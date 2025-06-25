@@ -63,18 +63,18 @@
 	"content": "Kích hoạt Security Hub Trong bước này chúng ta sẽ tiến hành kích hoạt Security Hub để người dùng có cái nhìn tổng quan hơn về các cảnh báo bảo mật\nĐăng nhập vào AWS Console Truy cập vào Giao diện quản trị dịch vụ AWS Security Hub Chọn Security Hub CSPM, sau đó click Get started Tại trang Enable AWS Security Hub CSPM, chọn các tiêu chuẩn về bảo mật (Security standards) như là AWS Foundational Security Best Practices, CIS AWS Foundations Benchmark, và PCI DSS. Chọn Enable Security Hub. Sau khi kích hoạt, bạn sẽ cần chờ một khoản thời gian để Security Hub đánh giá Security Score của tài khoản hiện tại của bạn so với từng bộ tiêu chuẩn bảo mật mà bạn thiết lập. "
 },
 {
-	"uri": "//localhost:1313/vi/2-prerequiste/2.2-createstack/",
-	"title": "Tạo Stack",
-	"tags": [],
-	"description": "",
-	"content": "Tạo Stack Trong bước này chúng ta sẽ tiến hành tạo Stack để theo dõi và ngăn chặn các cuộc tấn công thông qua Findings trên GuardDuty\nĐăng nhập vào AWS Console\nTruy cập vào Giao diện quản trị dịch vụ CloudFormation\nTiến hành tạo Stack mới bằng việc ấn nút Create stack Ở trang Specify template, click vào Upload a template file\nTải file template tại đây\nỞ trang Paraments, chúng ta sẽ nhập một số thông tin bắt buộc sau: Email Address: Địa chỉ email của bạn. Click Next Ở trang Specify Stack Details, ấn Next. Ở trang Configure stack options, ấn Next. Ở trang Capabilities, tiến hành chấp nhận (Acknowledge) cho phép Template tạo các IAM role, cuối cùng chọn nút Create Stack. Kiểm tra lại các thông tin, ấn Submit Quá trình trên sẽ diễn ra trong vòng 5-10 phút cho tới khi chúng ta thấy được trạng thái của Stack là CREATE_COMPLETE. Sau đó, chúng ta sẽ nhận được một thông báo qua Email với chủ đề tương tự AWS Notification - Subscription Confirmation.\nCác tài nguyên được chuẩn bị Dịch vụ EC2: 2 instances với tên gọi là Compromised Instance. 1 instance với tên gọi là Malicious Instance. Dịch vụ IAM: 1 IAM Role dành cho EC2 instance với quyền hạn truy cập đến SSM Parameter Store và DynamoDB. Dịch vụ SNS: 1 SNS Topic gửi thông báo qua E-mail. Dịch vụ EventBridge: 3 EventBridge Events Rules cho việc kích hoạt các thông báo và quá trình khắc phục. Dịch vụ Lambda: 2 Lambda Functions tiến hành khắc phục các lỗ hổng. Dịch vụ SSM: 1 SSM Parameter Store dùng để chứa mật khẩu cho môi trường TESTING. "
-},
-{
 	"uri": "//localhost:1313/vi/3-simulateattacks/",
 	"title": "Mô phỏng các cuộc tấn công",
 	"tags": [],
 	"description": "",
 	"content": "Trong bước này, chúng ta sẽ quan sát và thực hiện các giao thức bảo mật cần thiết với 3 tình huống mô phỏng các cuộc tấn công. Từ đó sẽ thấy được các cảnh báo bảo mật trên Security Hub và GuardDuty sẽ chủ động ngăn chặn các cuộc tấn công thông qua các tài nguyên đã được chuẩn bị từ trước (Lambda function, EventBridge Rules, SNS Topic,\u0026hellip;)\nNội dung 3.1. Compromised EC2 Instance 3.2. Compromised IAM credentials 3.3. Create Findings 3.4 Credential Exfiltration\n"
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.3-createstack/",
+	"title": "Tạo Stack",
+	"tags": [],
+	"description": "",
+	"content": "Tạo Stack Trong bước này chúng ta sẽ tiến hành tạo Stack để theo dõi và ngăn chặn các cuộc tấn công thông qua Findings trên GuardDuty\nĐăng nhập vào AWS Console\nTruy cập vào Giao diện quản trị dịch vụ CloudFormation\nTiến hành tạo Stack mới bằng việc ấn nút Create stack Ở trang Specify template, click vào Upload a template file\nTải file template tại đây\nỞ trang Paraments, chúng ta sẽ nhập một số thông tin bắt buộc sau: Email Address: Địa chỉ email của bạn. Click Next Ở trang Specify Stack Details, ấn Next. Ở trang Configure stack options, ấn Next. Ở trang Capabilities, tiến hành chấp nhận (Acknowledge) cho phép Template tạo các IAM role, cuối cùng chọn nút Create Stack. Kiểm tra lại các thông tin, ấn Submit Quá trình trên sẽ diễn ra trong vòng 5-10 phút cho tới khi chúng ta thấy được trạng thái của Stack là CREATE_COMPLETE. Sau đó, chúng ta sẽ nhận được một thông báo qua Email với chủ đề tương tự AWS Notification - Subscription Confirmation.\nCác tài nguyên được chuẩn bị Dịch vụ EC2: 2 instances với tên gọi là Compromised Instance. 1 instance với tên gọi là Malicious Instance. Dịch vụ IAM: 1 IAM Role dành cho EC2 instance với quyền hạn truy cập đến SSM Parameter Store và DynamoDB. Dịch vụ SNS: 1 SNS Topic gửi thông báo qua E-mail. Dịch vụ EventBridge: 3 EventBridge Events Rules cho việc kích hoạt các thông báo và quá trình khắc phục. Dịch vụ Lambda: 2 Lambda Functions tiến hành khắc phục các lỗ hổng. Dịch vụ SSM: 1 SSM Parameter Store dùng để chứa mật khẩu cho môi trường TESTING. "
 },
 {
 	"uri": "//localhost:1313/vi/4-cleanup/",
