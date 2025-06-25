@@ -17,8 +17,8 @@ Trong các bước tiếp theo, chúng ta sẽ tiến hành kích hoạt GuardDu
 | 3          | [IAM role exfiltration](#)       | Thông qua một credential bị rò rỉ, một cá nhân đang cố gắng xâm nhập và gọi API từ một máy chủ bên ngoài     | Tiến hành khắc phục với **AWS Lambda**                                                                           |
 
 ### Nội dung
-  - [Kích hoạt GuardDuty](2.1-createec2/)
-  - [Kích hoạt Security Hub](2.2-createiamrole/)
+  - [Kích hoạt GuardDuty](2.1-enableguardduty/)
+  - [Kích hoạt Security Hub](2.2-enablesecurityhub/)
   - [Tạo Stack](2.3-createstack/)
 
   

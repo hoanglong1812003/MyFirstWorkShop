@@ -1,21 +1,25 @@
 ---
-title : "Preparation "
-date : 2025-06-11
-weight : 2
+title : "Preparation steps"
+date :  2025-06-11
+weight : 2 
 chapter : false
 pre : " <b> 2. </b> "
 ---
 
-{{% notice info %}}
-You need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.
-{{% /notice %}}
-
-To learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:
-  - [About Amazon EC2](https://000004.awsstudygroup.com/en/)
-  - [Works with Amazon VPC](https://000003.awsstudygroup.com/en/)
-
-In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.
+### Overview
+In the next steps, we will proceed to enable GuardDuty, Security Hub and create Stack.
+### Situation
+*The exercise will describe the following situations.*
+| **Order** | **Name**                          | **Specification**                                                                                                   | **Solutions**                                                                                                     |
+|------------|----------------------------------|--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| 1          | [Compromised EC2 instance](3.1-public-instance/)    |	Detect and recover attacked EC2 instances.                                                               | Combining **Amazon GuardDuty** , **Amazon EventBridge Event Rules** , and **AWS Lambda**                      |
+| 2          | [Compromised IAM credentials](3.2-private-instance/) | Identify an individual actively making API calls to a system on AWS.                                             | Fix this threat immediately (*manually*)                                           |
+| 3          | [IAM role exfiltration](#)       | Through a leaked credential, an individual is trying to break in and call an API from an external server.     | Remediation with **AWS Lambda**                                                                           |
 
 ### Content
-  - [Prepare VPC and EC2](2.1-createec2/)
-  - [Create IAM Role](2.2-createiamrole/)
+  - [Enable GuardDuty](2.1-enableguardduty/)
+  - [Enable Security Hub](2.2-enablesecurityhub/)
+  - [Create Stack](2.3-createstack/)
+
+
+  

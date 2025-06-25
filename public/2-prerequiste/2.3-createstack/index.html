@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=61266&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.147.8">
@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: AWS System Manager</title>
+    <title>Create Stack :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1750830680" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1750830680" rel="stylesheet">
-    <link href="/css/hybrid.css?1750830680" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1750830680" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1750830680" rel="stylesheet">
-    <link href="/css/auto-complete.css?1750830680" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1750830680" rel="stylesheet">
-    <link href="/css/theme.css?1750830680" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1750830680" rel="stylesheet">
+    <link href="/css/nucleus.css?1750863814" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1750863814" rel="stylesheet">
+    <link href="/css/hybrid.css?1750863814" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1750863814" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1750863814" rel="stylesheet">
+    <link href="/css/auto-complete.css?1750863814" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1750863814" rel="stylesheet">
+    <link href="/css/theme.css?1750863814" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1750863814" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1750830680" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1750863814" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1750830680"></script>
+    <script src="/js/jquery-3.3.1.min.js?1750863814"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1750830680"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1750830680"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1750863814"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1750863814"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:1313\/";
+        var baseurl = "\/\/localhost:61266\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1750830680"></script>
+<script type="text/javascript" src="/js/search.js?1750863814"></script>
 
     
   </div>
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/" title="Preparation " class="dd-item 
+    <li data-nav-id="/2-prerequiste/" title="Preparation steps" class="dd-item 
         parent
         
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation 
+           <b> 2. </b> Preparation steps
           
             <i class="fas fa-check read-icon"></i>
           
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.1-createec2/" title="Preparing VPC and EC2" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.1-enableguardduty/" title="Enable GuardDuty" class="dd-item 
         
         
         
         ">
-      <a href="/2-prerequiste/2.1-createec2/">
-           <b> 2.1 </b> Preparing VPC and EC2
+      <a href="/2-prerequiste/2.1-enableguardduty/">
+           <b> 2.1 </b> Enable GuardDuty
           
             <i class="fas fa-check read-icon"></i>
           
@@ -167,41 +167,41 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.2-createiamrole/" title="Create IAM Role" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/2-prerequiste/2.2-createiamrole/">
-           <b> 2.2 </b> Create IAM Role
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/2-prerequiste/2.3-createstack/" title="" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.3-createstack/" title="Create Stack" class="dd-item 
         
         active
         
         ">
       <a href="/2-prerequiste/2.3-createstack/">
+           <b> 2.3 </b> Create Stack
           
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.2-enablesecurityhub/" title="Enable Security Hub" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.2-enablesecurityhub/">
+           <b> 2.2 </b> Enable Security Hub
           
             <i class="fas fa-check read-icon"></i>
           
@@ -230,13 +230,13 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/" title="Connect to EC2 servers" class="dd-item 
+    <li data-nav-id="/3-simulateattacks/" title="Simulate attacks" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/">
-           <b> 3. </b> Connect to EC2 servers
+      <a href="/3-simulateattacks/">
+           <b> 3. </b> Simulate attacks
           
             <i class="fas fa-check read-icon"></i>
           
@@ -261,13 +261,13 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.1-public-instance/" title="Connect to Public Instance" class="dd-item 
+    <li data-nav-id="/3-simulateattacks/3.1-compromisedec2instance/" title="Compromised EC2 Instance" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.1-public-instance/">
-           <b> 3.1. </b> Connect to Public Instance
+      <a href="/3-simulateattacks/3.1-compromisedec2instance/">
+           <b> 3.1. </b> Compromised EC2 Instance
           
             <i class="fas fa-check read-icon"></i>
           
@@ -289,13 +289,13 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/" title="Connect to Private instance" class="dd-item 
+    <li data-nav-id="/3-simulateattacks/3.2-compromisediamcredentials/" title="Compromised IAM credentials" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.2-private-instance/">
-           <b> 3.2. </b> Connect to Private instance
+      <a href="/3-simulateattacks/3.2-compromisediamcredentials/">
+           <b> 3.2. </b> Compromised IAM credentials
           
             <i class="fas fa-check read-icon"></i>
           
@@ -317,13 +317,13 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.3-credential-exfiltration/" title="" class="dd-item 
+    <li data-nav-id="/3-simulateattacks/3.3-createfindings/" title="Create Findings" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.3-credential-exfiltration/">
-          
+      <a href="/3-simulateattacks/3.3-createfindings/">
+           <b> 3.3. </b> Create Findings
           
             <i class="fas fa-check read-icon"></i>
           
@@ -345,13 +345,13 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.4-credential-exfiltration/" title="" class="dd-item 
+    <li data-nav-id="/3-simulateattacks/3.4-credential-exfiltration/" title="Credential Exfiltration" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.4-credential-exfiltration/">
-          
+      <a href="/3-simulateattacks/3.4-credential-exfiltration/">
+           <b> 3.4. </b> Credential Exfiltration
           
             <i class="fas fa-check read-icon"></i>
           
@@ -380,13 +380,13 @@
  
   
     
-    <li data-nav-id="/6-cleanup/" title="Clean up resources" class="dd-item 
+    <li data-nav-id="/4-cleanup/" title="Clean up resources" class="dd-item 
         
         
         
         ">
-      <a href="/6-cleanup/">
-          <b>6. </b>Clean up resources
+      <a href="/4-cleanup/">
+          <b>4.</b>Clean up resources
           
             <i class="fas fa-check read-icon"></i>
           
@@ -433,7 +433,7 @@
                   
                     
                     
-                      <option id="en" value="//localhost:1313/2-prerequiste/2.3-createstack/" selected>English</option>
+                      <option id="en" value="//localhost:61266/2-prerequiste/2.3-createstack/" selected>English</option>
                     
                   
               
@@ -447,7 +447,7 @@
                   
                     
                     
-                      <option id="vi" value="//localhost:1313/vi/2-prerequiste/2.3-createstack/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:61266/vi/2-prerequiste/2.3-createstack/">Tiếng Việt</option>
                     
                   
               
@@ -539,7 +539,7 @@
             
           
           
-            <a href='/'>Session Management</a> > <a href='/2-prerequiste/'>Preparation </a> > 
+            <a href='/'>Detect threats with Amazon GuardDuty</a> > <a href='/2-prerequiste/'>Preparation steps</a> > Create Stack
           
         
           
@@ -552,7 +552,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#create-stack">Create Stack</a></li>
+        <li><a href="#resources-prepared">Resources prepared</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -568,7 +577,7 @@
           
             <h1>
               
-              
+              Create Stack
             </h1>
           
 
@@ -576,7 +585,83 @@
 
 
 
-	
+	<h3 id="create-stack">Create Stack</h3>
+<p>In this step we will create a Stack to monitor and prevent attacks through <strong>Findings</strong> on GuardDuty</p>
+<ol>
+<li>
+<p>Sign in to AWS Console</p>
+</li>
+<li>
+<p>Access to <a href="https://ap-southeast-1.console.aws.amazon.com.cloudformation/home?region=ap-southeast-1">CloudFormation Service Administration Interface</a></p>
+</li>
+<li>
+<p>Proceed to create a new Stack by pressing the <strong>Create stack</strong>
+<img src="/images/2.prerequisite/2.3/1.png" alt="CloudFormation"></p>
+</li>
+<li>
+<p>On the Specify template page, click Upload a template file</p>
+</li>
+</ol>
+<p>Download template file at <a href="https://github.com/AWS-First-Cloud-Journey/GuardDuty-Hands-On/archive/refs/heads/main.zip">here</a></p>
+<p><img src="/images/2.prerequisite/2.3/2.png" alt="CloudFormation"></p>
+<ol start="5">
+<li>On the Parameters page, we will enter some required information:</li>
+</ol>
+<ul>
+<li><strong>Email Address</strong>: Your email address. Click <strong>Next</strong>
+<img src="/images/2.prerequisite/2.3/3.png" alt="CloudFormation"></li>
+</ul>
+<ol start="6">
+<li>On the Specify Stack Details page, click <strong>Next</strong>.</li>
+<li>On the Configure stack options page, click <strong>Next</strong>.</li>
+<li>On the Capabilities page, accept (Acknowledge) to allow the Template to create IAM roles, and finally select the <strong>Create Stack</strong> button.
+<img src="/images/2.prerequisite/2.3/4.png" alt="CloudFormation"></li>
+<li>Check the information again, press <strong>Submit</strong>
+<img src="/images/2.prerequisite/2.3/5.png" alt="CloudFormation">
+
+<div class="notices note" ><p>The above process will take place within 5-10 minutes until we see the status of the Stack as CREATE_COMPLETE. After that, we will receive an Email notification with the same subject as AWS Notification - Subscription Confirmation.</p>
+</div>
+</li>
+</ol>
+<h3 id="resources-prepared">Resources prepared</h3>
+<ol>
+<li>EC2 Services:</li>
+</ol>
+<ul>
+<li>2 instances called Compromised Instance.</li>
+<li>1 instance called Malicious Instance.</li>
+</ul>
+<ol start="2">
+<li>IAM Services:</li>
+</ol>
+<ul>
+<li>1 IAM Role for EC2 instance with access to SSM Parameter Store and DynamoDB.</li>
+</ul>
+<ol start="3">
+<li>SNS Services:</li>
+</ol>
+<ul>
+<li>1 SNS Topic sends notifications via E-mail.</li>
+</ul>
+<ol start="4">
+<li>EventBridge Services:</li>
+</ol>
+<ul>
+<li>3 EventBridge Events Rules for triggering notifications and remediation.</li>
+</ul>
+<ol start="5">
+<li>Lambda Service:</li>
+</ol>
+<ul>
+<li>2 Lambda Functions proceed to fix the vulnerabilities.</li>
+</ul>
+<ol start="6">
+<li>SSM Services:</li>
+</ol>
+<ul>
+<li>1 SSM Parameter Store is used to store passwords for the TESTING environment.</li>
+</ul>
+
 
 
 
@@ -670,22 +755,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -698,9 +767,6 @@
             
         
                     
-            
-        
-                    
                         
             
             
@@ -708,6 +774,25 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -811,10 +896,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/2-prerequiste/2.2-createiamrole/" title="Create IAM Role"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/2-prerequiste/2.1-enableguardduty/" title="Enable GuardDuty"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-accessibilitytoinstances/" title="Connect to EC2 servers" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/2-prerequiste/2.2-enablesecurityhub/" title="Enable Security Hub" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -824,19 +909,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1750830680"></script>
-    <script src="/js/perfect-scrollbar.min.js?1750830680"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1750830680"></script>
-    <script src="/js/jquery.sticky.js?1750830680"></script>
-    <script src="/js/featherlight.min.js?1750830680"></script>
-    <script src="/js/highlight.pack.js?1750830680"></script>
+    <script src="/js/clipboard.min.js?1750863814"></script>
+    <script src="/js/perfect-scrollbar.min.js?1750863814"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1750863814"></script>
+    <script src="/js/jquery.sticky.js?1750863814"></script>
+    <script src="/js/featherlight.min.js?1750863814"></script>
+    <script src="/js/highlight.pack.js?1750863814"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1750830680"></script>
-    <script src="/js/learn.js?1750830680"></script>
-    <script src="/js/hugo-learn.js?1750830680"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1750863814"></script>
+    <script src="/js/learn.js?1750863814"></script>
+    <script src="/js/hugo-learn.js?1750863814"></script>
 
-    <link href="/mermaid/mermaid.css?1750830680" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1750830680"></script>
+    <link href="/mermaid/mermaid.css?1750863814" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1750863814"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

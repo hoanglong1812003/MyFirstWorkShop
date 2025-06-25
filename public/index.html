@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Session Management :: AWS System Manager</title>
+    <title>Detect threats with Amazon GuardDuty :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1750835315" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1750835315" rel="stylesheet">
-    <link href="/css/hybrid.css?1750835315" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1750835315" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1750835315" rel="stylesheet">
-    <link href="/css/auto-complete.css?1750835315" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1750835315" rel="stylesheet">
-    <link href="/css/theme.css?1750835315" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1750835315" rel="stylesheet">
+    <link href="/css/nucleus.css?1750864658" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1750864658" rel="stylesheet">
+    <link href="/css/hybrid.css?1750864658" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1750864658" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1750864658" rel="stylesheet">
+    <link href="/css/auto-complete.css?1750864658" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1750864658" rel="stylesheet">
+    <link href="/css/theme.css?1750864658" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1750864658" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1750835315" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1750864658" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1750835315"></script>
+    <script src="/js/jquery-3.3.1.min.js?1750864658"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1750835315"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1750835315"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1750864658"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1750864658"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1750835315"></script>
+<script type="text/javascript" src="/js/search.js?1750864658"></script>
 
     
   </div>
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/" title="Preparation " class="dd-item 
+    <li data-nav-id="/2-prerequiste/" title="Preparation steps" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation 
+           <b> 2. </b> Preparation steps
           
             <i class="fas fa-check read-icon"></i>
           
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.1-createec2/" title="Preparing VPC and EC2" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.1-enableguardduty/" title="Enable GuardDuty" class="dd-item 
         
         
         
         ">
-      <a href="/2-prerequiste/2.1-createec2/">
-           <b> 2.1 </b> Preparing VPC and EC2
+      <a href="/2-prerequiste/2.1-enableguardduty/">
+           <b> 2.1 </b> Enable GuardDuty
           
             <i class="fas fa-check read-icon"></i>
           
@@ -167,13 +167,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.2-createiamrole/" title="Create IAM Role" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.2-createstack/" title="Create Stack" class="dd-item 
         
         
         
         ">
-      <a href="/2-prerequiste/2.2-createiamrole/">
-           <b> 2.2 </b> Create IAM Role
+      <a href="/2-prerequiste/2.2-createstack/">
+           <b> 2.3 </b> Create Stack
           
             <i class="fas fa-check read-icon"></i>
           
@@ -195,13 +195,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.3-createstack/" title="" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.2-enablesecurityhub/" title="Enable Security Hub" class="dd-item 
         
         
         
         ">
-      <a href="/2-prerequiste/2.3-createstack/">
-          
+      <a href="/2-prerequiste/2.2-enablesecurityhub/">
+           <b> 2.2 </b> Enable Security Hub
           
             <i class="fas fa-check read-icon"></i>
           
@@ -230,13 +230,13 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/" title="Connect to EC2 servers" class="dd-item 
+    <li data-nav-id="/3-simulateattacks/" title="Simulate attacks" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/">
-           <b> 3. </b> Connect to EC2 servers
+      <a href="/3-simulateattacks/">
+           <b> 3. </b> Simulate attacks
           
             <i class="fas fa-check read-icon"></i>
           
@@ -261,13 +261,13 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.1-public-instance/" title="Connect to Public Instance" class="dd-item 
+    <li data-nav-id="/3-simulateattacks/3.1-compromisedec2instance/" title="Compromised EC2 Instance" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.1-public-instance/">
-           <b> 3.1. </b> Connect to Public Instance
+      <a href="/3-simulateattacks/3.1-compromisedec2instance/">
+           <b> 3.1. </b> Compromised EC2 Instance
           
             <i class="fas fa-check read-icon"></i>
           
@@ -289,13 +289,13 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/" title="Connect to Private instance" class="dd-item 
+    <li data-nav-id="/3-simulateattacks/3.2-compromisediamcredentials/" title="Compromised IAM credentials" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.2-private-instance/">
-           <b> 3.2. </b> Connect to Private instance
+      <a href="/3-simulateattacks/3.2-compromisediamcredentials/">
+           <b> 3.2. </b> Compromised IAM credentials
           
             <i class="fas fa-check read-icon"></i>
           
@@ -317,13 +317,13 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.3-credential-exfiltration/" title="" class="dd-item 
+    <li data-nav-id="/3-simulateattacks/3.3-createfindings/" title="Create Findings" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.3-credential-exfiltration/">
-          
+      <a href="/3-simulateattacks/3.3-createfindings/">
+           <b> 3.3. </b> Create Findings
           
             <i class="fas fa-check read-icon"></i>
           
@@ -345,13 +345,13 @@
  
   
     
-    <li data-nav-id="/3-accessibilitytoinstances/3.4-credential-exfiltration/" title="" class="dd-item 
+    <li data-nav-id="/3-simulateattacks/3.4-credential-exfiltration/" title="Credential Exfiltration" class="dd-item 
         
         
         
         ">
-      <a href="/3-accessibilitytoinstances/3.4-credential-exfiltration/">
-          
+      <a href="/3-simulateattacks/3.4-credential-exfiltration/">
+           <b> 3.4. </b> Credential Exfiltration
           
             <i class="fas fa-check read-icon"></i>
           
@@ -380,13 +380,13 @@
  
   
     
-    <li data-nav-id="/6-cleanup/" title="Clean up resources" class="dd-item 
+    <li data-nav-id="/4-cleanup/" title="Clean up resources" class="dd-item 
         
         
         
         ">
-      <a href="/6-cleanup/">
-          <b>6. </b>Clean up resources
+      <a href="/4-cleanup/">
+          <b>4.</b>Clean up resources
           
             <i class="fas fa-check read-icon"></i>
           
@@ -526,19 +526,138 @@
 </span>
 
  
-<h1 id="work-with-amazon-system-manager---session-manager">Work with Amazon System Manager - Session Manager</h1>
-<h3 id="overall">Overall</h3>
-<p>In this lab, you&rsquo;ll learn the basics and practice of Amazon  System Manager - Session Manager
-. Perform creating public and private instance connections.</p>
-<p><img src="/images/arc-log.png" alt="ConnectPrivate"></p>
+<h1 id="detect-threats-with-amazon-guardduty">Detect threats with Amazon GuardDuty</h1>
+<h3 id="overview">Overview</h3>
+<p>In this lab, you will learn about Amazon GuardDuty combined with AWS Security Hub . Amazon GuardDuty is a service that detects and remediates threats to the system, while AWS Security Hub will provide us with a comprehensive view of priority security alerts and compliance status on AWS accounts. We will analyze, evaluate, and how to alert and fix security issues based on the &ldquo;Findings&rdquo; of GuardDuty and Security Hub.</p>
+<h3 id="about-guardduty">About GuardDuty</h3>
+<p><strong>Data Sources</strong>
+Once enabled in an AWS Region, GuardDuty analyzes all data coming from:</p>
+<ol>
+<li>
+<p>VPC Flow Logs</p>
+</li>
+<li>
+<p>CloudTrail Logs</p>
+</li>
+<li>
+<p>DNS Logs</p>
+<ul>
+<li>DNS logs come from DNS resolvers (owned by AWS) for VPCs and are not directly accessible to users.</li>
+<li>If the DNS resolver is configured independently by yourself or by a third party, GuardDuty will not be able to retrieve, process and identify threats from this data source.</li>
+</ul>
+<p><img src="/images/1.png" alt="GuardDuty"></p>
+</li>
+</ol>
+<p>GuardDuty can access any data sources (mentioned above) even if they are not previously enabled.</p>
+
+<div class="notices note" ><p>You should enable CloudTrail Logs and VPC Flow Logs at the same time to get the most comprehensive and detailed view when analyzing data.</p>
+</div>
+
+<p>GuardDuty is a Regional service, so to be able to monitor data in an AWS Region, you must activate it in that AWS Region.</p>
+
+<div class="notices note" ><p>You can enable it through the AWS Console or using the APIs. Most users will enable it across all AWS Regions and AWS Accounts simultaneously through the APIs.</p>
+</div>
+
+<p>Regardless of how many AWS resources you have (e.g. VPCs or IAM users), GuardDuty will not impact any of them because the processing will be performed internally within the GuardDuty service.</p>
+
+<div class="notices note" ><p>GuardDuty is a fully managed service provided by AWS.</p>
+</div>
+
+<p>GuardDuty&rsquo;s pricing will be based on</p>
+<ul>
+<li>Number of CloudTrail events analyzed.</li>
+<li>Volume of VPC floư logs (in GB)</li>
+<li>DNS log size (in GB)</li>
+</ul>
+
+<div class="notices note" ><p>Each AWS account will have a 30-day trial period in each AWS Region, which will help GuardDuty easily predict the costs incurred.</p>
+</div>
+
+<h3 id="findings">Findings</h3>
+<p>GuardDuty will proactively observe and monitor for anomalies originating from:</p>
+<ul>
+<li>3 data sources (mentioned above)/</li>
+<li>EC2 Instances.</li>
+<li>AWS IAM Resources.</li>
+</ul>
+<p>You can easily access the details of the Findings discovered by GuardDuty in the Findings tab. Each Finding is broken down into information in a format that allows us to easily understand and address security risks.</p>
+
+<div class="notices note" ><p>Learn more about the full list of GuardDuty Findings series at <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-format.html">here</a></p>
+</div>
+
+<h3 id="about-aws-security-hub">About AWS Security Hub</h3>
+<p>AWS Security Hub gives you a comprehensive view of high-priority security alerts and compliance status across your AWS accounts.</p>
+<p>You have a lot of powerful security tools at your disposal, from firewalls and endpoint protection to vulnerability scanning and security compliance. But sometimes, this leaves your team flipping back and forth between these tools to deal with hundreds or thousands of security alerts each day. With Security Hub, you now have a single place to aggregate, sort, and prioritize security alerts or findings from multiple AWS services (such as Amazon GuardDuty, Amazon Inspector, and Amazon Macie) or AWS partner solutions.</p>
+<p>The risks found are visually summarized on a built-in dashboard with interactive charts and tables. You can also continuously monitor your system using automated compliance checks against AWS best practices and market standards that your business follows.</p>
+<p><img src="/images/2.jpeg" alt="SecurityHub"></p>
+<h3 id="expense">Expense</h3>
+<p>Typically, it will cost less than $1 per month if your account is only used for testing, training, and not for performing simulated attacks.</p>
+<p><strong>Security Check</strong></p>
+<ul>
+<li>First 100,000 =&gt; $0.0010/check</li>
+<li>100,001 – 500,000 =&gt; $0.0008/check</li>
+<li>500,001+ =&gt; $0.0005/check</li>
+</ul>
+<p><strong>Find attack events</strong></p>
+<ul>
+<li>First 10,000 times =&gt; free</li>
+<li>10,001+ =&gt; $0.00003/time</li>
+</ul>
+<h3 id="comparing-amazon-guardduty-and-aws-security-hub">Comparing Amazon GuardDuty and AWS Security Hub</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Criteria</th>
+          <th>Amazon GuardDuty</th>
+          <th>AWS Security Hub</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Main purpose</strong></td>
+          <td>PAutomated threat detection based on behavior and machine learning.</td>
+          <td>Aggregate, standardize, and evaluate security alerts from multiple sources.</td>
+      </tr>
+      <tr>
+          <td><strong>Data processing</strong></td>
+          <td>VPC Flow Logs, CloudTrail Events, DNS logs. logs</td>
+          <td>Alerts from GuardDuty, Inspector, IAM Access Analyzer,…</td>
+      </tr>
+      <tr>
+          <td><strong>How it works</strong></td>
+          <td>Log analysis, using AI and threat intel to detect anomalies.</td>
+          <td>Collect and standardize alerts according to ASFF standards.</td>
+      </tr>
+      <tr>
+          <td><strong>Event response</strong></td>
+          <td>Send alert to CloudWatch, trigger Lambda</td>
+          <td>Allows creation of Custom Actions, integration with Lambda, EventBridge</td>
+      </tr>
+      <tr>
+          <td><strong>Warning standard</strong></td>
+          <td>Private internal format.</td>
+          <td>AWS Security Finding Format (ASFF).</td>
+      </tr>
+      <tr>
+          <td><strong>Advantage</strong></td>
+          <td>No agent installation required, real-time, automatic detection.</td>
+          <td>Comprehensive synthesis, integrating multiple sources, supporting Best Practice.</td>
+      </tr>
+      <tr>
+          <td><strong>Disadvantages</strong></td>
+          <td>No aggregate reporting, may generate false alarms.</td>
+          <td>Depending on other warning sources, information overload may occur.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>It is possible to <strong>combine both</strong> : use GuardDuty to detect threats, then send findings to Security Hub for aggregation, assessment, and response.</p></blockquote>
 <h3 id="content">Content</h3>
 <ol>
-<li><a href="/1-introduce/">Introduction </a></li>
-<li><a href="/2-prerequiste/">Preparation</a></li>
-<li><a href="/3-accessibilitytoinstances/">Connect to EC2 instance</a></li>
-<li><a href="4-s3log/">Manage session logs</a></li>
-<li><a href="5-Portfwd/">Port Forwarding</a></li>
-<li><a href="/6-cleanup/">Clean up resources</a></li>
+<li><a href="/1-introduce/">Introduce</a></li>
+<li><a href="/2-prerequiste/">Preparation steps</a></li>
+<li><a href="/3-simulateattacks/">Simulate attacks</a></li>
+<li><a href="/4-cleanup/">Clean up resources</a></li>
 </ol>
 	
   
@@ -760,8 +879,6 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/6-cleanup/" title="Clean up resources"> <i class="fa fa-chevron-left"></i></a>
-		
 		
 			<a class="nav nav-next" href="/1-introduce/" title="Introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
@@ -773,19 +890,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1750835315"></script>
-    <script src="/js/perfect-scrollbar.min.js?1750835315"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1750835315"></script>
-    <script src="/js/jquery.sticky.js?1750835315"></script>
-    <script src="/js/featherlight.min.js?1750835315"></script>
-    <script src="/js/highlight.pack.js?1750835315"></script>
+    <script src="/js/clipboard.min.js?1750864658"></script>
+    <script src="/js/perfect-scrollbar.min.js?1750864658"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1750864658"></script>
+    <script src="/js/jquery.sticky.js?1750864658"></script>
+    <script src="/js/featherlight.min.js?1750864658"></script>
+    <script src="/js/highlight.pack.js?1750864658"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1750835315"></script>
-    <script src="/js/learn.js?1750835315"></script>
-    <script src="/js/hugo-learn.js?1750835315"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1750864658"></script>
+    <script src="/js/learn.js?1750864658"></script>
+    <script src="/js/hugo-learn.js?1750864658"></script>
 
-    <link href="/mermaid/mermaid.css?1750835315" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1750835315"></script>
+    <link href="/mermaid/mermaid.css?1750864658" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1750864658"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

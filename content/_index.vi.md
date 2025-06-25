@@ -1,5 +1,5 @@
 ---
-title : "Session Management"
+title : "Phát hiện các mối đe dọa với Amazon GuardDuty"
 date :  2025-06-11
 weight : 1 
 chapter : false
