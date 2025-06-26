@@ -11,14 +11,14 @@ home = [ "HTML", "RSS", "JSON"]
   # Git hub repo link
   editURL = ""
   description = ""
-  author = "journeyoftheaverageguy@gmail.com"
+  author = "hoanglong1812003@gmail.com"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
   
 [Languages]
 [Languages.en]
-title = "AWS System Manager"
+title = "AWS GuardDuty & Security Hub"
 weight = 1
 languageName = "English"
 
@@ -29,7 +29,7 @@ url = "https://www.facebook.com/groups/awsstudygroupfcj/"
 weight = 20
 
 [Languages.vi]
-title = "AWS System Manager"
+title = "AWS GuardDuty & Security Hub"
 weight = 2
 languageName = "Tiếng Việt"
 

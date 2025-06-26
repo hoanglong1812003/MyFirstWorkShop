@@ -119,19 +119,6 @@
                 href="//localhost:1313/vi/2-prerequiste/2.2-enablesecurityhub/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.3-createstack/</loc>
-    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.3-createstack/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.3-createstack/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/3-simulateattacks/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -143,6 +130,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/3-simulateattacks/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/2-prerequiste/2.3-createstack/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-prerequiste/2.3-createstack/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-prerequiste/2.3-createstack/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/4-cleanup/</loc>
