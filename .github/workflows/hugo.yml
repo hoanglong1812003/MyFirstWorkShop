@@ -3,7 +3,7 @@ name: Deploy Hugo to GitHub Pages
 on:
   push:
     branches:
-      - main  # hoặc branch bạn dùng để viết content
+      - main  
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.125.0'  # Thay bằng version bạn dùng
+          hugo-version: 'v0.147.8'
 
       - name: Build site
         run: hugo
