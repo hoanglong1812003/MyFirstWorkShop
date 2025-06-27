@@ -46,7 +46,7 @@ Cách tính giá của GuardDuty sẽ dựa trên
 {{% notice note %}}
 Mỗi tài khoản AWS sẽ có 30 ngày thử nghiệm ở mỗi AWS Region, điều này sẽ giúp GuardDuty dễ dàng dự đoán chi phí phát sinh.
 {{% /notice %}}
-![ConnectPrivate](/images/arc-log.png) 
+
 
 ### Findings
 GuardDuty sẽ chủ động quan sát và theo dõi các dấu hiệu bất thường xuất phát từ:
