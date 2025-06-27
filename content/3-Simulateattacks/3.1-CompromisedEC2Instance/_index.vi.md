@@ -18,7 +18,7 @@ Nội dung E-mail thứ hai ngay sau đó mà bạn nhận được với tình 
 
 ### Kiến trúc tổng quan
 
-![Compromised EC2 Instance](/images/3.attack/3.1/CompromisedEC2.png) 
+![Compromised EC2 Instance](/images/3.attack/3.1/CompromisedEC2-1.png) 
 
 1. Một EC2 compromised instance, tiến hành gửi gói tin pings đến địa chỉ EIP của một EC2 instance nguy hại. Địa chỉ EIP đó đã được thêm ở Custom Threat List.
 2. Security Hub phát hiện ra lỗ hổng bảo mật bất thường.
