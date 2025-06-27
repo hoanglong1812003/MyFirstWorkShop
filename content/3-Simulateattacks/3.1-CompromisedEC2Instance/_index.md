@@ -18,7 +18,7 @@ The second E-mail you received shortly after with the situation being resolved i
 
 ### Overview Architecture
 
-![Compromised EC2 Instance](/images/3.attack/3.1/CompromisedEC2.png) 
+![Compromised EC2 Instance](/images/3.attack/3.1/CompromisedEC2-1.png) 
 
 1. A compromised EC2 instance sends pings to the EIP address of a malicious EC2 instance. That EIP address has been added to the Custom Threat List.
 2. Security Hub discovered an unusual security vulnerability.
