@@ -9,7 +9,7 @@ pre : " <b> 3.4. </b> "
 
 **Retrieve temporary IAM security credentials with Systems Manager**
 
-![CredentialExfiltration](/images/3.attack/3.4/CredentialExfiltration.png)
+![CredentialExfiltration](/images/3.attack/3.4/CredentialExfiltration-1.png)
 
 1. Remote server accesses compromised EC2 instance and steals IAM role credentials via Metadata.
 2. This server sets up an AWS CLI Profile to make API calls to an AWS account.

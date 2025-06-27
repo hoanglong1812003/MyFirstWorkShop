@@ -13,7 +13,7 @@ No personal IAM credentials have ever been exposed or disclosed in any way.
 {{% /notice %}}
 ### Overview Architecture
 
-![Compromised IAM credentials](/images/3.attack/3.2/CompromisedIAMcredentials.png)
+![Compromised IAM credentials](/images/3.attack/3.2/CompromisedIAMcredentials-1.png)
 1. **This EC2-malicious** instance is making **API calls** , the EIP of this instance has been added to **the Threat List**. The content of the API calls has been recorded in the CloudTrail log.
 2. **Security Hub** detects suspicious actions detected by GuardDuty
 3. **GuardDuty** looks at **CloudTrail** Logs along with **VPC Flow Logs** and **DNS Logs** , and assesses the situation based on certain baselines.

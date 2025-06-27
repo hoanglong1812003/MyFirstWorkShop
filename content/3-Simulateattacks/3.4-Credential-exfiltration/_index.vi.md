@@ -9,7 +9,7 @@ pre : " <b> 3.4. </b> "
 
 **Truy xuất IAM security credential tạm thời với Systems Manager**
 
-![CredentialExfiltration](/images/3.attack/3.4/CredentialExfiltration.png)
+![CredentialExfiltration](/images/3.attack/3.4/CredentialExfiltration-1.png)
 
 1. Máy chủ từ xa truy cập đến EC2 compromised instance và đánh cắp IAM role credential thông qua dữ liệu Metadata.
 2. Máy chủ này thiết lập AWS CLI Profile để tiến hành gọi API đến tài khoản AWS.

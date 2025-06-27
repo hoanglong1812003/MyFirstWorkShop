@@ -13,7 +13,7 @@ Không có bất kỳ IAM credentials cá nhân nào đã từng bị phơi bày
 {{% /notice %}}
 ### Kiến trúc tổng quan
 
-![Compromised IAM credentials](/images/3.attack/3.2/CompromisedIAMcredentials.png)
+![Compromised IAM credentials](/images/3.attack/3.2/CompromisedIAMcredentials-1.png)
 1. **EC2-malicious** instance này tiến hành thực hiện các **API calls**, EIP của instance này đã được thêm vào **Threat List**. Nội dung các API calls đã được lưu lại trong nhật ký của CloudTrail.
 2. **Security Hub** phát hiện các hành động đáng ngờ được phát hiện bởi GuardDuty
 3. **GuardDuty** quan sát nhật ký của **CloudTrail Logs** cùng với **VPC Flow Logs** và **DNS Logs**, qua đó đánh giá tình hình dựa trên một số cơ sở nhất định.
