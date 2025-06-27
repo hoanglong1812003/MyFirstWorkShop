@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mô phỏng các cuộc tấn công on AWS GuardDuty &amp; Security Hub</title>
-    <link>/vi/3-simulateattacks/</link>
+    <link>https://hoanglong1812003.github.io/MyFirstWorkShop/vi/3-simulateattacks/</link>
     <description>Recent content in Mô phỏng các cuộc tấn công on AWS GuardDuty &amp; Security Hub</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="/vi/3-simulateattacks/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hoanglong1812003.github.io/MyFirstWorkShop/vi/3-simulateattacks/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

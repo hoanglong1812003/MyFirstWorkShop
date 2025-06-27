@@ -7,26 +7,26 @@
     <meta name="description" content="">
 <meta name="author" content="hoanglong1812003@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="../../../images/favicon.png" type="image/png">
 
     <title>Compromised IAM credentials :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="/css/nucleus.css?1750997587" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1750997587" rel="stylesheet">
-    <link href="/css/hybrid.css?1750997587" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1750997587" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1750997587" rel="stylesheet">
-    <link href="/css/auto-complete.css?1750997587" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1750997587" rel="stylesheet">
-    <link href="/css/theme.css?1750997587" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1750997587" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1750998553" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1750998553" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1750998553" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1750998553" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1750998553" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1750998553" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1750998553" rel="stylesheet">
+    <link href="../../../css/theme.css?1750998553" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1750998553" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1750997587" rel="stylesheet">
+    <link href="../../../css/theme-workshop.css?1750998553" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1750997587"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1750998553"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,14 +36,14 @@
     </style>
     
   </head>
-  <body class="" data-url="/vi/3-simulateattacks/3.2-compromisediamcredentials/">
+  <body class="" data-url="../../../vi/3-simulateattacks/3.2-compromisediamcredentials/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
 
   <div id="header-wrapper">
     <div id="header">
-      <a id="logo" href="/">
+      <a id="logo" href="../../../">
 
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1750997587"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1750997587"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1750998553"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1750998553"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/vi";
+        var baseurl = "https:\/\/hoanglong1812003.github.io\/MyFirstWorkShop\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1750997587"></script>
+<script type="text/javascript" src="../../../js/search.js?1750998553"></script>
 
     
   </div>
@@ -87,7 +87,7 @@
         
         
         ">
-      <a href="/vi/1-introduce/">
+      <a href="../../../vi/1-introduce/">
            <b> 1. </b> Giới thiệu
           
             <i class="fas fa-check read-icon"></i>
@@ -113,7 +113,7 @@
         
         
         ">
-      <a href="/vi/2-prerequiste/">
+      <a href="../../../vi/2-prerequiste/">
            <b> 2. </b> Các bước chuẩn bị
           
             <i class="fas fa-check read-icon"></i>
@@ -144,7 +144,7 @@
         
         
         ">
-      <a href="/vi/2-prerequiste/2.1-enableguardduty/">
+      <a href="../../../vi/2-prerequiste/2.1-enableguardduty/">
            <b> 2.1 </b> Kích hoạt GuardDuty
           
             <i class="fas fa-check read-icon"></i>
@@ -172,7 +172,7 @@
         
         
         ">
-      <a href="/vi/2-prerequiste/2.2-enablesecurityhub/">
+      <a href="../../../vi/2-prerequiste/2.2-enablesecurityhub/">
            <b> 2.2 </b> Kích hoạt Security Hub
           
             <i class="fas fa-check read-icon"></i>
@@ -200,7 +200,7 @@
         
         
         ">
-      <a href="/vi/2-prerequiste/2.3-createstack/">
+      <a href="../../../vi/2-prerequiste/2.3-createstack/">
            <b> 2.3 </b> Tạo Stack
           
             <i class="fas fa-check read-icon"></i>
@@ -235,7 +235,7 @@
         
         
         ">
-      <a href="/vi/3-simulateattacks/">
+      <a href="../../../vi/3-simulateattacks/">
            <b> 3. </b> Mô phỏng các cuộc tấn công
           
             <i class="fas fa-check read-icon"></i>
@@ -266,7 +266,7 @@
         
         
         ">
-      <a href="/vi/3-simulateattacks/3.1-compromisedec2instance/">
+      <a href="../../../vi/3-simulateattacks/3.1-compromisedec2instance/">
            <b> 3.1. </b> Compromised EC2 Instance
           
             <i class="fas fa-check read-icon"></i>
@@ -294,7 +294,7 @@
         active
         
         ">
-      <a href="/vi/3-simulateattacks/3.2-compromisediamcredentials/">
+      <a href="../../../vi/3-simulateattacks/3.2-compromisediamcredentials/">
            <b> 3.2. </b> Compromised IAM credentials
           
             <i class="fas fa-check read-icon"></i>
@@ -322,7 +322,7 @@
         
         
         ">
-      <a href="/vi/3-simulateattacks/3.3-createfindings/">
+      <a href="../../../vi/3-simulateattacks/3.3-createfindings/">
            <b> 3.3. </b> Create Findings
           
             <i class="fas fa-check read-icon"></i>
@@ -350,7 +350,7 @@
         
         
         ">
-      <a href="/vi/3-simulateattacks/3.4-credential-exfiltration/">
+      <a href="../../../vi/3-simulateattacks/3.4-credential-exfiltration/">
            <b> 3.4. </b> Credential Exfiltration
           
             <i class="fas fa-check read-icon"></i>
@@ -385,7 +385,7 @@
         
         
         ">
-      <a href="/vi/4-cleanup/">
+      <a href="../../../vi/4-cleanup/">
           <b>4. </b>Dọn dẹp tài nguyên  
           
             <i class="fas fa-check read-icon"></i>
@@ -433,7 +433,7 @@
                   
                     
                     
-                      <option id="en" value="/3-simulateattacks/3.2-compromisediamcredentials/">English</option>
+                      <option id="en" value="https://hoanglong1812003.github.io/MyFirstWorkShop/3-simulateattacks/3.2-compromisediamcredentials/">English</option>
                     
                   
               
@@ -447,7 +447,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/3-simulateattacks/3.2-compromisediamcredentials/" selected>Tiếng Việt</option>
+                      <option id="vi" value="https://hoanglong1812003.github.io/MyFirstWorkShop/vi/3-simulateattacks/3.2-compromisediamcredentials/" selected>Tiếng Việt</option>
                     
                   
               
@@ -537,7 +537,7 @@
             
           
           
-            <a href='/vi/'>Phát hiện các mối đe dọa với Amazon GuardDuty</a> > <a href='/vi/3-simulateattacks/'>Mô phỏng các cuộc tấn công</a> > Compromised IAM credentials
+            <a href='../../../vi/'>Phát hiện các mối đe dọa với Amazon GuardDuty</a> > <a href='../../../vi/3-simulateattacks/'>Mô phỏng các cuộc tấn công</a> > Compromised IAM credentials
           
         
           
@@ -591,7 +591,7 @@
 </div>
 
 <h3 id="kiến-trúc-tổng-quan">Kiến trúc tổng quan</h3>
-<p><img src="/images/3.attack/3.2/CompromisedIAMcredentials.png" alt="Compromised IAM credentials"></p>
+<p><img src="../../../images/3.attack/3.2/CompromisedIAMcredentials.png" alt="Compromised IAM credentials"></p>
 <ol>
 <li><strong>EC2-malicious</strong> instance này tiến hành thực hiện các <strong>API calls</strong>, EIP của instance này đã được thêm vào <strong>Threat List</strong>. Nội dung các API calls đã được lưu lại trong nhật ký của CloudTrail.</li>
 <li><strong>Security Hub</strong> phát hiện các hành động đáng ngờ được phát hiện bởi GuardDuty</li>
@@ -604,14 +604,14 @@
 <p>Để tiến hành xem xét các Findings:</p>
 <ol>
 <li>Truy cập Security Hub, chúng ta phát hiện ra lỗ hổng bảo mật được phát hiện bởi GuardDuty
-<img src="/images/3.attack/3.2/hub.png" alt="Compromised IAM credentials"></li>
+<img src="../../../images/3.attack/3.2/hub.png" alt="Compromised IAM credentials"></li>
 <li>Truy cập vào GuardDuty Console ở <strong>ap-southeast-1</strong> tại <a href="https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/">đây</a></li>
 <li>Chúng ta sẽ thấy được các Findings với định dạng như sau.</li>
 </ol>
 <ul>
 <li>Recon:IAMUser</li>
 <li>UnauthorizedAccess:IAMUser.
-<img src="/images/3.attack/3.2/1.png" alt="Compromised IAM credentials"></li>
+<img src="../../../images/3.attack/3.2/1.png" alt="Compromised IAM credentials"></li>
 </ul>
 <ol start="4">
 <li>Nếu không có bất kỳ Finding nào, tiến hành nhấn nút Refresh và đợi.</li>
@@ -624,18 +624,18 @@
 </ul>
 <ol start="6">
 <li>Ở dưới phần <strong>Resource Affected</strong>, bạn sẽ kiếm được User Name mà liên quan đến Finding này.
-<img src="/images/3.attack/3.2/2.png" alt="Compromised IAM credentials">
+<img src="../../../images/3.attack/3.2/2.png" alt="Compromised IAM credentials">
 Finding này chỉ ra rằng <strong>IAM credential</strong> của <strong>User Name</strong> trên đã có thể bị phơi bày bởi những <strong>API calls</strong> xuất phát từ địa chỉ IP mà trước đó đã được thêm vào <strong>Threat List</strong>.</li>
 </ol>
 <blockquote>
 <p>Vậy những hành động nào đã được IAM User này thực hiện?</p></blockquote>
 <p>Ở mục <strong>Action</strong>, chúng ta thấy được hành động <strong>DescribeParameters</strong> đã được thực hiện.
-<img src="/images/3.attack/3.2/3.png" alt="Compromised IAM credentials"></p>
+<img src="../../../images/3.attack/3.2/3.png" alt="Compromised IAM credentials"></p>
 <blockquote>
 <p>Làm thế nào để chúng ta có thể thấy được hết các hành động còn lại, được thực hiện bởi IAM User này, trong vòng 1 tiếng trước hay 1 ngày truớc?</p></blockquote>
 <p>GuardDuty có khả năng phân tích một lượng lớn dữ liệu nhằm xác định chính xác mối nguy hiểm có mặt trong môi trường của bạn. Tuy nhiên, trong quá trình điều tra và các bước thực hiện Remediation, chúng ta cũng cần kết hợp nhiều nguồn dữ liệu khác nhau để có một cái nhìn tương quan nhất có thể.</p>
 <p>Trong trường hợp này, nhà phân tích có thể sử dụng các thông tin chi tiết có thể tìm thấy trong nhật ký hành vi người dùng thông qua <strong>CloudTrail</strong>.
-<img src="/images/3.attack/3.2/4.png" alt="Compromised IAM credentials"></p>
+<img src="../../../images/3.attack/3.2/4.png" alt="Compromised IAM credentials"></p>
 
 <div class="notices note" ><p>Những Findings về IAM được sinh ra bởi EC2 malicious instance đã thực hiện những API calls và EIP của instance này nằm trong Custom Threat List.</p>
 </div>
@@ -646,7 +646,7 @@ Finding này chỉ ra rằng <strong>IAM credential</strong> của <strong>User 
 <li>Ở thanh điều hướng bên tay trái, dưới <strong>Events</strong>, chọn <strong>Rules</strong>. Bạn sẽ thấy có 3 quy tắc đã được thiết lập (bởi CloudFormation Template), bắt đầu với tiền tố có dạng sau <em>GuardDuty-Event..</em></li>
 <li>Tiến hành chọn quy tắc có tên là <strong>GuardDuty-Event-IAMUser-MaliciousIPCaller</strong></li>
 <li>Bạn sẽ dễ dàng nhận thấy chỉ có 1 mục tiêu tại vùng <strong>Targets</strong> là <strong>SNS Topic</strong>.
-<img src="/images/3.attack/3.2/5.png" alt="Compromised IAM credentials"></li>
+<img src="../../../images/3.attack/3.2/5.png" alt="Compromised IAM credentials"></li>
 </ol>
 <p>Hoá ra, Việt chưa từng thiết lập Lambda Function để thực hiện quá trình Remediation bởi đội ngũ Security đã đưa ra quyết định rằng họ sẽ tiến hành một cách thủ công đối với Finding này.</p>
 <blockquote>
@@ -658,14 +658,14 @@ Finding này chỉ ra rằng <strong>IAM credential</strong> của <strong>User 
 Bởi Việt chưa từng thiết lập quá trình Remediation đối với Finding này nên bạn Long cần phải thực hiện một cách thủ công. Trong khi đội ngũ Security đang tiến hành phân tích những hành vi của IAM user này để xác định rõ hơn phạm vi lỗ hổng, bạn Long cần phải thực hiện một số bước để vô hiệu hoá Access Key nhằm ngăn chặn lập tức những hành động tiếp theo.</p>
 <ol>
 <li>Truy cập vào IAM Console tại <a href="https://us-east-1.console.aws.amazon.com/iam/home?region=ap-southeast-1#/home">đây</a>
-<img src="/images/3.attack/3.2/6.png" alt="Compromised IAM credentials"></li>
+<img src="../../../images/3.attack/3.2/6.png" alt="Compromised IAM credentials"></li>
 <li>Ở thanh điều hướng bên tay trái, chọn Users.</li>
 <li>Dựa trên GuardDuty Finding và thông báo E-mail, chúng ta dễ dàng chọn ra được IAM user - <strong>GuardDuty-Example-Compromised-Simulated</strong>.
-<img src="/images/3.attack/3.2/7.png" alt="Compromised IAM credentials"></li>
+<img src="../../../images/3.attack/3.2/7.png" alt="Compromised IAM credentials"></li>
 <li>Ở user <strong>GuardDuty-Example-Compromised-Simulated</strong>, chúng ta chọn thanh <strong>Security Credentials</strong>.</li>
 <li>Ở mục Access Keys, dựa trên thông tin Access Key ID từ Finding, chúng ta tiến hành chọn <strong>Action</strong> -&gt; <strong>Deactivate</strong>.
-<img src="/images/3.attack/3.2/8.png" alt="Compromised IAM credentials">
-<img src="/images/3.attack/3.2/9.png" alt="Compromised IAM credentials"></li>
+<img src="../../../images/3.attack/3.2/8.png" alt="Compromised IAM credentials">
+<img src="../../../images/3.attack/3.2/9.png" alt="Compromised IAM credentials"></li>
 </ol>
 
 
@@ -902,10 +902,10 @@ Bởi Việt chưa từng thiết lập quá trình Remediation đối với Fin
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/3-simulateattacks/3.1-compromisedec2instance/" title="Compromised EC2 Instance"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="../../../vi/3-simulateattacks/3.1-compromisedec2instance/" title="Compromised EC2 Instance"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/3-simulateattacks/3.3-createfindings/" title="Create Findings" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="../../../vi/3-simulateattacks/3.3-createfindings/" title="Create Findings" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -915,19 +915,19 @@ Bởi Việt chưa từng thiết lập quá trình Remediation đối với Fin
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1750997587"></script>
-    <script src="/js/perfect-scrollbar.min.js?1750997587"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1750997587"></script>
-    <script src="/js/jquery.sticky.js?1750997587"></script>
-    <script src="/js/featherlight.min.js?1750997587"></script>
-    <script src="/js/highlight.pack.js?1750997587"></script>
+    <script src="../../../js/clipboard.min.js?1750998553"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1750998553"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1750998553"></script>
+    <script src="../../../js/jquery.sticky.js?1750998553"></script>
+    <script src="../../../js/featherlight.min.js?1750998553"></script>
+    <script src="../../../js/highlight.pack.js?1750998553"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1750997587"></script>
-    <script src="/js/learn.js?1750997587"></script>
-    <script src="/js/hugo-learn.js?1750997587"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1750998553"></script>
+    <script src="../../../js/learn.js?1750998553"></script>
+    <script src="../../../js/hugo-learn.js?1750998553"></script>
 
-    <link href="/mermaid/mermaid.css?1750997587" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1750997587"></script>
+    <link href="../../../mermaid/mermaid.css?1750998553" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1750998553"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
