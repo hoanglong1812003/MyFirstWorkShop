@@ -1,23 +1,27 @@
-name: Deploy Hugo to GitHub Pages
+name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
     branches:
-      - main  
+      - main
+
+permissions:
+  contents: write
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'v0.147.8'
+          hugo-version: '0.147.8'
+          extended: true
 
-      - name: Build site
+      - name: Build
         run: hugo
 
       - name: Deploy to GitHub Pages
