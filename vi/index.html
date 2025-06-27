@@ -12,21 +12,21 @@
     <title>Phát hiện các mối đe dọa với Amazon GuardDuty :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="../css/nucleus.css?1750999081" rel="stylesheet">
-    <link href="../css/fontawesome-all.min.css?1750999081" rel="stylesheet">
-    <link href="../css/hybrid.css?1750999081" rel="stylesheet">
-    <link href="../css/featherlight.min.css?1750999081" rel="stylesheet">
-    <link href="../css/perfect-scrollbar.min.css?1750999081" rel="stylesheet">
-    <link href="../css/auto-complete.css?1750999081" rel="stylesheet">
-    <link href="../css/atom-one-dark-reasonable.css?1750999081" rel="stylesheet">
-    <link href="../css/theme.css?1750999081" rel="stylesheet">
-    <link href="../css/hugo-theme.css?1750999081" rel="stylesheet">
+    <link href="../css/nucleus.css?1750999367" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css?1750999367" rel="stylesheet">
+    <link href="../css/hybrid.css?1750999367" rel="stylesheet">
+    <link href="../css/featherlight.min.css?1750999367" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css?1750999367" rel="stylesheet">
+    <link href="../css/auto-complete.css?1750999367" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css?1750999367" rel="stylesheet">
+    <link href="../css/theme.css?1750999367" rel="stylesheet">
+    <link href="../css/hugo-theme.css?1750999367" rel="stylesheet">
     
-    <link href="../css/theme-workshop.css?1750999081" rel="stylesheet">
+    <link href="../css/theme-workshop.css?1750999367" rel="stylesheet">
     
     
 
-    <script src="../js/jquery-3.3.1.min.js?1750999081"></script>
+    <script src="../js/jquery-3.3.1.min.js?1750999367"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../js/lunr.min.js?1750999081"></script>
-<script type="text/javascript" src="../js/auto-complete.js?1750999081"></script>
+<script type="text/javascript" src="../js/lunr.min.js?1750999367"></script>
+<script type="text/javascript" src="../js/auto-complete.js?1750999367"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hoanglong1812003.github.io\/MyFirstWorkShop\/\/vi";
     
 </script>
-<script type="text/javascript" src="../js/search.js?1750999081"></script>
+<script type="text/javascript" src="../js/search.js?1750999367"></script>
 
     
   </div>
@@ -531,13 +531,19 @@
 <p><strong>Nguồn dữ liệu</strong>
 Kể từ khi được kích hoạt trên một AWS Region, GuardDuty sẽ tiến hành phân tích mọi dữ liệu đến từ:</p>
 <ol>
-<li>VPC Flow Logs</li>
-<li>CloudTrail Logs</li>
-<li>DNS Logs
+<li>
+<p>VPC Flow Logs</p>
+</li>
+<li>
+<p>CloudTrail Logs</p>
+</li>
+<li>
+<p>DNS Logs</p>
 <ul>
 <li>Nhật ký lưu trữ của DNS xuất phát từ các DNS resolvers (sở hữu bởi AWS) dành cho các VPC và không thể truy xuất trực tiếp từ phía người dùng.</li>
 <li>Nếu như DNS resolver được cấu hình độc lập bởi chính bạn hoặc từ phía bên thứ 3, GuardDuty sẽ không thể truy xuất, xử lý và xác định các mối nguy hại từ nguồn dữ liệu này.</li>
 </ul>
+<p><img src="../images/1.png" alt="GuardDuty"></p>
 </li>
 </ol>
 <p>GuardDuty có thể truy xuất đến mọi nguồn dữ liệu (được đề cập ở trên) cho dù chúng chưa được kích hoạt từ trước.</p>
@@ -581,6 +587,7 @@ Bạn sẽ dễ dàng truy xuất chi tiết các Findings được phát hiện
 <p>AWS Security Hub cung cấp cho bạn cái nhìn toàn diện về các cảnh báo bảo mật ưu tiên cao và trạng thái tuân thủ trên các tài khoản AWS</p>
 <p>Sẽ có rất nhiều các công cụ bảo mật mạnh mẽ để bạn sử dụng, từ tường lửa hay ứng dụng bảo vệ endpoint đến các ứng dụng quét lỗ hổng và sự tuân thủ bảo mật. Nhưng đôi khi, điều này khiến đội ngũ của bạn phải chuyển đổi qua lại giữa các công cụ này để đối phó với hàng trăm, hàng nghìn cảnh báo bảo mật mỗi ngày. Với Security Hub, giờ đây bạn có một nơi tổng hợp duy nhất, sắp xếp và phân độ ưu tiên các cảnh báo hoặc phát hiện bảo mật từ nhiều dịch vụ AWS (như Amazon GuardDuty, Amazon Inspector và Amazon Macie) hay từ các giải pháp cung cấp bởi đối tác của AWS.</p>
 <p>Các rủi ro được tìm thấy sẽ được tóm tắt trực quan trên trang tổng quan tích hợp với các biểu đồ và bảng mà bạn có thể tương tác. Bạn cũng có thể giám sát hệ thống của bạn liên tục bằng cách sử dụng chức năng kiểm tra tự động sự tuân thủ so với các thực nghiệm tối ưu từ AWS và các tiêu chuẩn trên thị trường mà doanh nghiệp của bạn đang tuân theo.</p>
+<p><img src="../images/2.jpeg" alt="SecurityHub"></p>
 <h3 id="chi-phí">Chi phí</h3>
 <p>Thông thường, chi phí sẽ ít hơn $1 mỗi tháng nếu tài khoản của bạn chỉ sử dụng cho mục đích thử nghiệm, luyện tập và không thực hiện những cuộc tấn công giả lập.
 <strong>Kiểm tra bảo mật</strong></p>
@@ -881,19 +888,19 @@ Bạn sẽ dễ dàng truy xuất chi tiết các Findings được phát hiện
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../js/clipboard.min.js?1750999081"></script>
-    <script src="../js/perfect-scrollbar.min.js?1750999081"></script>
-    <script src="../js/perfect-scrollbar.jquery.min.js?1750999081"></script>
-    <script src="../js/jquery.sticky.js?1750999081"></script>
-    <script src="../js/featherlight.min.js?1750999081"></script>
-    <script src="../js/highlight.pack.js?1750999081"></script>
+    <script src="../js/clipboard.min.js?1750999367"></script>
+    <script src="../js/perfect-scrollbar.min.js?1750999367"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js?1750999367"></script>
+    <script src="../js/jquery.sticky.js?1750999367"></script>
+    <script src="../js/featherlight.min.js?1750999367"></script>
+    <script src="../js/highlight.pack.js?1750999367"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../js/modernizr.custom-3.6.0.js?1750999081"></script>
-    <script src="../js/learn.js?1750999081"></script>
-    <script src="../js/hugo-learn.js?1750999081"></script>
+    <script src="../js/modernizr.custom-3.6.0.js?1750999367"></script>
+    <script src="../js/learn.js?1750999367"></script>
+    <script src="../js/hugo-learn.js?1750999367"></script>
 
-    <link href="../mermaid/mermaid.css?1750999081" rel="stylesheet" />
-    <script src="../mermaid/mermaid.js?1750999081"></script>
+    <link href="../mermaid/mermaid.css?1750999367" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js?1750999367"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
