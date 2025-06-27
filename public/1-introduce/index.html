@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/MyFirstWorkShop/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=MyFirstWorkShop/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="hoanglong1812003@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="../images/favicon.png" type="image/png">
 
     <title>Introduction :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="/css/nucleus.css?1750992214" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1750992214" rel="stylesheet">
-    <link href="/css/hybrid.css?1750992214" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1750992214" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1750992214" rel="stylesheet">
-    <link href="/css/auto-complete.css?1750992214" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1750992214" rel="stylesheet">
-    <link href="/css/theme.css?1750992214" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1750992214" rel="stylesheet">
+    <link href="../css/nucleus.css?1750998419" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css?1750998419" rel="stylesheet">
+    <link href="../css/hybrid.css?1750998419" rel="stylesheet">
+    <link href="../css/featherlight.min.css?1750998419" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css?1750998419" rel="stylesheet">
+    <link href="../css/auto-complete.css?1750998419" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css?1750998419" rel="stylesheet">
+    <link href="../css/theme.css?1750998419" rel="stylesheet">
+    <link href="../css/hugo-theme.css?1750998419" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1750992214" rel="stylesheet">
+    <link href="../css/theme-workshop.css?1750998419" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1750992214"></script>
+    <script src="../js/jquery-3.3.1.min.js?1750998419"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,14 +36,14 @@
     </style>
     
   </head>
-  <body class="" data-url="/1-introduce/">
+  <body class="" data-url="../1-introduce/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
 
   <div id="header-wrapper">
     <div id="header">
-      <a id="logo" href="/">
+      <a id="logo" href="../">
 
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1750992214"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1750992214"></script>
+<script type="text/javascript" src="../js/lunr.min.js?1750998419"></script>
+<script type="text/javascript" src="../js/auto-complete.js?1750998419"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:1313\/";
+        var baseurl = "http:\/\/localhost:1313\/MyFirstWorkShop\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1750992214"></script>
+<script type="text/javascript" src="../js/search.js?1750998419"></script>
 
     
   </div>
@@ -87,7 +87,7 @@
         active
         
         ">
-      <a href="/1-introduce/">
+      <a href="../1-introduce/">
            <b> 1. </b> Introduction
           
             <i class="fas fa-check read-icon"></i>
@@ -113,7 +113,7 @@
         
         
         ">
-      <a href="/2-prerequiste/">
+      <a href="../2-prerequiste/">
            <b> 2. </b> Preparation steps
           
             <i class="fas fa-check read-icon"></i>
@@ -144,7 +144,7 @@
         
         
         ">
-      <a href="/2-prerequiste/2.1-enableguardduty/">
+      <a href="../2-prerequiste/2.1-enableguardduty/">
            <b> 2.1 </b> Enable GuardDuty
           
             <i class="fas fa-check read-icon"></i>
@@ -172,7 +172,7 @@
         
         
         ">
-      <a href="/2-prerequiste/2.2-enablesecurityhub/">
+      <a href="../2-prerequiste/2.2-enablesecurityhub/">
            <b> 2.2 </b> Enable Security Hub
           
             <i class="fas fa-check read-icon"></i>
@@ -200,7 +200,7 @@
         
         
         ">
-      <a href="/2-prerequiste/2.3-createstack/">
+      <a href="../2-prerequiste/2.3-createstack/">
            <b> 2.3 </b> Create Stack
           
             <i class="fas fa-check read-icon"></i>
@@ -235,7 +235,7 @@
         
         
         ">
-      <a href="/3-simulateattacks/">
+      <a href="../3-simulateattacks/">
            <b> 3. </b> Simulate attacks
           
             <i class="fas fa-check read-icon"></i>
@@ -266,7 +266,7 @@
         
         
         ">
-      <a href="/3-simulateattacks/3.1-compromisedec2instance/">
+      <a href="../3-simulateattacks/3.1-compromisedec2instance/">
            <b> 3.1. </b> Compromised EC2 Instance
           
             <i class="fas fa-check read-icon"></i>
@@ -294,7 +294,7 @@
         
         
         ">
-      <a href="/3-simulateattacks/3.2-compromisediamcredentials/">
+      <a href="../3-simulateattacks/3.2-compromisediamcredentials/">
            <b> 3.2. </b> Compromised IAM credentials
           
             <i class="fas fa-check read-icon"></i>
@@ -322,7 +322,7 @@
         
         
         ">
-      <a href="/3-simulateattacks/3.3-createfindings/">
+      <a href="../3-simulateattacks/3.3-createfindings/">
            <b> 3.3. </b> Create Findings
           
             <i class="fas fa-check read-icon"></i>
@@ -350,7 +350,7 @@
         
         
         ">
-      <a href="/3-simulateattacks/3.4-credential-exfiltration/">
+      <a href="../3-simulateattacks/3.4-credential-exfiltration/">
            <b> 3.4. </b> Credential Exfiltration
           
             <i class="fas fa-check read-icon"></i>
@@ -385,7 +385,7 @@
         
         
         ">
-      <a href="/4-cleanup/">
+      <a href="../4-cleanup/">
           <b>4.</b>Clean up resources
           
             <i class="fas fa-check read-icon"></i>
@@ -433,7 +433,7 @@
                   
                     
                     
-                      <option id="en" value="//localhost:1313/1-introduce/" selected>English</option>
+                      <option id="en" value="http://localhost:1313/MyFirstWorkShop/1-introduce/" selected>English</option>
                     
                   
               
@@ -447,7 +447,7 @@
                   
                     
                     
-                      <option id="vi" value="//localhost:1313/vi/1-introduce/">Tiếng Việt</option>
+                      <option id="vi" value="http://localhost:1313/MyFirstWorkShop/vi/1-introduce/">Tiếng Việt</option>
                     
                   
               
@@ -533,7 +533,7 @@
             
           
           
-            <a href='/'>Detect threats with Amazon GuardDuty</a> > Introduction
+            <a href='../'>Detect threats with Amazon GuardDuty</a> > Introduction
           
         
           
@@ -600,7 +600,7 @@ Once enabled in an AWS Region, GuardDuty analyzes all data coming from:</p>
 <li>DNS logs come from DNS resolvers (owned by AWS) for VPCs and are not directly accessible to users.</li>
 <li>If the DNS resolver is configured independently by yourself or by a third party, GuardDuty will not be able to retrieve, process and identify threats from this data source.</li>
 </ul>
-<p><img src="/images/1.png" alt="GuardDuty"></p>
+<p><img src="../images/1.png" alt="GuardDuty"></p>
 </li>
 </ol>
 <p>GuardDuty can access any data sources (mentioned above) even if they are not previously enabled.</p>
@@ -644,7 +644,7 @@ Once enabled in an AWS Region, GuardDuty analyzes all data coming from:</p>
 <p>AWS Security Hub gives you a comprehensive view of high-priority security alerts and compliance status across your AWS accounts.</p>
 <p>You have a lot of powerful security tools at your disposal, from firewalls and endpoint protection to vulnerability scanning and security compliance. But sometimes, this leaves your team flipping back and forth between these tools to deal with hundreds or thousands of security alerts each day. With Security Hub, you now have a single place to aggregate, sort, and prioritize security alerts or findings from multiple AWS services (such as Amazon GuardDuty, Amazon Inspector, and Amazon Macie) or AWS partner solutions.</p>
 <p>The risks found are visually summarized on a built-in dashboard with interactive charts and tables. You can also continuously monitor your system using automated compliance checks against AWS best practices and market standards that your business follows.</p>
-<p><img src="/images/2.jpeg" alt="SecurityHub"></p>
+<p><img src="../images/2.jpeg" alt="SecurityHub"></p>
 <h3 id="expense">Expense</h3>
 <p>Typically, it will cost less than $1 per month if your account is only used for testing, training, and not for performing simulated attacks.</p>
 <p><strong>Security Check</strong></p>
@@ -709,8 +709,8 @@ Once enabled in an AWS Region, GuardDuty analyzes all data coming from:</p>
 <p>It is possible to <strong>combine both</strong> : use GuardDuty to detect threats, then send findings to Security Hub for aggregation, assessment, and response.</p></blockquote>
 <h3 id="content">Content</h3>
 <ol>
-<li><a href="/1-introduce/">Introduce</a></li>
-<li><a href="/2-prerequiste/">Preparation steps</a></li>
+<li><a href="../1-introduce/">Introduce</a></li>
+<li><a href="../2-prerequiste/">Preparation steps</a></li>
 <li><a href="3-Accessibilitytoinstance/">Simulate attacks</a></li>
 <li><a href="6-cleanup/">Clean up resources</a></li>
 </ol>
@@ -942,10 +942,10 @@ Once enabled in an AWS Region, GuardDuty analyzes all data coming from:</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/" title="Detect threats with Amazon GuardDuty"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="../" title="Detect threats with Amazon GuardDuty"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/2-prerequiste/" title="Preparation steps" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="../2-prerequiste/" title="Preparation steps" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -955,19 +955,19 @@ Once enabled in an AWS Region, GuardDuty analyzes all data coming from:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1750992214"></script>
-    <script src="/js/perfect-scrollbar.min.js?1750992214"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1750992214"></script>
-    <script src="/js/jquery.sticky.js?1750992214"></script>
-    <script src="/js/featherlight.min.js?1750992214"></script>
-    <script src="/js/highlight.pack.js?1750992214"></script>
+    <script src="../js/clipboard.min.js?1750998419"></script>
+    <script src="../js/perfect-scrollbar.min.js?1750998419"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js?1750998419"></script>
+    <script src="../js/jquery.sticky.js?1750998419"></script>
+    <script src="../js/featherlight.min.js?1750998419"></script>
+    <script src="../js/highlight.pack.js?1750998419"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1750992214"></script>
-    <script src="/js/learn.js?1750992214"></script>
-    <script src="/js/hugo-learn.js?1750992214"></script>
+    <script src="../js/modernizr.custom-3.6.0.js?1750998419"></script>
+    <script src="../js/learn.js?1750998419"></script>
+    <script src="../js/hugo-learn.js?1750998419"></script>
 
-    <link href="/mermaid/mermaid.css?1750992214" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1750992214"></script>
+    <link href="../mermaid/mermaid.css?1750998419" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js?1750998419"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -1,3 +1,7 @@
+baseURL = "https://hoanglong1812003.github.io/MyFirstWorkShop/"
+relativeURLs = true
+canonifyURLs = true
+
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
 

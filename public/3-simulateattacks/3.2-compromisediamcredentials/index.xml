@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Compromised IAM credentials on AWS GuardDuty &amp; Security Hub</title>
-    <link>//localhost:1313/3-simulateattacks/3.2-compromisediamcredentials/</link>
+    <link>http://localhost:1313/MyFirstWorkShop/3-simulateattacks/3.2-compromisediamcredentials/</link>
     <description>Recent content in Compromised IAM credentials on AWS GuardDuty &amp; Security Hub</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="//localhost:1313/3-simulateattacks/3.2-compromisediamcredentials/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/MyFirstWorkShop/3-simulateattacks/3.2-compromisediamcredentials/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
