@@ -35,6 +35,8 @@ Tải file template tại [đây](https://github.com/AWS-First-Cloud-Journey/Gua
 Quá trình trên sẽ diễn ra trong vòng 5-10 phút cho tới khi chúng ta thấy được trạng thái của Stack là CREATE_COMPLETE. Sau đó, chúng ta sẽ nhận được một thông báo qua Email với chủ đề tương tự AWS Notification - Subscription Confirmation.
 {{% /notice %}}
 
+![CloudFormation](/images/2.prerequisite/2.3/6.png)
+
 ### Các tài nguyên được chuẩn bị
 1. Dịch vụ EC2:
 - 2 instances với tên gọi là Compromised Instance.

@@ -35,6 +35,8 @@ Download template file at [here](https://github.com/AWS-First-Cloud-Journey/Guar
 The above process will take place within 5-10 minutes until we see the status of the Stack as CREATE_COMPLETE. After that, we will receive an Email notification with the same subject as AWS Notification - Subscription Confirmation.
 {{% /notice %}}
 
+![CloudFormation](/images/2.prerequisite/2.3/6.png)
+
 ### Resources prepared
 1. EC2 Services:
 - 2 instances called Compromised Instance.
