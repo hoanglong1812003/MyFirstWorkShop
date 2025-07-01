@@ -397,20 +397,20 @@ Bạn Long vừa nhận ra các cuộc tấn công vừa rồi là các cuộc t
    
 ![create findings](public/images/3.attack/3.3/1.png)
 
-3. Ở thanh điều hướng bên tay phải, chọn tiếp tục Start Session
+2. Ở thanh điều hướng bên tay phải, chọn tiếp tục Start Session
    
 ![create findings](public/images/3.attack/3.3/2.png)
 
-4. Ở mục **Target instances** chúng ta sẽ thấy một managed EC2 instance với định dạng tên như sau - **GuardDuty-Example: Compromised Instance: Scenario 3** với trạng thái SSM Agent ping status là Online.
-5. Chọn instance **GuardDuty-Example: Compromised Instance: Scenario 3** và ấn **Start session**
+3. Ở mục **Target instances** chúng ta sẽ thấy một managed EC2 instance với định dạng tên như sau - **GuardDuty-Example: Compromised Instance: Scenario 3** với trạng thái SSM Agent ping status là Online.
+4. Chọn instance **GuardDuty-Example: Compromised Instance: Scenario 3** và ấn **Start session**
    
 ![create findings](public/images/3.attack/3.3/3.png)
 
-6. Thực hiện câu lệnh truy vấn dữ liệu Metadata:
+5. Thực hiện câu lệnh truy vấn dữ liệu Metadata:
 
          curl http://169.254.169.254/latest/meta-data/iam/security-credentials/GuardDuty-Example-EC2-Compromised
 
-7. Mở notepad, tiến hành ghi chú một số thông tin quan trọng sau:
+6. Mở notepad, tiến hành ghi chú một số thông tin quan trọng sau:
 - Access Key ID
 - Secret Access Key
 - Session Token
