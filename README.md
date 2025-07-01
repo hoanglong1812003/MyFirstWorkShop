@@ -490,13 +490,13 @@ Bằng các câu lệnh AWS CLI dưới đây, chúng ta tiến hành thực hi�
    
 ![CredentialExfiltration](public/images/3.attack/3.4/hub.png)
 
-3. Truy cập [GuardDuty Console](https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/).
-4. Chúng ta sẽ thấy được Findings với định dạng như sau **UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration**.
+2. Truy cập [GuardDuty Console](https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/).
+3. Chúng ta sẽ thấy được Findings với định dạng như sau **UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration**.
    
 ![CredentialExfiltration](public/images/3.attack/3.4/8.png)
 
-5. Nếu không có bất kỳ Finding nào, tiến hành nhấn nút Refresh và đợi.
-6. Từ Finding **UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration**, chúng ta có thể dễ dàng truy xuất một số thông tin sau:
+4. Nếu không có bất kỳ Finding nào, tiến hành nhấn nút Refresh và đợi.
+5. Từ Finding **UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration**, chúng ta có thể dễ dàng truy xuất một số thông tin sau:
 - High Severity
 - Thông báo rằng có người cố ý sử dụng IAM role credential ở ngoài EC2 instance
 > Mỗi GuardDuty Finding sẽ được gán một mức độ nghiêm trọng cụ thể - Low/Medium/High. Các mức độ này được định nghĩa bởi AWS, chúng được dùng để phân loại và xác định.
