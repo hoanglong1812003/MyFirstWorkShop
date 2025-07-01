@@ -1,10 +1,10 @@
 ---
-title : "Detect threats with Amazon GuardDuty"
+title : "Detect threats with Amazon Security Hub & Amazon GuardDuty"
 date :  2025-06-11
 weight : 1 
 chapter : false
 ---
-# Detect threats with Amazon GuardDuty
+# Detect threats with Amazon Security Hub & Amazon GuardDuty
 
 ### Overview
 

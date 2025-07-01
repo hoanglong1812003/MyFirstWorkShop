@@ -1,10 +1,10 @@
 ---
-title : "Phát hiện các mối đe dọa với Amazon GuardDuty"
+title : "Phát hiện các mối đe dọa với Amazon Security Hub & Amazon GuardDuty"
 date :  2025-06-11
 weight : 1 
 chapter : false
 ---
-# Phát hiện các mối đe dọa với Amazon GuardDuty
+# Phát hiện các mối đe dọa với Amazon Security Hub & Amazon GuardDuty
 
 ### Tổng quan
 
