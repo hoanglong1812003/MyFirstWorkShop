@@ -12,21 +12,21 @@
     <title>Tạo Stack :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="../../../css/nucleus.css?1751249372" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1751249372" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1751249372" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1751249372" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1751249372" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1751249372" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1751249372" rel="stylesheet">
-    <link href="../../../css/theme.css?1751249372" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1751249372" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1751377947" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1751377947" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1751377947" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1751377947" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1751377947" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1751377947" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1751377947" rel="stylesheet">
+    <link href="../../../css/theme.css?1751377947" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1751377947" rel="stylesheet">
     
-    <link href="../../../css/theme-workshop.css?1751249372" rel="stylesheet">
+    <link href="../../../css/theme-workshop.css?1751377947" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1751249372"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1751377947"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1751249372"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1751249372"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1751377947"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1751377947"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/MyFirstWorkShop\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1751249372"></script>
+<script type="text/javascript" src="../../../js/search.js?1751377947"></script>
 
     
   </div>
@@ -537,7 +537,7 @@
             
           
           
-            <a href='../../../vi/'>Phát hiện các mối đe dọa với Amazon GuardDuty</a> > <a href='../../../vi/2-prerequiste/'>Các bước chuẩn bị</a> > Tạo Stack
+            <a href='../../../vi/'>Phát hiện các mối đe dọa với Amazon Security Hub & Amazon GuardDuty</a> > <a href='../../../vi/2-prerequiste/'>Các bước chuẩn bị</a> > Tạo Stack
           
         
           
@@ -584,43 +584,39 @@
 
 
 	<h3 id="tao-stack">Tạo Stack</h3>
-<p>Trong bước này chúng ta sẽ tiến hành tạo Stack để theo dõi và ngăn chặn các cuộc tấn công thông qua <em><strong>Findings</strong></em> trên GuardDuty</p>
+<p>Trong bước này chúng ta sẽ tiến hành tạo Stack để theo dõi và ngăn chặn các cuộc tấn công thông qua <em><strong>Findings</strong></em> trên GuardDuty.</p>
 <ol>
-<li>
-<p>Đăng nhập vào AWS Console</p>
-</li>
-<li>
-<p>Truy cập vào <a href="https://ap-southeast-1.console.aws.amazon.com.cloudformation/home?region=ap-southeast-1">Giao diện quản trị dịch vụ CloudFormation</a></p>
-</li>
-<li>
-<p>Tiến hành tạo Stack mới bằng việc ấn nút <strong>Create stack</strong>
-<img src="../../../images/2.prerequisite/2.3/1.png" alt="CloudFormation"></p>
-</li>
-<li>
-<p>Ở trang Specify template, click vào Upload a template file</p>
-</li>
+<li>Đăng nhập vào AWS Console.</li>
+<li>Truy cập vào <a href="https://ap-southeast-1.console.aws.amazon.com.cloudformation/home?region=ap-southeast-1">Giao diện quản trị dịch vụ CloudFormation</a>.</li>
+<li>Tiến hành tạo Stack mới bằng việc ấn nút <strong>Create stack</strong>.</li>
 </ol>
-<p>Tải file template tại <a href="https://github.com/AWS-First-Cloud-Journey/GuardDuty-Hands-On/archive/refs/heads/main.zip">đây</a></p>
+<p><img src="../../../images/2.prerequisite/2.3/1.png" alt="CloudFormation"></p>
+<ol start="4">
+<li>Ở trang Specify template, click vào Upload a template file.</li>
+</ol>
+<p>Tải file template tại <a href="https://github.com/AWS-First-Cloud-Journey/GuardDuty-Hands-On/archive/refs/heads/main.zip">đây</a>.</p>
 <p><img src="../../../images/2.prerequisite/2.3/2.png" alt="CloudFormation"></p>
 <ol start="5">
 <li>Ở trang Paraments, chúng ta sẽ nhập một số thông tin bắt buộc sau:</li>
 </ol>
 <ul>
-<li><strong>Email Address</strong>: Địa chỉ email của bạn. Click <strong>Next</strong>
-<img src="../../../images/2.prerequisite/2.3/3.png" alt="CloudFormation"></li>
+<li><strong>Email Address</strong>: Địa chỉ email của bạn. Click <strong>Next</strong>.</li>
 </ul>
+<p><img src="../../../images/2.prerequisite/2.3/3.png" alt="CloudFormation"></p>
 <ol start="6">
 <li>Ở trang Specify Stack Details, ấn <strong>Next</strong>.</li>
 <li>Ở trang Configure stack options, ấn <strong>Next</strong>.</li>
-<li>Ở trang Capabilities, tiến hành chấp nhận (Acknowledge) cho phép Template tạo các IAM role, cuối cùng chọn nút <strong>Create Stack</strong>.
-<img src="../../../images/2.prerequisite/2.3/4.png" alt="CloudFormation"></li>
-<li>Kiểm tra lại các thông tin, ấn <strong>Submit</strong>
-<img src="../../../images/2.prerequisite/2.3/5.png" alt="CloudFormation">
+<li>Ở trang Capabilities, tiến hành chấp nhận (Acknowledge) cho phép Template tạo các IAM role, cuối cùng chọn nút <strong>Create Stack</strong>.</li>
+</ol>
+<p><img src="../../../images/2.prerequisite/2.3/4.png" alt="CloudFormation"></p>
+<ol start="9">
+<li>Kiểm tra lại các thông tin, ấn <strong>Submit</strong>.</li>
+</ol>
+<p><img src="../../../images/2.prerequisite/2.3/5.png" alt="CloudFormation"></p>
 
 <div class="notices note" ><p>Quá trình trên sẽ diễn ra trong vòng 5-10 phút cho tới khi chúng ta thấy được trạng thái của Stack là CREATE_COMPLETE. Sau đó, chúng ta sẽ nhận được một thông báo qua Email với chủ đề tương tự AWS Notification - Subscription Confirmation.</p>
 </div>
-</li>
-</ol>
+
 <p><img src="../../../images/2.prerequisite/2.3/6.png" alt="CloudFormation"></p>
 <h3 id="các-tài-nguyên-được-chuẩn-bị">Các tài nguyên được chuẩn bị</h3>
 <ol>
@@ -908,19 +904,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1751249372"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1751249372"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1751249372"></script>
-    <script src="../../../js/jquery.sticky.js?1751249372"></script>
-    <script src="../../../js/featherlight.min.js?1751249372"></script>
-    <script src="../../../js/highlight.pack.js?1751249372"></script>
+    <script src="../../../js/clipboard.min.js?1751377947"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1751377947"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1751377947"></script>
+    <script src="../../../js/jquery.sticky.js?1751377947"></script>
+    <script src="../../../js/featherlight.min.js?1751377947"></script>
+    <script src="../../../js/highlight.pack.js?1751377947"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1751249372"></script>
-    <script src="../../../js/learn.js?1751249372"></script>
-    <script src="../../../js/hugo-learn.js?1751249372"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1751377947"></script>
+    <script src="../../../js/learn.js?1751377947"></script>
+    <script src="../../../js/hugo-learn.js?1751377947"></script>
 
-    <link href="../../../mermaid/mermaid.css?1751249372" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1751249372"></script>
+    <link href="../../../mermaid/mermaid.css?1751377947" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1751377947"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

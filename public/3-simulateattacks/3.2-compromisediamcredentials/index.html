@@ -12,21 +12,21 @@
     <title>Compromised IAM credentials :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="../../css/nucleus.css?1751249371" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1751249371" rel="stylesheet">
-    <link href="../../css/hybrid.css?1751249371" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1751249371" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1751249371" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1751249371" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1751249371" rel="stylesheet">
-    <link href="../../css/theme.css?1751249371" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1751249371" rel="stylesheet">
+    <link href="../../css/nucleus.css?1751377947" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1751377947" rel="stylesheet">
+    <link href="../../css/hybrid.css?1751377947" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1751377947" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1751377947" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1751377947" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1751377947" rel="stylesheet">
+    <link href="../../css/theme.css?1751377947" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1751377947" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1751249371" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1751377947" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1751249371"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1751377947"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1751249371"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1751249371"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1751377947"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1751377947"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/MyFirstWorkShop\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1751249371"></script>
+<script type="text/javascript" src="../../js/search.js?1751377947"></script>
 
     
   </div>
@@ -537,7 +537,7 @@
             
           
           
-            <a href='../../'>Detect threats with Amazon GuardDuty</a> > <a href='../../3-simulateattacks/'>Simulate attacks</a> > Compromised IAM credentials
+            <a href='../../'>Detect threats with Amazon Security Hub & Amazon GuardDuty</a> > <a href='../../3-simulateattacks/'>Simulate attacks</a> > Compromised IAM credentials
           
         
           
@@ -603,16 +603,22 @@
 <h3 id="investigation-process">Investigation process</h3>
 <p>To proceed with reviewing the Findings:</p>
 <ol>
-<li>Visiting Security Hub, we discovered a security vulnerability discovered by GuardDuty
-<img src="../../images/3.attack/3.2/hub.png" alt="Compromised IAM credentials"></li>
-<li>Access the GuardDuty Console at ap-southeast-1 at <a href="https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/">here</a></li>
-<li>We will see the Findings in the following format.</li>
+<li>Visiting Security Hub, we discovered a security vulnerability discovered by GuardDuty.</li>
+</ol>
+<p><img src="../../images/3.attack/3.2/hub.png" alt="Compromised IAM credentials"></p>
+<ol start="2">
+<li>
+<p>Access the GuardDuty Console at ap-southeast-1 at <a href="https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/">here</a>.</p>
+</li>
+<li>
+<p>We will see the Findings in the following format.</p>
+</li>
 </ol>
 <ul>
-<li>Recon:IAMUser</li>
-<li>UnauthorizedAccess:IAMUser.
-<img src="../../images/3.attack/3.2/1.png" alt="Compromised IAM credentials"></li>
+<li>Recon:IAMUser.</li>
+<li>UnauthorizedAccess:IAMUser.</li>
 </ul>
+<p><img src="../../images/3.attack/3.2/1.png" alt="Compromised IAM credentials"></p>
 <ol start="4">
 <li>If there is no Finding, press the Refresh button and wait.</li>
 <li>From Finding <strong>Recon:IAMUser/MaliciousIPCaller.Custom</strong>, we can easily retrieve some of the following information:</li>
@@ -623,19 +629,19 @@
 <li>When did this event happen?</li>
 </ul>
 <ol start="6">
-<li>Under <strong>Resource Affected</strong> section, you will find the User Name that is related to this Finding.
-<img src="../../images/3.attack/3.2/2.png" alt="Compromised IAM credentials">
-This finding indicates that the <strong>IAM credential</strong> of the above User Name may have been exposed by <strong>API calls</strong> originating from the IP address that was previously added to the Threat List .</li>
+<li>Under <strong>Resource Affected</strong> section, you will find the User Name that is related to this Finding.</li>
 </ol>
+<p><img src="../../images/3.attack/3.2/2.png" alt="Compromised IAM credentials"></p>
+<p>This finding indicates that the <strong>IAM credential</strong> of the above User Name may have been exposed by <strong>API calls</strong> originating from the IP address that was previously added to the Threat List .</p>
 <blockquote>
 <p>So what actions did this IAM User perform?</p></blockquote>
-<p>In the <strong>Action</strong> section, we see that the <strong>DescribeParameters</strong> action has been performed.
-<img src="../../images/3.attack/3.2/3.png" alt="Compromised IAM credentials"></p>
+<p>In the <strong>Action</strong> section, we see that the <strong>DescribeParameters</strong> action has been performed.</p>
+<p><img src="../../images/3.attack/3.2/3.png" alt="Compromised IAM credentials"></p>
 <blockquote>
 <p>How can we see all the remaining actions, performed by this IAM User, within the last 1 hour or 1 day?</p></blockquote>
 <p>GuardDuty is capable of analyzing large amounts of data to accurately identify the hazards present in your environment. However, during the investigation and remediation steps, we also need to combine different data sources to get the most correlated view possible.</p>
-<p>In this case, the analyst can use the insights that can be found in user behavior logs via <strong>CloudTrail</strong>.
-<img src="../../images/3.attack/3.2/4.png" alt="Compromised IAM credentials"></p>
+<p>In this case, the analyst can use the insights that can be found in user behavior logs via <strong>CloudTrail</strong>.</p>
+<p><img src="../../images/3.attack/3.2/4.png" alt="Compromised IAM credentials"></p>
 
 <div class="notices note" ><p>Findings about IAM generated by malicious EC2 instance making API calls and EIP of this instance is in Custom Threat List.</p>
 </div>
@@ -645,9 +651,9 @@ This finding indicates that the <strong>IAM credential</strong> of the above Use
 <li>Access the <strong>EventBridge Event Rule</strong> Console at ap-southeast-1.</li>
 <li>In the left navigation bar, under <strong>Events</strong> , select <strong>Rules</strong> . You&rsquo;ll see three rules already set up (by CloudFormation Template), starting with a prefix like <em>GuardDuty-Event&hellip;</em></li>
 <li>Proceed to select the rule named <strong>GuardDuty-Event-IAMUser-MaliciousIPCaller</strong></li>
-<li>You will easily notice that there is only 1 target in the <strong>Targets</strong> area , which is <strong>SNS Topic</strong>.
-<img src="../../images/3.attack/3.2/5.png" alt="Compromised IAM credentials"></li>
+<li>You will easily notice that there is only 1 target in the <strong>Targets</strong> area , which is <strong>SNS Topic</strong>.</li>
 </ol>
+<p><img src="../../images/3.attack/3.2/5.png" alt="Compromised IAM credentials"></p>
 <p>As it turns out, Viet never set up a Lambda Function to perform the Remediation process because the Security team decided that they would do this Finding manually.</p>
 <blockquote>
 <p>The combination of GuardDuty, Security Hub, and EventBridge Events provides the flexibility to easily create an automated Remediation process. Lambda functions or AWS partner solutions are top choices.</p></blockquote>
@@ -657,16 +663,20 @@ This finding indicates that the <strong>IAM credential</strong> of the above Use
 <p><strong>Resolving the situation</strong>
 Since Viet has never set up a Remediation process for this Finding, Long needs to do it manually. While the Security team is analyzing the behavior of this IAM user to better determine the scope of the vulnerability, Long needs to take some steps to disable the Access Key to immediately prevent further actions.</p>
 <ol>
-<li>Access the IAM Console at <a href="https://us-east-1.console.aws.amazon.com/iam/home?region=ap-southeast-1#/home">here</a>
-<img src="../../images/3.attack/3.2/6.png" alt="Compromised IAM credentials"></li>
-<li>In the left navigation bar, select <strong>Users</strong>.</li>
-<li>Based on GuardDuty Finding and E-mail notification, we can easily select the IAM user - <strong>GuardDuty-Example-Compromised-Simulated</strong>.
-<img src="../../images/3.attack/3.2/7.png" alt="Compromised IAM credentials"></li>
-<li>In user <strong>GuardDuty-Example-Compromised-Simulated</strong>, we select the <strong>Security Credentials</strong> tab .</li>
-<li>In the Access Keys section, based on the Access Key ID information from Finding, we proceed to select <strong>Action -&gt; Deactivate</strong> .
-<img src="../../images/3.attack/3.2/8.png" alt="Compromised IAM credentials">
-<img src="../../images/3.attack/3.2/9.png" alt="Compromised IAM credentials"></li>
+<li>Access the IAM Console at <a href="https://us-east-1.console.aws.amazon.com/iam/home?region=ap-southeast-1#/home">here</a></li>
 </ol>
+<p><img src="../../images/3.attack/3.2/6.png" alt="Compromised IAM credentials"></p>
+<ol start="2">
+<li>In the left navigation bar, select <strong>Users</strong>.</li>
+<li>Based on GuardDuty Finding and E-mail notification, we can easily select the IAM user - <strong>GuardDuty-Example-Compromised-Simulated</strong>.</li>
+</ol>
+<p><img src="../../images/3.attack/3.2/7.png" alt="Compromised IAM credentials"></p>
+<ol start="4">
+<li>In user <strong>GuardDuty-Example-Compromised-Simulated</strong>, we select the <strong>Security Credentials</strong> tab .</li>
+<li>In the Access Keys section, based on the Access Key ID information from Finding, we proceed to select <strong>Action -&gt; Deactivate</strong> .</li>
+</ol>
+<p><img src="../../images/3.attack/3.2/8.png" alt="Compromised IAM credentials"></p>
+<p><img src="../../images/3.attack/3.2/9.png" alt="Compromised IAM credentials"></p>
 
 
 
@@ -915,19 +925,19 @@ Since Viet has never set up a Remediation process for this Finding, Long needs t
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1751249371"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1751249371"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1751249371"></script>
-    <script src="../../js/jquery.sticky.js?1751249371"></script>
-    <script src="../../js/featherlight.min.js?1751249371"></script>
-    <script src="../../js/highlight.pack.js?1751249371"></script>
+    <script src="../../js/clipboard.min.js?1751377947"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1751377947"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1751377947"></script>
+    <script src="../../js/jquery.sticky.js?1751377947"></script>
+    <script src="../../js/featherlight.min.js?1751377947"></script>
+    <script src="../../js/highlight.pack.js?1751377947"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1751249371"></script>
-    <script src="../../js/learn.js?1751249371"></script>
-    <script src="../../js/hugo-learn.js?1751249371"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1751377947"></script>
+    <script src="../../js/learn.js?1751377947"></script>
+    <script src="../../js/hugo-learn.js?1751377947"></script>
 
-    <link href="../../mermaid/mermaid.css?1751249371" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1751249371"></script>
+    <link href="../../mermaid/mermaid.css?1751377947" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1751377947"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

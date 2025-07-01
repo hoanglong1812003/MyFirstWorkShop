@@ -42,8 +42,8 @@ GuardDuty is a fully managed service provided by AWS.
 GuardDuty's pricing will be based on
 
 - Number of CloudTrail events analyzed.
-- Volume of VPC floư logs (in GB)
-- DNS log size (in GB)
+- Volume of VPC floư logs (in GB).
+- DNS log size (in GB).
 
 {{% notice note %}}
 Each AWS account will have a 30-day trial period in each AWS Region, which will help GuardDuty easily predict the costs incurred.
@@ -51,14 +51,14 @@ Each AWS account will have a 30-day trial period in each AWS Region, which will 
 
 ### Findings
 GuardDuty will proactively observe and monitor for anomalies originating from:
-- 3 data sources (mentioned above)/
+- 3 data sources (mentioned above).
 - EC2 Instances.
 - AWS IAM Resources. 
 
 You can easily access the details of the Findings discovered by GuardDuty in the Findings tab. Each Finding is broken down into information in a format that allows us to easily understand and address security risks.
 
 {{% notice note %}}
-Learn more about the full list of GuardDuty Findings series at [here](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-format.html)
+Learn more about the full list of GuardDuty Findings series at [here](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-format.html).
 {{% /notice %}}
 
 ### About AWS Security Hub
@@ -74,13 +74,13 @@ The risks found are visually summarized on a built-in dashboard with interactive
 Typically, it will cost less than $1 per month if your account is only used for testing, training, and not for performing simulated attacks.
 
 **Security Check**
-- First 100,000 => $0.0010/check
-- 100,001 – 500,000 => $0.0008/check
-- 500,001+ => $0.0005/check
+- First 100,000 => $0.0010/check.
+- 100,001 – 500,000 => $0.0008/check.
+- 500,001+ => $0.0005/check.
 
 **Find attack events**
-- First 10,000 times => free
-- 10,001+ => $0.00003/time
+- First 10,000 times => free.
+- 10,001+ => $0.00003/time.
 
 ### Comparing Amazon GuardDuty and AWS Security Hub
 

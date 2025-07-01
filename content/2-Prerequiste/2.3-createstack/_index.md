@@ -8,11 +8,12 @@ pre : " <b> 2.3 </b> "
 
 ### Create Stack
 
-In this step we will create a Stack to monitor and prevent attacks through **Findings** on GuardDuty
+In this step we will create a Stack to monitor and prevent attacks through **Findings** on GuardDuty.
 
-1. Sign in to AWS Console
-2. Access to [CloudFormation Service Administration Interface](https://ap-southeast-1.console.aws.amazon.com.cloudformation/home?region=ap-southeast-1)
-3. Proceed to create a new Stack by pressing the **Create stack**
+1. Sign in to AWS Console.
+2. Access to [CloudFormation Service Administration Interface](https://ap-southeast-1.console.aws.amazon.com.cloudformation/home?region=ap-southeast-1).
+3. Proceed to create a new Stack by pressing the **Create stack**.
+
 ![CloudFormation](/images/2.prerequisite/2.3/1.png)
 
 4. On the Specify template page, click Upload a template file
@@ -22,15 +23,20 @@ Download template file at [here](https://github.com/AWS-First-Cloud-Journey/Guar
 ![CloudFormation](/images/2.prerequisite/2.3/2.png)
 
 5. On the Parameters page, we will enter some required information:
-+ **Email Address**: Your email address. Click **Next**
++ **Email Address**: Your email address. Click **Next**.
+
 ![CloudFormation](/images/2.prerequisite/2.3/3.png)
 
 6. On the Specify Stack Details page, click **Next**.
 7. On the Configure stack options page, click **Next**.
 8. On the Capabilities page, accept (Acknowledge) to allow the Template to create IAM roles, and finally select the **Create Stack** button.
+
 ![CloudFormation](/images/2.prerequisite/2.3/4.png)
+
 9. Check the information again, press **Submit**
+
 ![CloudFormation](/images/2.prerequisite/2.3/5.png)
+
 {{% notice note %}}
 The above process will take place within 5-10 minutes until we see the status of the Stack as CREATE_COMPLETE. After that, we will receive an Email notification with the same subject as AWS Notification - Subscription Confirmation.
 {{% /notice %}}

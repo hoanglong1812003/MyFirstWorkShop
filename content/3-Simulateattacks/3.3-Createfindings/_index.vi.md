@@ -16,20 +16,27 @@ Bạn Long vừa nhận ra các cuộc tấn công vừa rồi là các cuộc t
 
 > Chúng ta sẽ tiến hành tạo các Findings 
 1. Truy cập vào Session Manager ở ap-southeast-1.
+
 ![create findings](/images/3.attack/3.3/1.png)
-2. Ở thanh điều hướng bên tay phải, chọn tiếp tục Start Session
+
+2. Ở thanh điều hướng bên tay phải, chọn tiếp tục Start Session.
+
 ![create findings](/images/3.attack/3.3/2.png)
+
 3. Ở mục **Target instances** chúng ta sẽ thấy một managed EC2 instance với định dạng tên như sau - **GuardDuty-Example: Compromised Instance: Scenario 3** với trạng thái SSM Agent ping status là Online.
-4. Chọn instance **GuardDuty-Example: Compromised Instance: Scenario 3** và ấn **Start session**
+4. Chọn instance **GuardDuty-Example: Compromised Instance: Scenario 3** và ấn **Start session**.
+
 ![create findings](/images/3.attack/3.3/3.png)
+
 5. Thực hiện câu lệnh truy vấn dữ liệu Metadata:
 
          curl http://169.254.169.254/latest/meta-data/iam/security-credentials/GuardDuty-Example-EC2-Compromised
 
 6. Mở notepad, tiến hành ghi chú một số thông tin quan trọng sau:
-- Access Key ID
-- Secret Access Key
-- Session Token
+- Access Key ID.
+- Secret Access Key.
+- Session Token.
+
 ![create findings](/images/3.attack/3.3/4.png)
 
 ### Tạo AWS CLI Profile trên máy tính cá nhân
@@ -55,6 +62,7 @@ Bằng các câu lệnh AWS CLI dưới đây, chúng ta tiến hành thực hi�
       aws iam create-user --user-name BuiChiBao --profile iamhacker
 
 ![create findings](/images/3.attack/3.4/2.png)
+
 > Như vậy IAM user không thể get-user cũng như create-user
 
 **Liệu có quyền truy cập đến DynamoDB?**
@@ -63,6 +71,7 @@ Bằng các câu lệnh AWS CLI dưới đây, chúng ta tiến hành thực hi�
       aws dynamodb describe-table --table-name GuardDuty-Example-Customer-DB --profile iamhacker
 
 ![create findings](/images/3.attack/3.4/3.png)
+
 ![create findings](/images/3.attack/3.4/4.png)
 **Liệu có quyền truy vấn dữ liệu đến DynamoDB?**
 
@@ -71,6 +80,7 @@ Bằng các câu lệnh AWS CLI dưới đây, chúng ta tiến hành thực hi�
       aws dynamodb list-tables --profile iamhacker
 
 ![create findings](/images/3.attack/3.4/5.png)
+
 ![create findings](/images/3.attack/3.4/6.png)
 
 > Như vậy hacker có quyền truy cập và truy vấn dữ liệu đến DynamoDB
@@ -83,4 +93,5 @@ Bằng các câu lệnh AWS CLI dưới đây, chúng ta tiến hành thực hi�
       aws ssm delete-parameter --name "gd_prod_dbpwd_sample" --profile iamhacker
 
 ![create findings](/images/3.attack/3.4/7.png)
+
 > Như vậy hacker có quyền truy cập đến System Manager Parameter Store

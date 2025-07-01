@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 3. </b> "
 ---
 
-In this step, we will observe and implement the necessary security protocols with 3 simulated attack scenarios. From there, we will see security warnings on Security Hub and GuardDuty will proactively prevent attacks through pre-prepared resources (Lambda function, EventBridge Rules, SNS Topic, ...)
+In this step, we will observe and implement the necessary security protocols with 3 simulated attack scenarios. From there, we will see security warnings on Security Hub and GuardDuty will proactively prevent attacks through pre-prepared resources (Lambda function, EventBridge Rules, SNS Topic, ...).
 
 ### Nội dung
 3.1. [Compromised EC2 Instance](3.1-CompromisedEC2Instance/) \

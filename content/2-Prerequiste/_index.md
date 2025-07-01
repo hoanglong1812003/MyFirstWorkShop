@@ -12,9 +12,9 @@ In the next steps, we will proceed to enable GuardDuty, Security Hub and create 
 *The exercise will describe the following situations.*
 | **Order** | **Name**                          | **Specification**                                                                                                   | **Solutions**                                                                                                     |
 |------------|----------------------------------|--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| 1          | [Compromised EC2 instance](3.1-public-instance/)    |	Detect and recover attacked EC2 instances.                                                               | Combining **Amazon GuardDuty** , **Amazon EventBridge Event Rules** , and **AWS Lambda**                      |
-| 2          | [Compromised IAM credentials](3.2-private-instance/) | Identify an individual actively making API calls to a system on AWS.                                             | Fix this threat immediately (*manually*)                                           |
-| 3          | [IAM role exfiltration](#)       | Through a leaked credential, an individual is trying to break in and call an API from an external server.     | Remediation with **AWS Lambda**                                                                           |
+| 1          | **Compromised EC2 Instance**    |	Detect and recover attacked EC2 instances.                                                               | Combining **Amazon GuardDuty** , **Amazon EventBridge Event Rules** , and **AWS Lambda**                      |
+| 2          | **Compromised IAM credentials**| Identify an individual actively making API calls to a system on AWS.                                             | Fix this threat immediately (*manually*)                                           |
+| 3          | **IAM role exfiltration**       | Through a leaked credential, an individual is trying to break in and call an API from an external server.     | Remediation with **AWS Lambda**                                                                           |
 
 ### Content
   - [Enable GuardDuty](2.1-enableguardduty/)

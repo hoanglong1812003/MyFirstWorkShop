@@ -12,21 +12,21 @@
     <title>Kích hoạt Security Hub :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="../../../css/nucleus.css?1751249372" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1751249372" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1751249372" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1751249372" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1751249372" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1751249372" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1751249372" rel="stylesheet">
-    <link href="../../../css/theme.css?1751249372" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1751249372" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1751377947" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1751377947" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1751377947" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1751377947" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1751377947" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1751377947" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1751377947" rel="stylesheet">
+    <link href="../../../css/theme.css?1751377947" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1751377947" rel="stylesheet">
     
-    <link href="../../../css/theme-workshop.css?1751249372" rel="stylesheet">
+    <link href="../../../css/theme-workshop.css?1751377947" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1751249372"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1751377947"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1751249372"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1751249372"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1751377947"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1751377947"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/MyFirstWorkShop\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1751249372"></script>
+<script type="text/javascript" src="../../../js/search.js?1751377947"></script>
 
     
   </div>
@@ -537,7 +537,7 @@
             
           
           
-            <a href='../../../vi/'>Phát hiện các mối đe dọa với Amazon GuardDuty</a> > <a href='../../../vi/2-prerequiste/'>Các bước chuẩn bị</a> > Kích hoạt Security Hub
+            <a href='../../../vi/'>Phát hiện các mối đe dọa với Amazon Security Hub & Amazon GuardDuty</a> > <a href='../../../vi/2-prerequiste/'>Các bước chuẩn bị</a> > Kích hoạt Security Hub
           
         
           
@@ -583,18 +583,22 @@
 
 
 	<h3 id="kích-hoạt-security-hub">Kích hoạt Security Hub</h3>
-<p>Trong bước này chúng ta sẽ tiến hành kích hoạt Security Hub để người dùng có cái nhìn tổng quan hơn về các cảnh báo bảo mật</p>
+<p>Trong bước này chúng ta sẽ tiến hành kích hoạt Security Hub để người dùng có cái nhìn tổng quan hơn về các cảnh báo bảo mật.</p>
 <ol>
 <li>Đăng nhập vào AWS Console</li>
-<li>Truy cập vào <a href="https://ap-southeast-1.console.aws.amazon.com/securityhub/home?region=ap-southeast-1#/landing">Giao diện quản trị dịch vụ AWS Security Hub</a></li>
-<li>Chọn <strong>Security Hub CSPM</strong>, sau đó click <strong>Get started</strong>
-<img src="../../../images/2.prerequisite/2.2/1.png" alt="SecurityHubConsole"></li>
-<li>Tại trang <strong>Enable AWS Security Hub CSPM</strong>, chọn các tiêu chuẩn về bảo mật (Security standards) như là AWS Foundational Security Best Practices, CIS AWS Foundations Benchmark, và PCI DSS.
-<img src="../../../images/2.prerequisite/2.2/2.png" alt="SecurityHubConsole"></li>
-<li>Chọn <strong>Enable Security Hub</strong>.</li>
-<li>Sau khi kích hoạt, bạn sẽ cần chờ một khoản thời gian để Security Hub đánh giá Security Score của tài khoản hiện tại của bạn so với từng bộ tiêu chuẩn bảo mật mà bạn thiết lập.
-<img src="../../../images/2.prerequisite/2.2/4.png" alt="SecurityHubConsole"></li>
+<li>Truy cập vào <a href="https://ap-southeast-1.console.aws.amazon.com/securityhub/home?region=ap-southeast-1#/landing">Giao diện quản trị dịch vụ AWS Security Hub</a>.</li>
+<li>Chọn <strong>Security Hub CSPM</strong>, sau đó click <strong>Get started</strong>.</li>
 </ol>
+<p><img src="../../../images/2.prerequisite/2.2/1.png" alt="SecurityHubConsole"></p>
+<ol start="4">
+<li>Tại trang <strong>Enable AWS Security Hub CSPM</strong>, chọn các tiêu chuẩn về bảo mật (Security standards) như là AWS Foundational Security Best Practices, CIS AWS Foundations Benchmark, và PCI DSS.</li>
+</ol>
+<p><img src="../../../images/2.prerequisite/2.2/2.png" alt="SecurityHubConsole"></p>
+<ol start="5">
+<li>Chọn <strong>Enable Security Hub</strong>.</li>
+<li>Sau khi kích hoạt, bạn sẽ cần chờ một khoản thời gian để Security Hub đánh giá Security Score của tài khoản hiện tại của bạn so với từng bộ tiêu chuẩn bảo mật mà bạn thiết lập.</li>
+</ol>
+<p><img src="../../../images/2.prerequisite/2.2/4.png" alt="SecurityHubConsole"></p>
 
 
 
@@ -843,19 +847,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1751249372"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1751249372"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1751249372"></script>
-    <script src="../../../js/jquery.sticky.js?1751249372"></script>
-    <script src="../../../js/featherlight.min.js?1751249372"></script>
-    <script src="../../../js/highlight.pack.js?1751249372"></script>
+    <script src="../../../js/clipboard.min.js?1751377947"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1751377947"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1751377947"></script>
+    <script src="../../../js/jquery.sticky.js?1751377947"></script>
+    <script src="../../../js/featherlight.min.js?1751377947"></script>
+    <script src="../../../js/highlight.pack.js?1751377947"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1751249372"></script>
-    <script src="../../../js/learn.js?1751249372"></script>
-    <script src="../../../js/hugo-learn.js?1751249372"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1751377947"></script>
+    <script src="../../../js/learn.js?1751377947"></script>
+    <script src="../../../js/hugo-learn.js?1751377947"></script>
 
-    <link href="../../../mermaid/mermaid.css?1751249372" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1751249372"></script>
+    <link href="../../../mermaid/mermaid.css?1751377947" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1751377947"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

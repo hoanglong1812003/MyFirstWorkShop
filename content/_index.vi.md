@@ -8,7 +8,7 @@ chapter : false
 
 ### Tổng quan
 
- Trong bài lab này, các bạn sẽ được tìm hiểu về **Amazon GuardDuty** kết hợp với **AWS Security Hub**. Amazon GuardDuty là một dịch vụ có chức năng phát hiện các mối đe dọa đến hệ thống và khắc phục chúng, trong khi AWS Security Hub sẽ cung cấp cho chúng ta cái nhìn toàn diện về các cảnh báo bảo mật ưu tiên và trạng thái tuân thủ trên các tài khoản AWS. Chúng ta sẽ cùng nhau phân tích, đánh giá và làm thế nào để báo động cũng như khắc phục các vấn đề bảo mật dựa trên các "Findings" của GuardDuty và Security Hub.
+ Trong bài workshop này, các bạn sẽ được tìm hiểu về **Amazon GuardDuty** kết hợp với **AWS Security Hub**. Amazon GuardDuty là một dịch vụ có chức năng phát hiện các mối đe dọa đến hệ thống và khắc phục chúng, trong khi AWS Security Hub sẽ cung cấp cho chúng ta cái nhìn toàn diện về các cảnh báo bảo mật ưu tiên và trạng thái tuân thủ trên các tài khoản AWS. Chúng ta sẽ cùng nhau phân tích, đánh giá và làm thế nào để báo động cũng như khắc phục các vấn đề bảo mật dựa trên các "Findings" của GuardDuty và Security Hub.
 
  ### Về GuardDuty
  **Nguồn dữ liệu**

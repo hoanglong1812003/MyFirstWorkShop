@@ -12,21 +12,21 @@
     <title>Credential Exfiltration :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="../../css/nucleus.css?1751249371" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1751249371" rel="stylesheet">
-    <link href="../../css/hybrid.css?1751249371" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1751249371" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1751249371" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1751249371" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1751249371" rel="stylesheet">
-    <link href="../../css/theme.css?1751249371" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1751249371" rel="stylesheet">
+    <link href="../../css/nucleus.css?1751377947" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1751377947" rel="stylesheet">
+    <link href="../../css/hybrid.css?1751377947" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1751377947" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1751377947" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1751377947" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1751377947" rel="stylesheet">
+    <link href="../../css/theme.css?1751377947" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1751377947" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1751249371" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1751377947" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1751249371"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1751377947"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1751249371"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1751249371"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1751377947"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1751377947"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/MyFirstWorkShop\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1751249371"></script>
+<script type="text/javascript" src="../../js/search.js?1751377947"></script>
 
     
   </div>
@@ -537,7 +537,7 @@
             
           
           
-            <a href='../../'>Detect threats with Amazon GuardDuty</a> > <a href='../../3-simulateattacks/'>Simulate attacks</a> > Credential Exfiltration
+            <a href='../../'>Detect threats with Amazon Security Hub & Amazon GuardDuty</a> > <a href='../../3-simulateattacks/'>Simulate attacks</a> > Credential Exfiltration
           
         
           
@@ -596,11 +596,15 @@
 </ol>
 <h4 id="investigation-process">Investigation process</h4>
 <ol>
-<li>Access <a href="https://ap-southeast-1.console.aws.amazon.com/securityhub/home?region=ap-southeast-1#/">Security Hub</a>, we see <strong>High</strong> Findings detected by GuardDuty
-<img src="../../images/3.attack/3.4/hub.png" alt="CredentialExfiltration"></li>
+<li>Access <a href="https://ap-southeast-1.console.aws.amazon.com/securityhub/home?region=ap-southeast-1#/">Security Hub</a>, we see <strong>High</strong> Findings detected by GuardDuty.</li>
+</ol>
+<p><img src="../../images/3.attack/3.4/hub.png" alt="CredentialExfiltration"></p>
+<ol start="2">
 <li>Access <a href="https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/">GuardDuty Console</a></li>
-<li>We will see Findings with the following format <strong>UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration</strong>.
-<img src="../../images/3.attack/3.4/8.png" alt="CredentialExfiltration"></li>
+<li>We will see Findings with the following format <strong>UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration</strong>.</li>
+</ol>
+<p><img src="../../images/3.attack/3.4/8.png" alt="CredentialExfiltration"></p>
+<ol start="4">
 <li>If there is no Finding, press the Refresh button and wait.</li>
 <li>From Finding <strong>UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration</strong>, c we can easily retrieve some of the following information:</li>
 </ol>
@@ -613,10 +617,14 @@
 <p><strong>Check EventBridge Event Rule</strong></p>
 <ol>
 <li>Check EventBridge Event Rule <a href="https://ap-southeast-1.console.aws.amazon.com/events/home?region=ap-southeast-1#/">EventBridge Event Rule</a> at ap-southeast-1.</li>
-<li>In the left navigation bar, under <strong>Events</strong> , select <strong>Rules</strong>. You&rsquo;ll see three rules already set up (by CloudFormation Template), starting with a prefix like <strong>GuardDuty-Event..</strong>
-<img src="../../images/3.attack/3.4/10.png" alt="CredentialExfiltration"></li>
-<li>Proceed to select the rule named <strong>GuardDuty-Event-IAMUser-InstanceCredentialExfiltration</strong>.
-<img src="../../images/3.attack/3.4/11.png" alt="CredentialExfiltration"></li>
+<li>In the left navigation bar, under <strong>Events</strong> , select <strong>Rules</strong>. You&rsquo;ll see three rules already set up (by CloudFormation Template), starting with a prefix like <strong>GuardDuty-Event..</strong>.</li>
+</ol>
+<p><img src="../../images/3.attack/3.4/10.png" alt="CredentialExfiltration"></p>
+<ol start="3">
+<li>Proceed to select the rule named <strong>GuardDuty-Event-IAMUser-InstanceCredentialExfiltration</strong>.</li>
+</ol>
+<p><img src="../../images/3.attack/3.4/11.png" alt="CredentialExfiltration"></p>
+<ol start="4">
 <li>In the Event Pattern section, we can easily see the data source that this Event will record and activate the Targets when any event occurs.</li>
 </ol>
 <blockquote>
@@ -625,9 +633,9 @@
 <p>Viet has set up a Remediation process to respond to this threat automatically through a Lambda function. We can examine the code to understand more about this process.</p>
 <ol>
 <li>Access <a href="https://ap-southeast-1.console.aws.amazon.com/lambda/home?region=ap-southeast-1#/begin">Lambda Console</a> to ap-southeast-1.
-2.In the left navigation bar, select Functions and search for <strong>GuardDuty-Example-Remediation-InstanceCredentialExfiltration</strong>.
-<img src="../../images/3.attack/3.4/9.png" alt="CredentialExfiltration"></li>
+2.In the left navigation bar, select Functions and search for <strong>GuardDuty-Example-Remediation-InstanceCredentialExfiltration</strong>.</li>
 </ol>
+<p><img src="../../images/3.attack/3.4/9.png" alt="CredentialExfiltration"></p>
 <blockquote>
 <p>Basically, this Lambda function will retrieve information about IAM Role from Finding and proceed to add IAM Policy.</p></blockquote>
 <p><strong>Verify the Remediation process</strong></p>
@@ -885,19 +893,19 @@ Execute the following command:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1751249371"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1751249371"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1751249371"></script>
-    <script src="../../js/jquery.sticky.js?1751249371"></script>
-    <script src="../../js/featherlight.min.js?1751249371"></script>
-    <script src="../../js/highlight.pack.js?1751249371"></script>
+    <script src="../../js/clipboard.min.js?1751377947"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1751377947"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1751377947"></script>
+    <script src="../../js/jquery.sticky.js?1751377947"></script>
+    <script src="../../js/featherlight.min.js?1751377947"></script>
+    <script src="../../js/highlight.pack.js?1751377947"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1751249371"></script>
-    <script src="../../js/learn.js?1751249371"></script>
-    <script src="../../js/hugo-learn.js?1751249371"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1751377947"></script>
+    <script src="../../js/learn.js?1751377947"></script>
+    <script src="../../js/hugo-learn.js?1751377947"></script>
 
-    <link href="../../mermaid/mermaid.css?1751249371" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1751249371"></script>
+    <link href="../../mermaid/mermaid.css?1751377947" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1751377947"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

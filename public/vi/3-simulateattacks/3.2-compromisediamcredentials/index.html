@@ -12,21 +12,21 @@
     <title>Compromised IAM credentials :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="../../../css/nucleus.css?1751249372" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1751249372" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1751249372" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1751249372" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1751249372" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1751249372" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1751249372" rel="stylesheet">
-    <link href="../../../css/theme.css?1751249372" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1751249372" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1751377947" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1751377947" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1751377947" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1751377947" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1751377947" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1751377947" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1751377947" rel="stylesheet">
+    <link href="../../../css/theme.css?1751377947" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1751377947" rel="stylesheet">
     
-    <link href="../../../css/theme-workshop.css?1751249372" rel="stylesheet">
+    <link href="../../../css/theme-workshop.css?1751377947" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1751249372"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1751377947"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1751249372"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1751249372"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1751377947"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1751377947"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/MyFirstWorkShop\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1751249372"></script>
+<script type="text/javascript" src="../../../js/search.js?1751377947"></script>
 
     
   </div>
@@ -537,7 +537,7 @@
             
           
           
-            <a href='../../../vi/'>Phát hiện các mối đe dọa với Amazon GuardDuty</a> > <a href='../../../vi/3-simulateattacks/'>Mô phỏng các cuộc tấn công</a> > Compromised IAM credentials
+            <a href='../../../vi/'>Phát hiện các mối đe dọa với Amazon Security Hub & Amazon GuardDuty</a> > <a href='../../../vi/3-simulateattacks/'>Mô phỏng các cuộc tấn công</a> > Compromised IAM credentials
           
         
           
@@ -603,16 +603,18 @@
 <h3 id="quá-trình-điều-tra">Quá trình điều tra</h3>
 <p>Để tiến hành xem xét các Findings:</p>
 <ol>
-<li>Truy cập Security Hub, chúng ta phát hiện ra lỗ hổng bảo mật được phát hiện bởi GuardDuty
-<img src="../../../images/3.attack/3.2/hub.png" alt="Compromised IAM credentials"></li>
-<li>Truy cập vào GuardDuty Console ở <strong>ap-southeast-1</strong> tại <a href="https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/">đây</a></li>
+<li>Truy cập Security Hub, chúng ta phát hiện ra lỗ hổng bảo mật được phát hiện bởi GuardDuty</li>
+</ol>
+<p><img src="../../../images/3.attack/3.2/hub.png" alt="Compromised IAM credentials"></p>
+<ol start="2">
+<li>Truy cập vào GuardDuty Console ở <strong>ap-southeast-1</strong> tại <a href="https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/">đây</a>.</li>
 <li>Chúng ta sẽ thấy được các Findings với định dạng như sau.</li>
 </ol>
 <ul>
-<li>Recon:IAMUser</li>
-<li>UnauthorizedAccess:IAMUser.
-<img src="../../../images/3.attack/3.2/1.png" alt="Compromised IAM credentials"></li>
+<li>Recon:IAMUser.</li>
+<li>UnauthorizedAccess:IAMUser.</li>
 </ul>
+<p><img src="../../../images/3.attack/3.2/1.png" alt="Compromised IAM credentials"></p>
 <ol start="4">
 <li>Nếu không có bất kỳ Finding nào, tiến hành nhấn nút Refresh và đợi.</li>
 <li>Từ Finding <strong>Recon:IAMUser/MaliciousIPCaller.Custom</strong>, chúng ta có thể dễ dàng truy xuất một số thông tin sau:</li>
@@ -623,19 +625,19 @@
 <li>Sự kiện này xảy ra khi nào?</li>
 </ul>
 <ol start="6">
-<li>Ở dưới phần <strong>Resource Affected</strong>, bạn sẽ kiếm được User Name mà liên quan đến Finding này.
-<img src="../../../images/3.attack/3.2/2.png" alt="Compromised IAM credentials">
-Finding này chỉ ra rằng <strong>IAM credential</strong> của <strong>User Name</strong> trên đã có thể bị phơi bày bởi những <strong>API calls</strong> xuất phát từ địa chỉ IP mà trước đó đã được thêm vào <strong>Threat List</strong>.</li>
+<li>Ở dưới phần <strong>Resource Affected</strong>, bạn sẽ kiếm được User Name mà liên quan đến Finding này.</li>
 </ol>
+<p><img src="../../../images/3.attack/3.2/2.png" alt="Compromised IAM credentials"></p>
+<p>Finding này chỉ ra rằng <strong>IAM credential</strong> của <strong>User Name</strong> trên đã có thể bị phơi bày bởi những <strong>API calls</strong> xuất phát từ địa chỉ IP mà trước đó đã được thêm vào <strong>Threat List</strong>.</p>
 <blockquote>
 <p>Vậy những hành động nào đã được IAM User này thực hiện?</p></blockquote>
-<p>Ở mục <strong>Action</strong>, chúng ta thấy được hành động <strong>DescribeParameters</strong> đã được thực hiện.
-<img src="../../../images/3.attack/3.2/3.png" alt="Compromised IAM credentials"></p>
+<p>Ở mục <strong>Action</strong>, chúng ta thấy được hành động <strong>DescribeParameters</strong> đã được thực hiện.</p>
+<p><img src="../../../images/3.attack/3.2/3.png" alt="Compromised IAM credentials"></p>
 <blockquote>
 <p>Làm thế nào để chúng ta có thể thấy được hết các hành động còn lại, được thực hiện bởi IAM User này, trong vòng 1 tiếng trước hay 1 ngày truớc?</p></blockquote>
 <p>GuardDuty có khả năng phân tích một lượng lớn dữ liệu nhằm xác định chính xác mối nguy hiểm có mặt trong môi trường của bạn. Tuy nhiên, trong quá trình điều tra và các bước thực hiện Remediation, chúng ta cũng cần kết hợp nhiều nguồn dữ liệu khác nhau để có một cái nhìn tương quan nhất có thể.</p>
-<p>Trong trường hợp này, nhà phân tích có thể sử dụng các thông tin chi tiết có thể tìm thấy trong nhật ký hành vi người dùng thông qua <strong>CloudTrail</strong>.
-<img src="../../../images/3.attack/3.2/4.png" alt="Compromised IAM credentials"></p>
+<p>Trong trường hợp này, nhà phân tích có thể sử dụng các thông tin chi tiết có thể tìm thấy trong nhật ký hành vi người dùng thông qua <strong>CloudTrail</strong>.</p>
+<p><img src="../../../images/3.attack/3.2/4.png" alt="Compromised IAM credentials"></p>
 
 <div class="notices note" ><p>Những Findings về IAM được sinh ra bởi EC2 malicious instance đã thực hiện những API calls và EIP của instance này nằm trong Custom Threat List.</p>
 </div>
@@ -645,9 +647,9 @@ Finding này chỉ ra rằng <strong>IAM credential</strong> của <strong>User 
 <li>Truy cập vào <strong>EventBridge Event Rule</strong> Console ở ap-southeast-1.</li>
 <li>Ở thanh điều hướng bên tay trái, dưới <strong>Events</strong>, chọn <strong>Rules</strong>. Bạn sẽ thấy có 3 quy tắc đã được thiết lập (bởi CloudFormation Template), bắt đầu với tiền tố có dạng sau <em>GuardDuty-Event..</em></li>
 <li>Tiến hành chọn quy tắc có tên là <strong>GuardDuty-Event-IAMUser-MaliciousIPCaller</strong></li>
-<li>Bạn sẽ dễ dàng nhận thấy chỉ có 1 mục tiêu tại vùng <strong>Targets</strong> là <strong>SNS Topic</strong>.
-<img src="../../../images/3.attack/3.2/5.png" alt="Compromised IAM credentials"></li>
+<li>Bạn sẽ dễ dàng nhận thấy chỉ có 1 mục tiêu tại vùng <strong>Targets</strong> là <strong>SNS Topic</strong>.</li>
 </ol>
+<p><img src="../../../images/3.attack/3.2/5.png" alt="Compromised IAM credentials"></p>
 <p>Hoá ra, Việt chưa từng thiết lập Lambda Function để thực hiện quá trình Remediation bởi đội ngũ Security đã đưa ra quyết định rằng họ sẽ tiến hành một cách thủ công đối với Finding này.</p>
 <blockquote>
 <p>Sự kết hợp giữa GuardDuty, Security Hub và EventBridge Events mang lại sự uyển chuyển giúp cho chúng ta dễ dàng tạo ra một quy trình Remediation tự động hoá. Lambda function hay giải pháp đến từ phía đối tác của AWS là những lựa chọn hàng đầu.</p></blockquote>
@@ -657,16 +659,20 @@ Finding này chỉ ra rằng <strong>IAM credential</strong> của <strong>User 
 <p><strong>Giải quyết tình hình</strong>
 Bởi Việt chưa từng thiết lập quá trình Remediation đối với Finding này nên bạn Long cần phải thực hiện một cách thủ công. Trong khi đội ngũ Security đang tiến hành phân tích những hành vi của IAM user này để xác định rõ hơn phạm vi lỗ hổng, bạn Long cần phải thực hiện một số bước để vô hiệu hoá Access Key nhằm ngăn chặn lập tức những hành động tiếp theo.</p>
 <ol>
-<li>Truy cập vào IAM Console tại <a href="https://us-east-1.console.aws.amazon.com/iam/home?region=ap-southeast-1#/home">đây</a>
-<img src="../../../images/3.attack/3.2/6.png" alt="Compromised IAM credentials"></li>
-<li>Ở thanh điều hướng bên tay trái, chọn Users.</li>
-<li>Dựa trên GuardDuty Finding và thông báo E-mail, chúng ta dễ dàng chọn ra được IAM user - <strong>GuardDuty-Example-Compromised-Simulated</strong>.
-<img src="../../../images/3.attack/3.2/7.png" alt="Compromised IAM credentials"></li>
-<li>Ở user <strong>GuardDuty-Example-Compromised-Simulated</strong>, chúng ta chọn thanh <strong>Security Credentials</strong>.</li>
-<li>Ở mục Access Keys, dựa trên thông tin Access Key ID từ Finding, chúng ta tiến hành chọn <strong>Action</strong> -&gt; <strong>Deactivate</strong>.
-<img src="../../../images/3.attack/3.2/8.png" alt="Compromised IAM credentials">
-<img src="../../../images/3.attack/3.2/9.png" alt="Compromised IAM credentials"></li>
+<li>Truy cập vào IAM Console tại <a href="https://us-east-1.console.aws.amazon.com/iam/home?region=ap-southeast-1#/home">đây</a></li>
 </ol>
+<p><img src="../../../images/3.attack/3.2/6.png" alt="Compromised IAM credentials"></p>
+<ol start="2">
+<li>Ở thanh điều hướng bên tay trái, chọn Users.</li>
+<li>Dựa trên GuardDuty Finding và thông báo E-mail, chúng ta dễ dàng chọn ra được IAM user - <strong>GuardDuty-Example-Compromised-Simulated</strong>.</li>
+</ol>
+<p><img src="../../../images/3.attack/3.2/7.png" alt="Compromised IAM credentials"></p>
+<ol start="4">
+<li>Ở user <strong>GuardDuty-Example-Compromised-Simulated</strong>, chúng ta chọn thanh <strong>Security Credentials</strong>.</li>
+<li>Ở mục Access Keys, dựa trên thông tin Access Key ID từ Finding, chúng ta tiến hành chọn <strong>Action</strong> -&gt; <strong>Deactivate</strong>.</li>
+</ol>
+<p><img src="../../../images/3.attack/3.2/8.png" alt="Compromised IAM credentials"></p>
+<p><img src="../../../images/3.attack/3.2/9.png" alt="Compromised IAM credentials"></p>
 
 
 
@@ -915,19 +921,19 @@ Bởi Việt chưa từng thiết lập quá trình Remediation đối với Fin
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1751249372"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1751249372"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1751249372"></script>
-    <script src="../../../js/jquery.sticky.js?1751249372"></script>
-    <script src="../../../js/featherlight.min.js?1751249372"></script>
-    <script src="../../../js/highlight.pack.js?1751249372"></script>
+    <script src="../../../js/clipboard.min.js?1751377947"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1751377947"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1751377947"></script>
+    <script src="../../../js/jquery.sticky.js?1751377947"></script>
+    <script src="../../../js/featherlight.min.js?1751377947"></script>
+    <script src="../../../js/highlight.pack.js?1751377947"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1751249372"></script>
-    <script src="../../../js/learn.js?1751249372"></script>
-    <script src="../../../js/hugo-learn.js?1751249372"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1751377947"></script>
+    <script src="../../../js/learn.js?1751377947"></script>
+    <script src="../../../js/hugo-learn.js?1751377947"></script>
 
-    <link href="../../../mermaid/mermaid.css?1751249372" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1751249372"></script>
+    <link href="../../../mermaid/mermaid.css?1751377947" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1751377947"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

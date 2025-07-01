@@ -12,21 +12,21 @@
     <title>Create Stack :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="../../css/nucleus.css?1751249371" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1751249371" rel="stylesheet">
-    <link href="../../css/hybrid.css?1751249371" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1751249371" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1751249371" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1751249371" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1751249371" rel="stylesheet">
-    <link href="../../css/theme.css?1751249371" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1751249371" rel="stylesheet">
+    <link href="../../css/nucleus.css?1751377947" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1751377947" rel="stylesheet">
+    <link href="../../css/hybrid.css?1751377947" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1751377947" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1751377947" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1751377947" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1751377947" rel="stylesheet">
+    <link href="../../css/theme.css?1751377947" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1751377947" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1751249371" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1751377947" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1751249371"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1751377947"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1751249371"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1751249371"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1751377947"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1751377947"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/MyFirstWorkShop\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1751249371"></script>
+<script type="text/javascript" src="../../js/search.js?1751377947"></script>
 
     
   </div>
@@ -537,7 +537,7 @@
             
           
           
-            <a href='../../'>Detect threats with Amazon GuardDuty</a> > <a href='../../2-prerequiste/'>Preparation steps</a> > Create Stack
+            <a href='../../'>Detect threats with Amazon Security Hub & Amazon GuardDuty</a> > <a href='../../2-prerequiste/'>Preparation steps</a> > Create Stack
           
         
           
@@ -584,21 +584,15 @@
 
 
 	<h3 id="create-stack">Create Stack</h3>
-<p>In this step we will create a Stack to monitor and prevent attacks through <strong>Findings</strong> on GuardDuty</p>
+<p>In this step we will create a Stack to monitor and prevent attacks through <strong>Findings</strong> on GuardDuty.</p>
 <ol>
-<li>
-<p>Sign in to AWS Console</p>
-</li>
-<li>
-<p>Access to <a href="https://ap-southeast-1.console.aws.amazon.com.cloudformation/home?region=ap-southeast-1">CloudFormation Service Administration Interface</a></p>
-</li>
-<li>
-<p>Proceed to create a new Stack by pressing the <strong>Create stack</strong>
-<img src="../../images/2.prerequisite/2.3/1.png" alt="CloudFormation"></p>
-</li>
-<li>
-<p>On the Specify template page, click Upload a template file</p>
-</li>
+<li>Sign in to AWS Console.</li>
+<li>Access to <a href="https://ap-southeast-1.console.aws.amazon.com.cloudformation/home?region=ap-southeast-1">CloudFormation Service Administration Interface</a>.</li>
+<li>Proceed to create a new Stack by pressing the <strong>Create stack</strong>.</li>
+</ol>
+<p><img src="../../images/2.prerequisite/2.3/1.png" alt="CloudFormation"></p>
+<ol start="4">
+<li>On the Specify template page, click Upload a template file</li>
 </ol>
 <p>Download template file at <a href="https://github.com/AWS-First-Cloud-Journey/GuardDuty-Hands-On/archive/refs/heads/main.zip">here</a></p>
 <p><img src="../../images/2.prerequisite/2.3/2.png" alt="CloudFormation"></p>
@@ -606,21 +600,23 @@
 <li>On the Parameters page, we will enter some required information:</li>
 </ol>
 <ul>
-<li><strong>Email Address</strong>: Your email address. Click <strong>Next</strong>
-<img src="../../images/2.prerequisite/2.3/3.png" alt="CloudFormation"></li>
+<li><strong>Email Address</strong>: Your email address. Click <strong>Next</strong>.</li>
 </ul>
+<p><img src="../../images/2.prerequisite/2.3/3.png" alt="CloudFormation"></p>
 <ol start="6">
 <li>On the Specify Stack Details page, click <strong>Next</strong>.</li>
 <li>On the Configure stack options page, click <strong>Next</strong>.</li>
-<li>On the Capabilities page, accept (Acknowledge) to allow the Template to create IAM roles, and finally select the <strong>Create Stack</strong> button.
-<img src="../../images/2.prerequisite/2.3/4.png" alt="CloudFormation"></li>
-<li>Check the information again, press <strong>Submit</strong>
-<img src="../../images/2.prerequisite/2.3/5.png" alt="CloudFormation">
+<li>On the Capabilities page, accept (Acknowledge) to allow the Template to create IAM roles, and finally select the <strong>Create Stack</strong> button.</li>
+</ol>
+<p><img src="../../images/2.prerequisite/2.3/4.png" alt="CloudFormation"></p>
+<ol start="9">
+<li>Check the information again, press <strong>Submit</strong></li>
+</ol>
+<p><img src="../../images/2.prerequisite/2.3/5.png" alt="CloudFormation"></p>
 
 <div class="notices note" ><p>The above process will take place within 5-10 minutes until we see the status of the Stack as CREATE_COMPLETE. After that, we will receive an Email notification with the same subject as AWS Notification - Subscription Confirmation.</p>
 </div>
-</li>
-</ol>
+
 <p><img src="../../images/2.prerequisite/2.3/6.png" alt="CloudFormation"></p>
 <h3 id="resources-prepared">Resources prepared</h3>
 <ol>
@@ -908,19 +904,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1751249371"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1751249371"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1751249371"></script>
-    <script src="../../js/jquery.sticky.js?1751249371"></script>
-    <script src="../../js/featherlight.min.js?1751249371"></script>
-    <script src="../../js/highlight.pack.js?1751249371"></script>
+    <script src="../../js/clipboard.min.js?1751377947"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1751377947"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1751377947"></script>
+    <script src="../../js/jquery.sticky.js?1751377947"></script>
+    <script src="../../js/featherlight.min.js?1751377947"></script>
+    <script src="../../js/highlight.pack.js?1751377947"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1751249371"></script>
-    <script src="../../js/learn.js?1751249371"></script>
-    <script src="../../js/hugo-learn.js?1751249371"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1751377947"></script>
+    <script src="../../js/learn.js?1751377947"></script>
+    <script src="../../js/hugo-learn.js?1751377947"></script>
 
-    <link href="../../mermaid/mermaid.css?1751249371" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1751249371"></script>
+    <link href="../../mermaid/mermaid.css?1751377947" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1751377947"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

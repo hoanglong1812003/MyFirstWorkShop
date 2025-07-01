@@ -20,11 +20,16 @@ pre : " <b> 3.4. </b> "
 7. **Lambda Function** tiến hành gán một chính sách mới nhằm thu hồi mọi Sessions đang hoạt động.
 
 #### Quá trình điều tra
-1. Truy cập [Security Hub](https://ap-southeast-1.console.aws.amazon.com/securityhub/home?region=ap-southeast-1#/), chúng ta thấy Findings ở mức **High** được phát hiện bởi GuardDuty. 
+1. Truy cập [Security Hub](https://ap-southeast-1.console.aws.amazon.com/securityhub/home?region=ap-southeast-1#/), chúng ta thấy Findings ở mức **High** được phát hiện bởi GuardDuty.
+
 ![CredentialExfiltration](/images/3.attack/3.4/hub.png)
-2. Truy cập [GuardDuty Console](https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/)
+
+2. Truy cập [GuardDuty Console](https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/).
+
 3. Chúng ta sẽ thấy được Findings với định dạng như sau **UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration**.
+
 ![CredentialExfiltration](/images/3.attack/3.4/8.png)
+
 4. Nếu không có bất kỳ Finding nào, tiến hành nhấn nút Refresh và đợi.
 5. Từ Finding **UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration**, chúng ta có thể dễ dàng truy xuất một số thông tin sau:
 - High Severity
@@ -34,10 +39,14 @@ pre : " <b> 3.4. </b> "
 **Kiểm tra EventBridge Event Rule**
 
 1. Truy cập vào [EventBridge Event Rule](https://ap-southeast-1.console.aws.amazon.com/events/home?region=ap-southeast-1#/) ở ap-southeast-1.
-2. Ở thanh điều hướng bên tay trái, dưới **Events**, chọn Rules. Bạn sẽ thấy có 3 quy tắc đã được thiết lập (bởi CloudFormation Template), bắt đầu với tiền tố có dạng sau **GuardDuty-Event..**
+2. Ở thanh điều hướng bên tay trái, dưới **Events**, chọn Rules. Bạn sẽ thấy có 3 quy tắc đã được thiết lập (bởi CloudFormation Template), bắt đầu với tiền tố có dạng sau **GuardDuty-Event..**.
+
 ![CredentialExfiltration](/images/3.attack/3.4/10.png)
+
 3. Tiến hành chọn quy tắc có tên là **GuardDuty-Event-IAMUser-InstanceCredentialExfiltration**.
+
 ![CredentialExfiltration](/images/3.attack/3.4/11.png)
+
 4. Ở mục Event Pattern, chúng ta dễ dàng thấy được nguồn dữ liệu mà Event này sẽ ghi nhận và tiến hành kích hoạt các Target khi có bất kỳ sự kiện nào.
 
 > Bạn có thể tạo EventBridge Event Rule nhằm ghi nhận sự kiện của một loại Finding cụ thể hay bất kỳ loại Finding nào.
@@ -48,7 +57,9 @@ Việt đã thiết lập quá trình Remediation nhằm phản ứng tự độ
 
 1. Truy cập vào [Lambda Console](https://ap-southeast-1.console.aws.amazon.com/lambda/home?region=ap-southeast-1#/begin) ở ap-southeast-1.
 2. Ở thanh điều hướng bên tay trái, chọn Functions và tìm kiếm **GuardDuty-Example-Remediation-InstanceCredentialExfiltration**.
+
 ![CredentialExfiltration](/images/3.attack/3.4/9.png)
+
 > Về cơ bản, Lambda function này sẽ truy xuất thông tin về IAM Role từ Finding và tiến hành thêm IAM Policy.
 
 **Kiểm chứng quá trình Remediation**
