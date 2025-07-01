@@ -64,6 +64,7 @@ Thông thường, chi phí sẽ ít hơn $1 mỗi tháng nếu tài khoản củ
 - 100,000 lần đầu tiên => $0.0010/check.
 - 100,001 – 500,000 => $0.0008/check.
 - 500,001+ => $0.0005/check.
+  
 **Tìm các sự kiện tấn công**
 - 10,000 lần đầu tiên => miễn phí.
 - 10,001+ => $0.00003/lần.
@@ -90,7 +91,7 @@ Thông thường, chi phí sẽ ít hơn $1 mỗi tháng nếu tài khoản củ
    
 ![GuardDutyConsole](public/images/2.prerequisite/2.1/3.png)
 
-4. Đối với tài khoản mới, AWS sẽ cho chúng ta 30 ngày dùng thử, để bắt đầu sử dụng, nhấn chọn nút 
+3. Đối với tài khoản mới, AWS sẽ cho chúng ta 30 ngày dùng thử, để bắt đầu sử dụng, nhấn chọn nút 
 **Enable GuardDuty**.
 
 ![GuardDutyConsole](public/images/2.prerequisite/2.1/2.png)
@@ -107,12 +108,12 @@ Trong bước này chúng ta sẽ tiến hành kích hoạt Security Hub để n
    
 ![SecurityHubConsole](public/images/2.prerequisite/2.2/1.png)
 
-5. Tại trang **Enable AWS Security Hub CSPM**, chọn các tiêu chuẩn về bảo mật (Security standards) như là AWS Foundational Security Best Practices, CIS AWS Foundations Benchmark, và PCI DSS.
+4. Tại trang **Enable AWS Security Hub CSPM**, chọn các tiêu chuẩn về bảo mật (Security standards) như là AWS Foundational Security Best Practices, CIS AWS Foundations Benchmark, và PCI DSS.
    
 ![SecurityHubConsole](public/images/2.prerequisite/2.2/2.png)
 
-8. Chọn **Enable Security Hub**.
-9. Sau khi kích hoạt, bạn sẽ cần chờ một khoản thời gian để Security Hub đánh giá Security Score của tài khoản hiện tại của bạn so với từng bộ tiêu chuẩn bảo mật mà bạn thiết lập.
+5. Chọn **Enable Security Hub**.
+6. Sau khi kích hoạt, bạn sẽ cần chờ một khoản thời gian để Security Hub đánh giá Security Score của tài khoản hiện tại của bạn so với từng bộ tiêu chuẩn bảo mật mà bạn thiết lập.
 
 ![SecurityHubConsole](public/images/2.prerequisite/2.2/4.png)
 
@@ -127,7 +128,7 @@ Trong bước này chúng ta sẽ tiến hành tạo Stack để theo dõi và n
    
 ![CloudFormation](public/images/2.prerequisite/2.3/1.png)
 
-5. Ở trang Specify template, click vào Upload a template file.
+4. Ở trang Specify template, click vào Upload a template file.
 
 Tải file template tại [đây](https://github.com/AWS-First-Cloud-Journey/GuardDuty-Hands-On/archive/refs/heads/main.zip)
 
@@ -144,9 +145,9 @@ Tải file template tại [đây](https://github.com/AWS-First-Cloud-Journey/Gua
 
 ![CloudFormation](public/images/2.prerequisite/2.3/4.png)
 
-10. Kiểm tra lại các thông tin, ấn **Submit**.
+9. Kiểm tra lại các thông tin, ấn **Submit**.
     
-![CloudFormation](publicpublic/images/2.prerequisite/2.3/5.png)
+![CloudFormation](public/images/2.prerequisite/2.3/5.png)
  
 Quá trình trên sẽ diễn ra trong vòng 5-10 phút cho tới khi chúng ta thấy được trạng thái của Stack là CREATE_COMPLETE. Sau đó, chúng ta sẽ nhận được một thông báo qua Email với chủ đề tương tự AWS Notification - Subscription Confirmation.
  
@@ -211,22 +212,23 @@ Mặc dù bạn có thể thấy các Findings này từ GuardDuty Console, đa 
 
 1. Truy cập  vào [Security Hub](https://ap-southeast-1.console.aws.amazon.com/securityhub/home?region=ap-southeast-1#/) ở ap-southeast-1.
 
-2. Chúng ta sẽ thấy được các cảnh báo bảo mật ở GuardDuty.
+2. Chúng ta sẽ thấy được các cảnh báo bảo mật ở GuardDuty với Finding: **UnauthorizedAccess:EC2/MaliciousIPCaller.Custom**.
+
 
 ![Compromised EC2 Instance](public/images/3.attack/3.1/hub.png)
 
-4. Tiến hành truy cập vào GuardDuty Console ở ap-southeast-1.
+3. Tiến hành truy cập vào GuardDuty Console ở ap-southeast-1.
 
-5. Chúng ta sẽ thấy được một Finding với định dạng như sau **UnauthorizedAccess:EC2/MaliciousIPCaller.Custom**.
+4. Chúng ta sẽ thấy được một Finding với định dạng như sau **UnauthorizedAccess:EC2/MaliciousIPCaller.Custom**.
    
 ![Compromised EC2 Instance](public/images/3.attack/3.1/4.png)
 
-7. Nếu không có Finding nào, vui lòng ấn refresh và đợi.
+5. Nếu không có Finding nào, vui lòng ấn refresh và đợi.
 
 > Người dùng có thể truy xuất các Findings ở GuardDuty console trong vòng 90 ngày.
 
-1. Trong môi trường của bạn, kiểu Finding này chỉ ra rằng một EC2 instance đang thực hiện quá trình giao tiếp tới địa chỉ IP (đã được thêm vào Threat Lists).
-2. Tiến hành chọn Lists ở thanh điều hướng (bên tay trái) để có thể xem Threat List mà Việt đã thêm trước đây **Example-Threat-List**.
+6. Trong môi trường của bạn, kiểu Finding này chỉ ra rằng một EC2 instance đang thực hiện quá trình giao tiếp tới địa chỉ IP (đã được thêm vào Threat Lists).
+7. Tiến hành chọn Lists ở thanh điều hướng (bên tay trái) để có thể xem Threat List mà Việt đã thêm trước đây **Example-Threat-List**.
    
 ![Compromised EC2 Instance](public/images/3.attack/3.1/5.png)
 
@@ -268,28 +270,35 @@ Lambda Function là chìa khoá nắm giữ logic nhằm thực hiện các bư�
   + Ở phần Function code, những logic về coding sẽ được thực thi tại đây.
 - Permissions
 - Monitoring
+  
 ![Compromised EC2 Instance](public/images/3.attack/3.1/9.png)
+
 ![Compromised EC2 Instance](public/images/3.attack/3.1/10.png)
 
 **Xác nhận quá trình Remediation đã thành công**
 Để đảm bảo kết quả của quá trình Remediation, chúng ta cần phải xem xét EC2 instance đã bị cô lập hay chưa. Tại thời điểm này, bạn đã nhận được một E-mail cùng với một số thông tin quan trọng.
-1. Truy cập vào EC2 console ở ap-southeast-1 tại [đây](https://ap-southeast-1.console.aws.amazon.com/ec2/home?region=ap-southeast-1#Overview:)
+1. Truy cập vào EC2 console ở ap-southeast-1 tại [đây](https://ap-southeast-1.console.aws.amazon.com/ec2/home?region=ap-southeast-1#Overview:).
+   
 ![Compromised EC2 Instance](public/images/3.attack/3.1/11.png)
+
 2. Chọn **Instances**, chúng sẽ thấy được 3 EC2 instance với tiền tố bắt đầu với định dạng sau *GuardDuty-Example*.
 
 3. Dựa trên **instance ID** có từ GuardDuty Finding hay thông báo E-mail, chúng ta chọn EC2 instance tương ứng: *GuardDuty-Example: Compromised Instance: Scenario 1*.
+   
 ![Compromised EC2 Instance](public/images/3.attack/3.1/12.png)
+
 4. Sau khi quá trình Remediation hoàn thành, chúng ta sẽ kiểm tra **Security Group** của EC2 compromised instance này, sẽ có định dạng tên tương tự sau **ForensicSecurityGroup**.
 5. **ForensicSecurityGroup** sẽ không có bất kỳ một quy tắc Ingress/Egress nào chứa địa chỉ IP trong **Example-Threat-List**.
+
 ![Compromised EC2 Instance](public/images/3.attack/3.1/13.png)
 
 ### 3.2 Compromised IAM credentials
 ### Tình huống 2: Compromised IAM credentials
 Bạn Long đã hoàn thành tình huống giả lập tấn công đầu tiên và quay trở lại với tách cà phê của mình. Tuy nhiên, bạn Long lại tiếp tục nhận thêm những thông báo mới về những Findings liên quan tới các dịch vụ AWS IAM. Nội dung thông báo đầu tiên chỉ ra rằng, bằng cách sử dụng **IAM credentials**, một số **API calls** đã được thực hiện từ địa chỉ IP đã được thêm vào **Threat List** (ở bài trước).
 
-{{% notice note %}}
-Không có bất kỳ IAM credentials cá nhân nào đã từng bị phơi bày hay lộ ra dưới bất kỳ hình thức nào.
-{{% /notice %}}
+ 
+> Không có bất kỳ IAM credentials cá nhân nào đã từng bị phơi bày hay lộ ra dưới bất kỳ hình thức nào.
+ 
 ### Kiến trúc tổng quan
 
 ![Compromised IAM credentials](public/images/3.attack/3.2/CompromisedIAMcredentials-1.png)
@@ -302,20 +311,26 @@ Không có bất kỳ IAM credentials cá nhân nào đã từng bị phơi bày
 
 ### Quá trình điều tra
 Để tiến hành xem xét các Findings:
-1. Truy cập Security Hub, chúng ta phát hiện ra lỗ hổng bảo mật được phát hiện bởi GuardDuty
+1. Truy cập Security Hub, chúng ta phát hiện ra lỗ hổng bảo mật được phát hiện bởi GuardDuty.
+   
 ![Compromised IAM credentials](public/images/3.attack/3.2/hub.png)
-2. Truy cập vào GuardDuty Console ở **ap-southeast-1** tại [đây](https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/)
+
+2. Truy cập vào GuardDuty Console ở **ap-southeast-1** tại [đây](https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/).
 3. Chúng ta sẽ thấy được các Findings với định dạng như sau.
 - Recon:IAMUser
 - UnauthorizedAccess:IAMUser.
+
 ![Compromised IAM credentials](public/images/3.attack/3.2/1.png)
+
 4. Nếu không có bất kỳ Finding nào, tiến hành nhấn nút Refresh và đợi.
 5. Từ Finding **Recon:IAMUser/MaliciousIPCaller.Custom**, chúng ta có thể dễ dàng truy xuất một số thông tin sau:
 - Chuyện gì đã xảy ra?
 - Tài nguyên AWS nào bị ảnh hưởng?
 - Sự kiện này xảy ra khi nào?
-6. Ở dưới phần **Resource Affected**, bạn sẽ kiếm được User Name mà liên quan đến Finding này. 
+6. Ở dưới phần **Resource Affected**, bạn sẽ kiếm được User Name mà liên quan đến Finding này.
+  
 ![Compromised IAM credentials](public/images/3.attack/3.2/2.png)
+
 Finding này chỉ ra rằng **IAM credential** của **User Name** trên đã có thể bị phơi bày bởi những **API calls** xuất phát từ địa chỉ IP mà trước đó đã được thêm vào **Threat List**.
 
 > Vậy những hành động nào đã được IAM User này thực hiện?
@@ -329,9 +344,9 @@ GuardDuty có khả năng phân tích một lượng lớn dữ liệu nhằm x�
 Trong trường hợp này, nhà phân tích có thể sử dụng các thông tin chi tiết có thể tìm thấy trong nhật ký hành vi người dùng thông qua **CloudTrail**.
 ![Compromised IAM credentials](public/images/3.attack/3.2/4.png)
 
-{{% notice note %}}
+ 
 Những Findings về IAM được sinh ra bởi EC2 malicious instance đã thực hiện những API calls và EIP của instance này nằm trong Custom Threat List.
-{{% /notice %}}
+ 
 
 **Kiểm tra EventBridge Event Rule**
 1. Truy cập vào **EventBridge Event Rule** Console ở ap-southeast-1.
@@ -351,14 +366,20 @@ Hoá ra, Việt chưa từng thiết lập Lambda Function để thực hiện q
 **Giải quyết tình hình**
 Bởi Việt chưa từng thiết lập quá trình Remediation đối với Finding này nên bạn Long cần phải thực hiện một cách thủ công. Trong khi đội ngũ Security đang tiến hành phân tích những hành vi của IAM user này để xác định rõ hơn phạm vi lỗ hổng, bạn Long cần phải thực hiện một số bước để vô hiệu hoá Access Key nhằm ngăn chặn lập tức những hành động tiếp theo.
 
-1. Truy cập vào IAM Console tại [đây](https://us-east-1.console.aws.amazon.com/iam/home?region=ap-southeast-1#/home)
+1. Truy cập vào IAM Console tại [đây](https://us-east-1.console.aws.amazon.com/iam/home?region=ap-southeast-1#/home).
+   
 ![Compromised IAM credentials](public/images/3.attack/3.2/6.png)
+
 2. Ở thanh điều hướng bên tay trái, chọn Users.
 3. Dựa trên GuardDuty Finding và thông báo E-mail, chúng ta dễ dàng chọn ra được IAM user - **GuardDuty-Example-Compromised-Simulated**.
+
 ![Compromised IAM credentials](public/images/3.attack/3.2/7.png)
+
 4. Ở user **GuardDuty-Example-Compromised-Simulated**, chúng ta chọn thanh **Security Credentials**.
 5. Ở mục Access Keys, dựa trên thông tin Access Key ID từ Finding, chúng ta tiến hành chọn **Action** -> **Deactivate**.
+   
 ![Compromised IAM credentials](public/images/3.attack/3.2/8.png)
+
 ![Compromised IAM credentials](public/images/3.attack/3.2/9.png)
 
 ### 3.3 Create findings
@@ -373,20 +394,27 @@ Bạn Long vừa nhận ra các cuộc tấn công vừa rồi là các cuộc t
 
 > Chúng ta sẽ tiến hành tạo các Findings 
 1. Truy cập vào Session Manager ở ap-southeast-1.
+   
 ![create findings](public/images/3.attack/3.3/1.png)
-2. Ở thanh điều hướng bên tay phải, chọn tiếp tục Start Session
+
+3. Ở thanh điều hướng bên tay phải, chọn tiếp tục Start Session
+   
 ![create findings](public/images/3.attack/3.3/2.png)
-3. Ở mục **Target instances** chúng ta sẽ thấy một managed EC2 instance với định dạng tên như sau - **GuardDuty-Example: Compromised Instance: Scenario 3** với trạng thái SSM Agent ping status là Online.
-4. Chọn instance **GuardDuty-Example: Compromised Instance: Scenario 3** và ấn **Start session**
+
+4. Ở mục **Target instances** chúng ta sẽ thấy một managed EC2 instance với định dạng tên như sau - **GuardDuty-Example: Compromised Instance: Scenario 3** với trạng thái SSM Agent ping status là Online.
+5. Chọn instance **GuardDuty-Example: Compromised Instance: Scenario 3** và ấn **Start session**
+   
 ![create findings](public/images/3.attack/3.3/3.png)
-5. Thực hiện câu lệnh truy vấn dữ liệu Metadata:
+
+6. Thực hiện câu lệnh truy vấn dữ liệu Metadata:
 
          curl http://169.254.169.254/latest/meta-data/iam/security-credentials/GuardDuty-Example-EC2-Compromised
 
-6. Mở notepad, tiến hành ghi chú một số thông tin quan trọng sau:
+7. Mở notepad, tiến hành ghi chú một số thông tin quan trọng sau:
 - Access Key ID
 - Secret Access Key
 - Session Token
+
 ![create findings](public/images/3.attack/3.3/4.png)
 
 ### Tạo AWS CLI Profile trên máy tính cá nhân
@@ -412,7 +440,7 @@ Bằng các câu lệnh AWS CLI dưới đây, chúng ta tiến hành thực hi�
       aws iam create-user --user-name BuiChiBao --profile iamhacker
 
 ![create findings](public/images/3.attack/3.4/2.png)
-> Như vậy IAM user không thể get-user cũng như create-user
+> Như vậy IAM user không thể get-user cũng như create-user.
 
 **Liệu có quyền truy cập đến DynamoDB?**
 
@@ -430,7 +458,7 @@ Bằng các câu lệnh AWS CLI dưới đây, chúng ta tiến hành thực hi�
 ![create findings](public/images/3.attack/3.4/5.png)
 ![create findings](public/images/3.attack/3.4/6.png)
 
-> Như vậy hacker có quyền truy cập và truy vấn dữ liệu đến DynamoDB
+> Như vậy hacker có quyền truy cập và truy vấn dữ liệu đến DynamoDB.
 
 **Liệu có thể truy cập đến System Manager Parameter Store?**
 
@@ -458,24 +486,32 @@ Bằng các câu lệnh AWS CLI dưới đây, chúng ta tiến hành thực hi�
 7. **Lambda Function** tiến hành gán một chính sách mới nhằm thu hồi mọi Sessions đang hoạt động.
 
 #### Quá trình điều tra
-1. Truy cập [Security Hub](https://ap-southeast-1.console.aws.amazon.com/securityhub/home?region=ap-southeast-1#/), chúng ta thấy Findings ở mức **High** được phát hiện bởi GuardDuty. 
+1. Truy cập [Security Hub](https://ap-southeast-1.console.aws.amazon.com/securityhub/home?region=ap-southeast-1#/), chúng ta thấy Findings ở mức **High** được phát hiện bởi GuardDuty.
+   
 ![CredentialExfiltration](public/images/3.attack/3.4/hub.png)
-2. Truy cập [GuardDuty Console](https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/)
-3. Chúng ta sẽ thấy được Findings với định dạng như sau **UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration**.
+
+3. Truy cập [GuardDuty Console](https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/).
+4. Chúng ta sẽ thấy được Findings với định dạng như sau **UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration**.
+   
 ![CredentialExfiltration](public/images/3.attack/3.4/8.png)
-4. Nếu không có bất kỳ Finding nào, tiến hành nhấn nút Refresh và đợi.
-5. Từ Finding **UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration**, chúng ta có thể dễ dàng truy xuất một số thông tin sau:
+
+5. Nếu không có bất kỳ Finding nào, tiến hành nhấn nút Refresh và đợi.
+6. Từ Finding **UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration**, chúng ta có thể dễ dàng truy xuất một số thông tin sau:
 - High Severity
 - Thông báo rằng có người cố ý sử dụng IAM role credential ở ngoài EC2 instance
-> Mỗi GuardDuty Finding sẽ được gán một mức độ nghiêm trọng cụ thể - Low/Medium/High. Các mức độ này được định nghĩa bởi AWS, chúng được dùng để phân loại và xác định
+> Mỗi GuardDuty Finding sẽ được gán một mức độ nghiêm trọng cụ thể - Low/Medium/High. Các mức độ này được định nghĩa bởi AWS, chúng được dùng để phân loại và xác định.
 
 **Kiểm tra EventBridge Event Rule**
 
 1. Truy cập vào [EventBridge Event Rule](https://ap-southeast-1.console.aws.amazon.com/events/home?region=ap-southeast-1#/) ở ap-southeast-1.
-2. Ở thanh điều hướng bên tay trái, dưới **Events**, chọn Rules. Bạn sẽ thấy có 3 quy tắc đã được thiết lập (bởi CloudFormation Template), bắt đầu với tiền tố có dạng sau **GuardDuty-Event..**
+2. Ở thanh điều hướng bên tay trái, dưới **Events**, chọn Rules. Bạn sẽ thấy có 3 quy tắc đã được thiết lập (bởi CloudFormation Template), bắt đầu với tiền tố có dạng sau **GuardDuty-Event..**.
+   
 ![CredentialExfiltration](public/images/3.attack/3.4/10.png)
+
 3. Tiến hành chọn quy tắc có tên là **GuardDuty-Event-IAMUser-InstanceCredentialExfiltration**.
+   
 ![CredentialExfiltration](public/images/3.attack/3.4/11.png)
+
 4. Ở mục Event Pattern, chúng ta dễ dàng thấy được nguồn dữ liệu mà Event này sẽ ghi nhận và tiến hành kích hoạt các Target khi có bất kỳ sự kiện nào.
 
 > Bạn có thể tạo EventBridge Event Rule nhằm ghi nhận sự kiện của một loại Finding cụ thể hay bất kỳ loại Finding nào.
@@ -486,7 +522,9 @@ Việt đã thiết lập quá trình Remediation nhằm phản ứng tự độ
 
 1. Truy cập vào [Lambda Console](https://ap-southeast-1.console.aws.amazon.com/lambda/home?region=ap-southeast-1#/begin) ở ap-southeast-1.
 2. Ở thanh điều hướng bên tay trái, chọn Functions và tìm kiếm **GuardDuty-Example-Remediation-InstanceCredentialExfiltration**.
+   
 ![CredentialExfiltration](public/images/3.attack/3.4/9.png)
+
 > Về cơ bản, Lambda function này sẽ truy xuất thông tin về IAM Role từ Finding và tiến hành thêm IAM Policy.
 
 **Kiểm chứng quá trình Remediation**
