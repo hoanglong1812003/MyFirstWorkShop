@@ -12,21 +12,21 @@
     <title>Create Findings :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="../../css/nucleus.css?1751375362" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1751375362" rel="stylesheet">
-    <link href="../../css/hybrid.css?1751375362" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1751375362" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1751375362" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1751375362" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1751375362" rel="stylesheet">
-    <link href="../../css/theme.css?1751375362" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1751375362" rel="stylesheet">
+    <link href="../../css/nucleus.css?1751378550" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1751378550" rel="stylesheet">
+    <link href="../../css/hybrid.css?1751378550" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1751378550" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1751378550" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1751378550" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1751378550" rel="stylesheet">
+    <link href="../../css/theme.css?1751378550" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1751378550" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1751375362" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1751378550" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1751375362"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1751378550"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1751375362"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1751375362"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1751378550"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1751378550"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hoanglong1812003.github.io\/MyFirstWorkShop\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1751375362"></script>
+<script type="text/javascript" src="../../js/search.js?1751378550"></script>
 
     
   </div>
@@ -594,21 +594,19 @@
 <blockquote>
 <p>We will proceed to create the Findings</p></blockquote>
 <ol>
-<li>
-<p>Access the Session Manager at ap-southeast-1.
-<img src="../../images/3.attack/3.3/1.png" alt="create findings"></p>
-</li>
-<li>
-<p>In the right hand navigation bar, select <strong>Start Session</strong>.
-<img src="../../images/3.attack/3.3/2.png" alt="create findings"></p>
-</li>
-<li>
-<p>In the <strong>Target instances</strong> section we will see a managed EC2 instance with the following name format - <strong>GuardDuty-Example: Compromised Instance: Scenario 3</strong> with SSM Agent ping status as Online.</p>
-</li>
-<li>
-<p>Select instance <strong>GuardDuty-Example: Compromised Instance: Scenario 3</strong> and press <strong>Start session</strong>
-<img src="../../images/3.attack/3.3/3.png" alt="create findings"></p>
-</li>
+<li>Access the Session Manager at ap-southeast-1.</li>
+</ol>
+<p><img src="../../images/3.attack/3.3/1.png" alt="create findings"></p>
+<ol start="2">
+<li>In the right hand navigation bar, select <strong>Start Session</strong>.</li>
+</ol>
+<p><img src="../../images/3.attack/3.3/2.png" alt="create findings"></p>
+<ol start="3">
+<li>In the <strong>Target instances</strong> section we will see a managed EC2 instance with the following name format - <strong>GuardDuty-Example: Compromised Instance: Scenario 3</strong> with SSM Agent ping status as Online.</li>
+<li>Select instance <strong>GuardDuty-Example: Compromised Instance: Scenario 3</strong> and press <strong>Start session</strong>.</li>
+</ol>
+<p><img src="../../images/3.attack/3.3/3.png" alt="create findings"></p>
+<ol start="5">
 <li>
 <p>Execute the Metadata query statement:</p>
 <pre><code>  curl http://169.254.169.254/latest/meta-data/iam/security-credentials/GuardDuty-Example-EC2-Compromised
@@ -621,9 +619,9 @@
 <ul>
 <li>Access Key ID</li>
 <li>Secret Access Key</li>
-<li>Session Token
-<img src="../../images/3.attack/3.3/4.png" alt="create findings"></li>
+<li>Session Token</li>
 </ul>
+<p><img src="../../images/3.attack/3.3/4.png" alt="create findings"></p>
 <h3 id="create-aws-cli-profile-on-your-pc">Create AWS CLI Profile on your PC</h3>
 <p>After successfully retrieving the temporary IAM security credential, we will proceed to create an AWS CLI Profile on our personal computer. From Terminal/CMD/PowerShell, we proceed to replace the values ​​with the specific values ​​we collected, then enter the following commands:</p>
 <pre><code>  aws configure set profile.iamhacker.region ap-southeast-1
@@ -648,15 +646,15 @@
 <pre><code>  aws dynamodb list-tables --profile iamhacker
   aws dynamodb describe-table --table-name GuardDuty-Example-Customer-DB --profile iamhacker
 </code></pre>
-<p><img src="../../images/3.attack/3.4/3.png" alt="create findings">
-<img src="../../images/3.attack/3.4/4.png" alt="create findings">
+<p><img src="../../images/3.attack/3.4/3.png" alt="create findings"></p>
+<p><img src="../../images/3.attack/3.4/4.png" alt="create findings">
 <strong>Is there any access to DynamoDB data?</strong></p>
 <pre><code>  aws dynamodb scan --table-name GuardDuty-Example-Customer-DB --profile iamhacker
   aws dynamodb delete-table --table-name GuardDuty-Example-Customer-DB --profile iamhacker
   aws dynamodb list-tables --profile iamhacker
 </code></pre>
-<p><img src="../../images/3.attack/3.4/5.png" alt="create findings">
-<img src="../../images/3.attack/3.4/6.png" alt="create findings"></p>
+<p><img src="../../images/3.attack/3.4/5.png" alt="create findings"></p>
+<p><img src="../../images/3.attack/3.4/6.png" alt="create findings"></p>
 <blockquote>
 <p>This way the hacker has access and can query data to DynamoDB.</p></blockquote>
 <p><strong>Is it possible to access the System Manager Parameter Store?</strong></p>
@@ -916,19 +914,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1751375362"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1751375362"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1751375362"></script>
-    <script src="../../js/jquery.sticky.js?1751375362"></script>
-    <script src="../../js/featherlight.min.js?1751375362"></script>
-    <script src="../../js/highlight.pack.js?1751375362"></script>
+    <script src="../../js/clipboard.min.js?1751378550"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1751378550"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1751378550"></script>
+    <script src="../../js/jquery.sticky.js?1751378550"></script>
+    <script src="../../js/featherlight.min.js?1751378550"></script>
+    <script src="../../js/highlight.pack.js?1751378550"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1751375362"></script>
-    <script src="../../js/learn.js?1751375362"></script>
-    <script src="../../js/hugo-learn.js?1751375362"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1751378550"></script>
+    <script src="../../js/learn.js?1751378550"></script>
+    <script src="../../js/hugo-learn.js?1751378550"></script>
 
-    <link href="../../mermaid/mermaid.css?1751375362" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1751375362"></script>
+    <link href="../../mermaid/mermaid.css?1751378550" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1751378550"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

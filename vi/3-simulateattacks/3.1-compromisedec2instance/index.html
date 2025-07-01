@@ -12,21 +12,21 @@
     <title>Compromised EC2 Instance :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="../../../css/nucleus.css?1751375362" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1751375362" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1751375362" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1751375362" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1751375362" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1751375362" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1751375362" rel="stylesheet">
-    <link href="../../../css/theme.css?1751375362" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1751375362" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1751378550" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1751378550" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1751378550" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1751378550" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1751378550" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1751378550" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1751378550" rel="stylesheet">
+    <link href="../../../css/theme.css?1751378550" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1751378550" rel="stylesheet">
     
-    <link href="../../../css/theme-workshop.css?1751375362" rel="stylesheet">
+    <link href="../../../css/theme-workshop.css?1751378550" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1751375362"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1751378550"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1751375362"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1751375362"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1751378550"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1751378550"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hoanglong1812003.github.io\/MyFirstWorkShop\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1751375362"></script>
+<script type="text/javascript" src="../../../js/search.js?1751378550"></script>
 
     
   </div>
@@ -587,10 +587,10 @@
 	<h3 id="tình-huống-1">Tình huống 1</h3>
 <p>Vào một buổi sáng thứ 2, bạn Long đến văn phòng sớm, chuẩn bị một tách cà phê, ngồi vào chỗ và mở laptop, bắt đầu các công việc hằng ngày như gửi E-mail, viết kế hoạch. Đột nhiên, bạn Long bắt đầu nhận một chuỗi những E-mails với nội dung liên quan đến sự phát hiện mới nhất đối với các mối nguy hại, điều mà bạn Long chưa từng thấy trước đây, tuy nhiên bạn Long bắt đầu tìm hiểu và điều tra ngay lập tức. Điều đáng mừng là đồng nghiệp của bạn, Việt đã thiết lập những phản ứng tự động dành cho những Findings ấy thế nên chúng đã được giải quyết tức.</p>
 <p><em>Vậy những phản ứng tự động Việt đã thiết lập là những phản ứng nào?</em></p>
-<p>Nội dung E-mail đầu tiên mà bạn Long được nhận được với việc EC2 instance của bạn có thể đã bị xâm nhập như sau:
-<img src="../../../images/3.attack/3.1/1.png" alt="Compromised EC2 Instance">
-Nội dung E-mail thứ hai ngay sau đó mà bạn nhận được với tình hình đã được giải quyết tức thì như sau:
-<img src="../../../images/3.attack/3.1/2.png" alt="Compromised EC2 Instance"></p>
+<p>Nội dung E-mail đầu tiên mà bạn Long được nhận được với việc EC2 instance của bạn có thể đã bị xâm nhập như sau:</p>
+<p><img src="../../../images/3.attack/3.1/1.png" alt="Compromised EC2 Instance"></p>
+<p>Nội dung E-mail thứ hai ngay sau đó mà bạn nhận được với tình hình đã được giải quyết tức thì như sau:</p>
+<p><img src="../../../images/3.attack/3.1/2.png" alt="Compromised EC2 Instance"></p>
 <h3 id="kiến-trúc-tổng-quan">Kiến trúc tổng quan</h3>
 <p><img src="../../../images/3.attack/3.1/CompromisedEC2-1.png" alt="Compromised EC2 Instance"></p>
 <ol>
@@ -608,32 +608,34 @@ Nội dung E-mail thứ hai ngay sau đó mà bạn nhận được với tình 
 <p>Mặc dù bạn có thể thấy các Findings này từ GuardDuty Console, đa số các khách hàng đều muốn tập hợp chúng, từ các AWS Regions và AWS Accounts, đến một hệ thống quản lý dữ liệu bảo mật tập trung (<strong>SIEM</strong>) để tiến hành phân tích và thực hiện quá trình Remediations. Cách tiếp cận thông dụng nhất là cấu hình GuardDuty dưới một mô hình Admin/Member và sử dụng quy trình kết hợp giữa EventBridge Event Rules và Lambda Function để tiến hành đẩy những Findings này tới <strong>SIEM</strong> hoặc một <strong>Centralized Logging Framework</strong>. Ngoài ra còn có một số giải pháp đến từ các đối tác của AWS, giúp khách hàng thực hiện các tác vụ hợp nhất và đẩy dữ liệu dễ dàng nhất.</p>
 <ol>
 <li>
-<p>Truy cập  vào <a href="https://ap-southeast-1.console.aws.amazon.com/securityhub/home?region=ap-southeast-1#/">Security Hub</a> ở ap-southeast-1</p>
+<p>Truy cập  vào <a href="https://ap-southeast-1.console.aws.amazon.com/securityhub/home?region=ap-southeast-1#/">Security Hub</a> ở ap-southeast-1.</p>
 </li>
 <li>
-<p>Chúng ta sẽ thấy được các cảnh báo bảo mật ở GuardDuty
-<img src="../../../images/3.attack/3.1/hub.png" alt="Compromised EC2 Instance"></p>
+<p>Chúng ta sẽ thấy được các cảnh báo bảo mật ở GuardDuty với Finding: <strong>UnauthorizedAccess:EC2/MaliciousIPCaller.Custom</strong>.</p>
 </li>
+</ol>
+<p><img src="../../../images/3.attack/3.1/hub.png" alt="Compromised EC2 Instance"></p>
+<ol start="3">
 <li>
 <p>Tiến hành truy cập vào GuardDuty Console ở ap-southeast-1</p>
 </li>
 <li>
-<p>Chúng ta sẽ thấy được một Finding với định dạng như sau <strong>UnauthorizedAccess:EC2/MaliciousIPCaller.Custom</strong>
-<img src="../../../images/3.attack/3.1/4.png" alt="Compromised EC2 Instance"></p>
+<p>Chúng ta sẽ thấy được một Finding với định dạng như sau <strong>UnauthorizedAccess:EC2/MaliciousIPCaller.Custom</strong>.</p>
 </li>
-<li>
-<p>Nếu không có Finding nào, vui lòng ấn refresh và đợi.</p>
-</li>
+</ol>
+<p><img src="../../../images/3.attack/3.1/4.png" alt="Compromised EC2 Instance"></p>
+<ol start="5">
+<li>Nếu không có Finding nào, vui lòng ấn refresh và đợi.</li>
 </ol>
 
 <div class="notices note" ><p>Người dùng có thể truy xuất các Findings ở GuardDuty console trong vòng 90 ngày.</p>
 </div>
 
-<ol>
+<ol start="6">
 <li>Trong môi trường của bạn, kiểu Finding này chỉ ra rằng một EC2 instance đang thực hiện quá trình giao tiếp tới địa chỉ IP (đã được thêm vào Threat Lists).</li>
-<li>Tiến hành chọn Lists ở thanh điều hướng (bên tay trái) để có thể xem Threat List mà Việt đã thêm trước đây <strong>Example-Threat-List</strong>.
-<img src="../../../images/3.attack/3.1/5.png" alt="Compromised EC2 Instance"></li>
+<li>Tiến hành chọn Lists ở thanh điều hướng (bên tay trái) để có thể xem Threat List mà Việt đã thêm trước đây <strong>Example-Threat-List</strong>.</li>
 </ol>
+<p><img src="../../../images/3.attack/3.1/5.png" alt="Compromised EC2 Instance"></p>
 <blockquote>
 <p>GuardDuty sử dụng những hệ thống Threat Intelligence được cung cấp bởi đội ngũ AWS Security và bên thứ 3 như ProofPoint và CrowdStike. Bạn có thể mở rộng tầm quan sát của GuardDuty bằng cách tự cấu hình danh sách IP đáng tin cậy (Trusted IP Lists) và danh sách các mối nguy hại (Threat Lists). Nếu bạn đã thiết lập GuardDuty theo cấu trúc Admin/Member, từ tài khoản GuardDuty Admin, bạn có thể quản lý các danh sách trên và để các tài khoản Members kế thừa. Mặc nhiên, các tài khoản Members sẽ không quyền chỉnh sửa các danh sách này.</p></blockquote>
 
@@ -643,26 +645,26 @@ Nội dung E-mail thứ hai ngay sau đó mà bạn nhận được với tình 
 <p><strong>Kiểm tra EventBridge Event Rule</strong>
 Việt sử dụng EventBridge Event Rules để gửi thông báo đến bạn về các Findings cùng với nội dung các bước của quá trình Remediations. Chúng ta sẽ tiến hành khảo sát chi tiết hơn để hiểu rõ Việt đã thiết lập những gì và quá trình này diễn ra như thế nào?</p>
 <ol>
-<li>
-<p>Truy cập vào <a href="https://ap-southeast-1.console.aws.amazon.com/events/home?region=ap-southeast-1#/">EventBridge</a> Console ở ap-southeast-1
-<img src="../../../images/3.attack/3.1/6.png" alt="Compromised EC2 Instance"></p>
-</li>
+<li>Truy cập vào <a href="https://ap-southeast-1.console.aws.amazon.com/events/home?region=ap-southeast-1#/">EventBridge</a> Console ở ap-southeast-1.</li>
+</ol>
+<p><img src="../../../images/3.attack/3.1/6.png" alt="Compromised EC2 Instance"></p>
+<ol start="2">
 <li>
 <p>Ở thanh điều hướng bên tay trái, dưới <strong>Events</strong>, chọn <strong>Rules</strong>. Bạn sẽ thấy có 3 quy tắc đã được thiết lập (bởi CloudFormation Template), bắt đầu với tiền tố có dạng sau <em>GuardDuty-Event</em>.</p>
 </li>
 <li>
-<p>Tiến hành chọn quy tắc có tên là <strong>GuardDuty-Event-EC2-MaliciousIPCaller</strong>.
-<img src="../../../images/3.attack/3.1/7.png" alt="Compromised EC2 Instance"></p>
+<p>Tiến hành chọn quy tắc có tên là <strong>GuardDuty-Event-EC2-MaliciousIPCaller</strong>.</p>
 </li>
-<li>
-<p>Bạn sẽ dễ dàng nhận thấy có 2 mục tiêu tại vùng Targets.</p>
-</li>
+</ol>
+<p><img src="../../../images/3.attack/3.1/7.png" alt="Compromised EC2 Instance"></p>
+<ol start="4">
+<li>Bạn sẽ dễ dàng nhận thấy có 2 mục tiêu tại vùng Targets.</li>
 </ol>
 <ul>
 <li><strong>Lambda Function</strong></li>
-<li><strong>SNS Topic</strong>: Tiến hành gửi thông báo E-mail cho bạn dựa trên dữ liệu được cung cấp bởi <strong>EventBridge Event Rule</strong>. Thay vì toàn bộ dữ liệu JSON được sử dụng, bằng việc sử dụng <strong>Input Transformer</strong>, Việt đã tuỳ chỉnh nội dung thông báo.
-<img src="../../../images/3.attack/3.1/8.png" alt="Compromised EC2 Instance"></li>
+<li><strong>SNS Topic</strong>: Tiến hành gửi thông báo E-mail cho bạn dựa trên dữ liệu được cung cấp bởi <strong>EventBridge Event Rule</strong>. Thay vì toàn bộ dữ liệu JSON được sử dụng, bằng việc sử dụng <strong>Input Transformer</strong>, Việt đã tuỳ chỉnh nội dung thông báo.</li>
 </ul>
+<p><img src="../../../images/3.attack/3.1/8.png" alt="Compromised EC2 Instance"></p>
 <p><strong>Kiểm tra quá trình Remediation dựa trên Lambda Function</strong></p>
 <p>Lambda Function là chìa khoá nắm giữ logic nhằm thực hiện các bước của quá trình Remediations dành cho các Findings. Việt đã thiết lập Lambda Function nhằm loại bỏ và thay thế Security Group của EC2 compromised instance bằng một Security Group <strong>không chứa bất kỳ một quy tắc Ingress/Egress nào</strong>. Điều này sẽ giúp <strong>cô lập EC2 compromised instance ra khỏi hệ thống mạng hiện tại</strong>.</p>
 <p><em>Để tiến hành kiểm tra quá trình Remediation:</em></p>
@@ -678,39 +680,37 @@ Việt sử dụng EventBridge Event Rules để gửi thông báo đến bạn 
 </li>
 </ol>
 <ul>
-<li>Configuration
+<li>Configuration.
 <ul>
 <li>Tại thanh Designer, chúng ta sẽ dễ dàng thấy mối quan hệ với EventBridge Event Rule.</li>
 <li>Ở phần Function code, những logic về coding sẽ được thực thi tại đây.</li>
 </ul>
 </li>
-<li>Permissions</li>
-<li>Monitoring
-<img src="../../../images/3.attack/3.1/9.png" alt="Compromised EC2 Instance">
-<img src="../../../images/3.attack/3.1/10.png" alt="Compromised EC2 Instance"></li>
+<li>Permissions.</li>
+<li>Monitoring.</li>
 </ul>
+<p><img src="../../../images/3.attack/3.1/9.png" alt="Compromised EC2 Instance"></p>
+<p><img src="../../../images/3.attack/3.1/10.png" alt="Compromised EC2 Instance"></p>
 <p><strong>Xác nhận quá trình Remediation đã thành công</strong>
 Để đảm bảo kết quả của quá trình Remediation, chúng ta cần phải xem xét EC2 instance đã bị cô lập hay chưa. Tại thời điểm này, bạn đã nhận được một E-mail cùng với một số thông tin quan trọng.</p>
 <ol>
-<li>
-<p>Truy cập vào EC2 console ở ap-southeast-1 tại <a href="https://ap-southeast-1.console.aws.amazon.com/ec2/home?region=ap-southeast-1#Overview:">đây</a>
-<img src="../../../images/3.attack/3.1/11.png" alt="Compromised EC2 Instance"></p>
-</li>
+<li>Truy cập vào EC2 console ở ap-southeast-1 tại <a href="https://ap-southeast-1.console.aws.amazon.com/ec2/home?region=ap-southeast-1#Overview:">đây</a>.</li>
+</ol>
+<p><img src="../../../images/3.attack/3.1/11.png" alt="Compromised EC2 Instance"></p>
+<ol start="2">
 <li>
 <p>Chọn <strong>Instances</strong>, chúng sẽ thấy được 3 EC2 instance với tiền tố bắt đầu với định dạng sau <em>GuardDuty-Example</em>.</p>
 </li>
 <li>
-<p>Dựa trên <strong>instance ID</strong> có từ GuardDuty Finding hay thông báo E-mail, chúng ta chọn EC2 instance tương ứng: <em>GuardDuty-Example: Compromised Instance: Scenario 1</em>.
-<img src="../../../images/3.attack/3.1/12.png" alt="Compromised EC2 Instance"></p>
-</li>
-<li>
-<p>Sau khi quá trình Remediation hoàn thành, chúng ta sẽ kiểm tra <strong>Security Group</strong> của EC2 compromised instance này, sẽ có định dạng tên tương tự sau <strong>ForensicSecurityGroup</strong>.</p>
-</li>
-<li>
-<p><strong>ForensicSecurityGroup</strong> sẽ không có bất kỳ một quy tắc Ingress/Egress nào chứa địa chỉ IP trong <strong>Example-Threat-List</strong>.
-<img src="../../../images/3.attack/3.1/13.png" alt="Compromised EC2 Instance"></p>
+<p>Dựa trên <strong>instance ID</strong> có từ GuardDuty Finding hay thông báo E-mail, chúng ta chọn EC2 instance tương ứng: <em>GuardDuty-Example: Compromised Instance: Scenario 1</em>.</p>
 </li>
 </ol>
+<p><img src="../../../images/3.attack/3.1/12.png" alt="Compromised EC2 Instance"></p>
+<ol start="4">
+<li>Sau khi quá trình Remediation hoàn thành, chúng ta sẽ kiểm tra <strong>Security Group</strong> của EC2 compromised instance này, sẽ có định dạng tên tương tự sau <strong>ForensicSecurityGroup</strong>.</li>
+<li><strong>ForensicSecurityGroup</strong> sẽ không có bất kỳ một quy tắc Ingress/Egress nào chứa địa chỉ IP trong <strong>Example-Threat-List</strong>.</li>
+</ol>
+<p><img src="../../../images/3.attack/3.1/13.png" alt="Compromised EC2 Instance"></p>
 
 
 
@@ -956,19 +956,19 @@ Việt sử dụng EventBridge Event Rules để gửi thông báo đến bạn 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1751375362"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1751375362"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1751375362"></script>
-    <script src="../../../js/jquery.sticky.js?1751375362"></script>
-    <script src="../../../js/featherlight.min.js?1751375362"></script>
-    <script src="../../../js/highlight.pack.js?1751375362"></script>
+    <script src="../../../js/clipboard.min.js?1751378550"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1751378550"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1751378550"></script>
+    <script src="../../../js/jquery.sticky.js?1751378550"></script>
+    <script src="../../../js/featherlight.min.js?1751378550"></script>
+    <script src="../../../js/highlight.pack.js?1751378550"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1751375362"></script>
-    <script src="../../../js/learn.js?1751375362"></script>
-    <script src="../../../js/hugo-learn.js?1751375362"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1751378550"></script>
+    <script src="../../../js/learn.js?1751378550"></script>
+    <script src="../../../js/hugo-learn.js?1751378550"></script>
 
-    <link href="../../../mermaid/mermaid.css?1751375362" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1751375362"></script>
+    <link href="../../../mermaid/mermaid.css?1751378550" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1751378550"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

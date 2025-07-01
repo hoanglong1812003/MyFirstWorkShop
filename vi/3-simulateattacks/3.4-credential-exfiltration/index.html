@@ -12,21 +12,21 @@
     <title>Credential Exfiltration :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="../../../css/nucleus.css?1751375362" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1751375362" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1751375362" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1751375362" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1751375362" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1751375362" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1751375362" rel="stylesheet">
-    <link href="../../../css/theme.css?1751375362" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1751375362" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1751378550" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1751378550" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1751378550" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1751378550" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1751378550" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1751378550" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1751378550" rel="stylesheet">
+    <link href="../../../css/theme.css?1751378550" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1751378550" rel="stylesheet">
     
-    <link href="../../../css/theme-workshop.css?1751375362" rel="stylesheet">
+    <link href="../../../css/theme-workshop.css?1751378550" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1751375362"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1751378550"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1751375362"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1751375362"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1751378550"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1751378550"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hoanglong1812003.github.io\/MyFirstWorkShop\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1751375362"></script>
+<script type="text/javascript" src="../../../js/search.js?1751378550"></script>
 
     
   </div>
@@ -596,11 +596,19 @@
 </ol>
 <h4 id="quá-trình-điều-tra">Quá trình điều tra</h4>
 <ol>
-<li>Truy cập <a href="https://ap-southeast-1.console.aws.amazon.com/securityhub/home?region=ap-southeast-1#/">Security Hub</a>, chúng ta thấy Findings ở mức <strong>High</strong> được phát hiện bởi GuardDuty.
-<img src="../../../images/3.attack/3.4/hub.png" alt="CredentialExfiltration"></li>
-<li>Truy cập <a href="https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/">GuardDuty Console</a></li>
-<li>Chúng ta sẽ thấy được Findings với định dạng như sau <strong>UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration</strong>.
-<img src="../../../images/3.attack/3.4/8.png" alt="CredentialExfiltration"></li>
+<li>Truy cập <a href="https://ap-southeast-1.console.aws.amazon.com/securityhub/home?region=ap-southeast-1#/">Security Hub</a>, chúng ta thấy Findings ở mức <strong>High</strong> được phát hiện bởi GuardDuty.</li>
+</ol>
+<p><img src="../../../images/3.attack/3.4/hub.png" alt="CredentialExfiltration"></p>
+<ol start="2">
+<li>
+<p>Truy cập <a href="https://ap-southeast-1.console.aws.amazon.com/guardduty/home?region=ap-southeast-1#/">GuardDuty Console</a>.</p>
+</li>
+<li>
+<p>Chúng ta sẽ thấy được Findings với định dạng như sau <strong>UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration</strong>.</p>
+</li>
+</ol>
+<p><img src="../../../images/3.attack/3.4/8.png" alt="CredentialExfiltration"></p>
+<ol start="4">
 <li>Nếu không có bất kỳ Finding nào, tiến hành nhấn nút Refresh và đợi.</li>
 <li>Từ Finding <strong>UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration</strong>, chúng ta có thể dễ dàng truy xuất một số thông tin sau:</li>
 </ol>
@@ -613,10 +621,14 @@
 <p><strong>Kiểm tra EventBridge Event Rule</strong></p>
 <ol>
 <li>Truy cập vào <a href="https://ap-southeast-1.console.aws.amazon.com/events/home?region=ap-southeast-1#/">EventBridge Event Rule</a> ở ap-southeast-1.</li>
-<li>Ở thanh điều hướng bên tay trái, dưới <strong>Events</strong>, chọn Rules. Bạn sẽ thấy có 3 quy tắc đã được thiết lập (bởi CloudFormation Template), bắt đầu với tiền tố có dạng sau <strong>GuardDuty-Event..</strong>
-<img src="../../../images/3.attack/3.4/10.png" alt="CredentialExfiltration"></li>
-<li>Tiến hành chọn quy tắc có tên là <strong>GuardDuty-Event-IAMUser-InstanceCredentialExfiltration</strong>.
-<img src="../../../images/3.attack/3.4/11.png" alt="CredentialExfiltration"></li>
+<li>Ở thanh điều hướng bên tay trái, dưới <strong>Events</strong>, chọn Rules. Bạn sẽ thấy có 3 quy tắc đã được thiết lập (bởi CloudFormation Template), bắt đầu với tiền tố có dạng sau <strong>GuardDuty-Event..</strong>.</li>
+</ol>
+<p><img src="../../../images/3.attack/3.4/10.png" alt="CredentialExfiltration"></p>
+<ol start="3">
+<li>Tiến hành chọn quy tắc có tên là <strong>GuardDuty-Event-IAMUser-InstanceCredentialExfiltration</strong>.</li>
+</ol>
+<p><img src="../../../images/3.attack/3.4/11.png" alt="CredentialExfiltration"></p>
+<ol start="4">
 <li>Ở mục Event Pattern, chúng ta dễ dàng thấy được nguồn dữ liệu mà Event này sẽ ghi nhận và tiến hành kích hoạt các Target khi có bất kỳ sự kiện nào.</li>
 </ol>
 <blockquote>
@@ -625,9 +637,9 @@
 <p>Việt đã thiết lập quá trình Remediation nhằm phản ứng tự động với mối nguy hại này thông qua Lambda function. Chúng ta có thể kiểm tra đoạn mã được lập trình để hiểu thêm về quá trình này.</p>
 <ol>
 <li>Truy cập vào <a href="https://ap-southeast-1.console.aws.amazon.com/lambda/home?region=ap-southeast-1#/begin">Lambda Console</a> ở ap-southeast-1.</li>
-<li>Ở thanh điều hướng bên tay trái, chọn Functions và tìm kiếm <strong>GuardDuty-Example-Remediation-InstanceCredentialExfiltration</strong>.
-<img src="../../../images/3.attack/3.4/9.png" alt="CredentialExfiltration"></li>
+<li>Ở thanh điều hướng bên tay trái, chọn Functions và tìm kiếm <strong>GuardDuty-Example-Remediation-InstanceCredentialExfiltration</strong>.</li>
 </ol>
+<p><img src="../../../images/3.attack/3.4/9.png" alt="CredentialExfiltration"></p>
 <blockquote>
 <p>Về cơ bản, Lambda function này sẽ truy xuất thông tin về IAM Role từ Finding và tiến hành thêm IAM Policy.</p></blockquote>
 <p><strong>Kiểm chứng quá trình Remediation</strong></p>
@@ -885,19 +897,19 @@ Tiến hành thực thi câu lệnh sau:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1751375362"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1751375362"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1751375362"></script>
-    <script src="../../../js/jquery.sticky.js?1751375362"></script>
-    <script src="../../../js/featherlight.min.js?1751375362"></script>
-    <script src="../../../js/highlight.pack.js?1751375362"></script>
+    <script src="../../../js/clipboard.min.js?1751378550"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1751378550"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1751378550"></script>
+    <script src="../../../js/jquery.sticky.js?1751378550"></script>
+    <script src="../../../js/featherlight.min.js?1751378550"></script>
+    <script src="../../../js/highlight.pack.js?1751378550"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1751375362"></script>
-    <script src="../../../js/learn.js?1751375362"></script>
-    <script src="../../../js/hugo-learn.js?1751375362"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1751378550"></script>
+    <script src="../../../js/learn.js?1751378550"></script>
+    <script src="../../../js/hugo-learn.js?1751378550"></script>
 
-    <link href="../../../mermaid/mermaid.css?1751375362" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1751375362"></script>
+    <link href="../../../mermaid/mermaid.css?1751378550" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1751378550"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
