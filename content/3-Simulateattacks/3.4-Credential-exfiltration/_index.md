@@ -13,7 +13,7 @@ pre : " <b> 3.4. </b> "
 
 1. Remote server accesses compromised EC2 instance and steals IAM role credentials via Metadata.
 2. This server sets up an AWS CLI Profile to make API calls to an AWS account.
-3. **Security Hub** detects anomalies
+3. **GuardDuty** discovered an unusual security vulnerability and sent it to **Security Hub** for synthesis.
 4. **GuardDuty** generates relevant Findings and simultaneously sends them to **GuardDuty console** and **EventBridge Events**.
 5. **EventBridge Event Rule** triggers **SNS Topic** and **Lambda Function**.
 6. **SNS Topic** proceeds to send E-mail notification with Finding details.

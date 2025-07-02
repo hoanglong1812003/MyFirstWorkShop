@@ -24,7 +24,7 @@ The second E-mail you received shortly after with the situation being resolved i
 ![Compromised EC2 Instance](/images/3.attack/3.1/CompromisedEC2-1.png) 
 
 1. A compromised EC2 instance sends pings to the EIP address of a malicious EC2 instance. That EIP address has been added to the Custom Threat List.
-2. Security Hub discovered an unusual security vulnerability.
+2. GuardDuty discovered an unusual security vulnerability and sent it to Security Hub for synthesis.
 3. GuardDuty monitors VPC Flow Logs (including CloudTrail and DNS Logs) and analyzes the situation based on Machine Learning, Custom Threat Lists, and more.
 4. GuardDuty generates a Finding and displays it on the GuardDuty Console and sends this event to EventBridge Events.
 5. Based on this event, EventBridge Event Rule reacts and triggers the corresponding SNS Topic and Lambda Function simultaneously.

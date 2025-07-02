@@ -13,7 +13,7 @@ pre : " <b> 3.4. </b> "
 
 1. Máy chủ từ xa truy cập đến EC2 compromised instance và đánh cắp IAM role credential thông qua dữ liệu Metadata.
 2. Máy chủ này thiết lập AWS CLI Profile để tiến hành gọi API đến tài khoản AWS.
-3. **Security Hub** phát hiện các bất thường
+3. **GuardDuty** phát hiện ra lỗ hổng bảo mật bất thường, tiến hành gửi về **Security Hub** để tổng hợp.
 4. **GuardDuty** sinh ra những Findings liên quan và đồng thời gửi tới **GuardDuty console** và **EventBridge Events**.
 5. **EventBridge Event Rule** kích hoạt **SNS Topic** và **Lambda Function**.
 6. **SNS Topic** tiến hành gửi thông báo E-mail với chi tiết Finding.

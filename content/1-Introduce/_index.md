@@ -11,7 +11,9 @@ pre : " <b> 1. </b> "
 In this lab, you will learn about Amazon GuardDuty combined with AWS Security Hub . Amazon GuardDuty is a service that detects and remediates threats to the system, while AWS Security Hub will provide us with a comprehensive view of priority security alerts and compliance status on AWS accounts. We will analyze, evaluate, and how to alert and fix security issues based on the "Findings" of GuardDuty and Security Hub.
 
  ### About GuardDuty
+
  **Data Sources**
+ 
  Once enabled in an AWS Region, GuardDuty analyzes all data coming from:
  1. VPC Flow Logs
  2. CloudTrail Logs

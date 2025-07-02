@@ -24,7 +24,7 @@ Nội dung E-mail thứ hai ngay sau đó mà bạn nhận được với tình 
 ![Compromised EC2 Instance](/images/3.attack/3.1/CompromisedEC2-1.png) 
 
 1. Một EC2 compromised instance, tiến hành gửi gói tin pings đến địa chỉ EIP của một EC2 instance nguy hại. Địa chỉ EIP đó đã được thêm ở Custom Threat List.
-2. Security Hub phát hiện ra lỗ hổng bảo mật bất thường.
+2. GuardDuty phát hiện ra lỗ hổng bảo mật bất thường, tiến hành gửi về Security Hub để tổng hợp.
 3. GuardDuty tiến hành theo dõi VPC Flow Logs (kể cả CloudTrail và DNS Logs) và phân tích tình hình dựa trên Machine Learning, Custom Threat List và một số cở sở khác.
 4. GuardDuty sinh ra một Finding và hiển thị trên GuardDuty Console và gửi sự kiện này đến EventBridge Events.
 5. Dựa trên sự kiện này, EventBridge Event Rule tiến hành phản ứng và kích hoạt đồng thời SNS Topic và Lambda Function tương ứng.

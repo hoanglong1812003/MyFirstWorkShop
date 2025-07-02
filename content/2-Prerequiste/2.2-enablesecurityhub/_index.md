@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 2.2 </b> "
 ---
 
-### Enable Security Hub
+**Enable Security Hub**
 
 In this step we will activate Security Hub so that users have a more comprehensive view of security warnings.
 
