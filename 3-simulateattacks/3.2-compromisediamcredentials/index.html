@@ -12,21 +12,21 @@
     <title>Compromised IAM credentials :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="../../css/nucleus.css?1751445407" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1751445407" rel="stylesheet">
-    <link href="../../css/hybrid.css?1751445407" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1751445407" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1751445407" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1751445407" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1751445407" rel="stylesheet">
-    <link href="../../css/theme.css?1751445407" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1751445407" rel="stylesheet">
+    <link href="../../css/nucleus.css?1751445496" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1751445496" rel="stylesheet">
+    <link href="../../css/hybrid.css?1751445496" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1751445496" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1751445496" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1751445496" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1751445496" rel="stylesheet">
+    <link href="../../css/theme.css?1751445496" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1751445496" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1751445407" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1751445496" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1751445407"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1751445496"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1751445407"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1751445407"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1751445496"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1751445496"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hoanglong1812003.github.io\/MyFirstWorkShop\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1751445407"></script>
+<script type="text/javascript" src="../../js/search.js?1751445496"></script>
 
     
   </div>
@@ -594,7 +594,7 @@
 <p><img src="../../images/3.attack/3.2/CompromisedIAMcredentials-1.png" alt="Compromised IAM credentials"></p>
 <ol>
 <li><strong>This EC2-malicious</strong> instance is making <strong>API calls</strong> , the EIP of this instance has been added to <strong>the Threat List</strong>. The content of the API calls has been recorded in the CloudTrail log.</li>
-<li><strong>Security Hub</strong> detects suspicious actions detected by GuardDuty</li>
+<li><strong>GuardDuty</strong> discovered an unusual security vulnerability and sent it to <strong>Security Hub</strong> for synthesis.</li>
 <li><strong>GuardDuty</strong> looks at <strong>CloudTrail</strong> Logs along with <strong>VPC Flow Logs</strong> and <strong>DNS Logs</strong> , and assesses the situation based on certain baselines.</li>
 <li><strong>GuardDuty</strong> generates the corresponding Findings and simultaneously sends the details to the GuardDuty Console and EventBridge Events .</li>
 <li><strong>EventBridge Event Rule</strong> triggers the <strong>SNS Topic</strong>.</li>
@@ -925,19 +925,19 @@ Since Viet has never set up a Remediation process for this Finding, Long needs t
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1751445407"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1751445407"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1751445407"></script>
-    <script src="../../js/jquery.sticky.js?1751445407"></script>
-    <script src="../../js/featherlight.min.js?1751445407"></script>
-    <script src="../../js/highlight.pack.js?1751445407"></script>
+    <script src="../../js/clipboard.min.js?1751445496"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1751445496"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1751445496"></script>
+    <script src="../../js/jquery.sticky.js?1751445496"></script>
+    <script src="../../js/featherlight.min.js?1751445496"></script>
+    <script src="../../js/highlight.pack.js?1751445496"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1751445407"></script>
-    <script src="../../js/learn.js?1751445407"></script>
-    <script src="../../js/hugo-learn.js?1751445407"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1751445496"></script>
+    <script src="../../js/learn.js?1751445496"></script>
+    <script src="../../js/hugo-learn.js?1751445496"></script>
 
-    <link href="../../mermaid/mermaid.css?1751445407" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1751445407"></script>
+    <link href="../../mermaid/mermaid.css?1751445496" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1751445496"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
