@@ -12,21 +12,21 @@
     <title>Compromised EC2 Instance :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="../../../css/nucleus.css?1751447251" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1751447251" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1751447251" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1751447251" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1751447251" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1751447251" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1751447251" rel="stylesheet">
-    <link href="../../../css/theme.css?1751447251" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1751447251" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1751448331" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1751448331" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1751448331" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1751448331" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1751448331" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1751448331" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1751448331" rel="stylesheet">
+    <link href="../../../css/theme.css?1751448331" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1751448331" rel="stylesheet">
     
-    <link href="../../../css/theme-workshop.css?1751447251" rel="stylesheet">
+    <link href="../../../css/theme-workshop.css?1751448331" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1751447251"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1751448331"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1751447251"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1751447251"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1751448331"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1751448331"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hoanglong1812003.github.io\/MyFirstWorkShop\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1751447251"></script>
+<script type="text/javascript" src="../../../js/search.js?1751448331"></script>
 
     
   </div>
@@ -594,13 +594,13 @@
 <h3 id="kiến-trúc-tổng-quan">Kiến trúc tổng quan</h3>
 <p><img src="../../../images/3.attack/3.1/CompromisedEC2-1.png" alt="Compromised EC2 Instance"></p>
 <ol>
-<li>Một EC2 compromised instance, tiến hành gửi gói tin pings đến địa chỉ EIP của một EC2 instance nguy hại. Địa chỉ EIP đó đã được thêm ở Custom Threat List.</li>
-<li>GuardDuty phát hiện ra lỗ hổng bảo mật bất thường, tiến hành gửi về Security Hub để tổng hợp.</li>
-<li>GuardDuty tiến hành theo dõi VPC Flow Logs (kể cả CloudTrail và DNS Logs) và phân tích tình hình dựa trên Machine Learning, Custom Threat List và một số cở sở khác.</li>
-<li>GuardDuty sinh ra một Finding và hiển thị trên GuardDuty Console và gửi sự kiện này đến EventBridge Events.</li>
-<li>Dựa trên sự kiện này, EventBridge Event Rule tiến hành phản ứng và kích hoạt đồng thời SNS Topic và Lambda Function tương ứng.</li>
-<li>SNS Topic sẽ gửi E-mail cùng với chi tiết Finding cho bạn.</li>
-<li>Lambda Function sẽ tiến hành cô lập EC2 compromised instance.</li>
+<li>Một <strong>EC2 compromised instance</strong>, tiến hành gửi gói tin pings đến địa chỉ EIP của một EC2 instance nguy hại. Địa chỉ EIP đó đã được thêm ở <strong>Custom Threat List</strong>.</li>
+<li><strong>GuardDuty</strong> phát hiện ra lỗ hổng bảo mật bất thường, tiến hành gửi về <strong>Security Hub</strong> để tổng hợp.</li>
+<li><strong>GuardDuty</strong> tiến hành theo dõi <strong>VPC Flow Logs</strong> (kể cả CloudTrail và DNS Logs) và phân tích tình hình dựa trên Machine Learning, Custom Threat List và một số cở sở khác.</li>
+<li><strong>GuardDuty</strong> sinh ra một Finding và hiển thị trên GuardDuty Console và gửi sự kiện này đến <strong>EventBridge Events</strong>.</li>
+<li>Dựa trên sự kiện này, <strong>EventBridge Event Rule</strong> tiến hành phản ứng và kích hoạt đồng thời <strong>SNS Topic</strong> và <strong>Lambda Function</strong> tương ứng.</li>
+<li><strong>SNS Topic</strong> sẽ gửi E-mail cùng với chi tiết Finding cho bạn.</li>
+<li><strong>Lambda Function</strong> sẽ tiến hành cô lập EC2 compromised instance.</li>
 </ol>
 <blockquote>
 <p>Khi Việt thiết lập thông báo E-mail cho sự kiện này, anh ấy chỉ thêm một vài thông tin nhất định về Finding ấy và cấu hình Lambda Function để tự động cô lập EC2 compromised instance. Mặc dù Finding đã được giải quyết, bạn vẫn quyết định tìm hiểu chi tiết hơn về các thiết lập và cấu hình hiện tại này của Việt.</p></blockquote>
@@ -642,8 +642,8 @@
 <div class="notices note" ><p>Trong tình huống giả lập này, EC2 compromised instance chỉ tiến hành truy cập đến EIP của một EC2 instance khác trong cùng VPC nhằm nội bộ hoá quá trình giả lập cùng luồng xử lý dữ liệu chỉ xảy ra trong môi trường của bạn. CloudFormation Template sẽ tự động tạo danh sách mối nguy hại (Threat Lists) và gán địa chỉ EIP này vào đó.</p>
 </div>
 
-<p><strong>Kiểm tra EventBridge Event Rule</strong>
-Việt sử dụng EventBridge Event Rules để gửi thông báo đến bạn về các Findings cùng với nội dung các bước của quá trình Remediations. Chúng ta sẽ tiến hành khảo sát chi tiết hơn để hiểu rõ Việt đã thiết lập những gì và quá trình này diễn ra như thế nào?</p>
+<p><strong>Kiểm tra EventBridge Event Rule</strong></p>
+<p>Việt sử dụng EventBridge Event Rules để gửi thông báo đến bạn về các Findings cùng với nội dung các bước của quá trình Remediations. Chúng ta sẽ tiến hành khảo sát chi tiết hơn để hiểu rõ Việt đã thiết lập những gì và quá trình này diễn ra như thế nào?</p>
 <ol>
 <li>Truy cập vào <a href="https://ap-southeast-1.console.aws.amazon.com/events/home?region=ap-southeast-1#/">EventBridge</a> Console ở ap-southeast-1.</li>
 </ol>
@@ -691,8 +691,8 @@ Việt sử dụng EventBridge Event Rules để gửi thông báo đến bạn 
 </ul>
 <p><img src="../../../images/3.attack/3.1/9.png" alt="Compromised EC2 Instance"></p>
 <p><img src="../../../images/3.attack/3.1/10.png" alt="Compromised EC2 Instance"></p>
-<p><strong>Xác nhận quá trình Remediation đã thành công</strong>
-Để đảm bảo kết quả của quá trình Remediation, chúng ta cần phải xem xét EC2 instance đã bị cô lập hay chưa. Tại thời điểm này, bạn đã nhận được một E-mail cùng với một số thông tin quan trọng.</p>
+<p><strong>Xác nhận quá trình Remediation đã thành công</strong></p>
+<p>Để đảm bảo kết quả của quá trình Remediation, chúng ta cần phải xem xét EC2 instance đã bị cô lập hay chưa. Tại thời điểm này, bạn đã nhận được một E-mail cùng với một số thông tin quan trọng.</p>
 <ol>
 <li>Truy cập vào EC2 console ở ap-southeast-1 tại <a href="https://ap-southeast-1.console.aws.amazon.com/ec2/home?region=ap-southeast-1#Overview:">đây</a>.</li>
 </ol>
@@ -956,19 +956,19 @@ Việt sử dụng EventBridge Event Rules để gửi thông báo đến bạn 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1751447251"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1751447251"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1751447251"></script>
-    <script src="../../../js/jquery.sticky.js?1751447251"></script>
-    <script src="../../../js/featherlight.min.js?1751447251"></script>
-    <script src="../../../js/highlight.pack.js?1751447251"></script>
+    <script src="../../../js/clipboard.min.js?1751448331"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1751448331"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1751448331"></script>
+    <script src="../../../js/jquery.sticky.js?1751448331"></script>
+    <script src="../../../js/featherlight.min.js?1751448331"></script>
+    <script src="../../../js/highlight.pack.js?1751448331"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1751447251"></script>
-    <script src="../../../js/learn.js?1751447251"></script>
-    <script src="../../../js/hugo-learn.js?1751447251"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1751448331"></script>
+    <script src="../../../js/learn.js?1751448331"></script>
+    <script src="../../../js/hugo-learn.js?1751448331"></script>
 
-    <link href="../../../mermaid/mermaid.css?1751447251" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1751447251"></script>
+    <link href="../../../mermaid/mermaid.css?1751448331" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1751448331"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

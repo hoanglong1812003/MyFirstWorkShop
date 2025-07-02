@@ -12,21 +12,21 @@
     <title>Credential Exfiltration :: AWS GuardDuty &amp; Security Hub</title>
 
     
-    <link href="../../css/nucleus.css?1751447251" rel="stylesheet">
-    <link href="../../css/fontawesome-all.min.css?1751447251" rel="stylesheet">
-    <link href="../../css/hybrid.css?1751447251" rel="stylesheet">
-    <link href="../../css/featherlight.min.css?1751447251" rel="stylesheet">
-    <link href="../../css/perfect-scrollbar.min.css?1751447251" rel="stylesheet">
-    <link href="../../css/auto-complete.css?1751447251" rel="stylesheet">
-    <link href="../../css/atom-one-dark-reasonable.css?1751447251" rel="stylesheet">
-    <link href="../../css/theme.css?1751447251" rel="stylesheet">
-    <link href="../../css/hugo-theme.css?1751447251" rel="stylesheet">
+    <link href="../../css/nucleus.css?1751448331" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1751448331" rel="stylesheet">
+    <link href="../../css/hybrid.css?1751448331" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1751448331" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1751448331" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1751448331" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1751448331" rel="stylesheet">
+    <link href="../../css/theme.css?1751448331" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1751448331" rel="stylesheet">
     
-    <link href="../../css/theme-workshop.css?1751447251" rel="stylesheet">
+    <link href="../../css/theme-workshop.css?1751448331" rel="stylesheet">
     
     
 
-    <script src="../../js/jquery-3.3.1.min.js?1751447251"></script>
+    <script src="../../js/jquery-3.3.1.min.js?1751448331"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../js/lunr.min.js?1751447251"></script>
-<script type="text/javascript" src="../../js/auto-complete.js?1751447251"></script>
+<script type="text/javascript" src="../../js/lunr.min.js?1751448331"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1751448331"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hoanglong1812003.github.io\/MyFirstWorkShop\/";
     
 </script>
-<script type="text/javascript" src="../../js/search.js?1751447251"></script>
+<script type="text/javascript" src="../../js/search.js?1751448331"></script>
 
     
   </div>
@@ -587,7 +587,7 @@
 <p><img src="../../images/3.attack/3.4/CredentialExfiltration-1.png" alt="CredentialExfiltration"></p>
 <ol>
 <li>Remote server accesses compromised EC2 instance and steals IAM role credentials via Metadata.</li>
-<li>This server sets up an AWS CLI Profile to make API calls to an AWS account.</li>
+<li>This server sets up an AWS CLI Profile to make <strong>API calls</strong> to an AWS account.</li>
 <li><strong>GuardDuty</strong> discovered an unusual security vulnerability and sent it to <strong>Security Hub</strong> for synthesis.</li>
 <li><strong>GuardDuty</strong> generates relevant Findings and simultaneously sends them to <strong>GuardDuty console</strong> and <strong>EventBridge Events</strong>.</li>
 <li><strong>EventBridge Event Rule</strong> triggers <strong>SNS Topic</strong> and <strong>Lambda Function</strong>.</li>
@@ -632,8 +632,12 @@
 <p><strong>Test the Remediation process with Lambda Function</strong></p>
 <p>Viet has set up a Remediation process to respond to this threat automatically through a Lambda function. We can examine the code to understand more about this process.</p>
 <ol>
-<li>Access <a href="https://ap-southeast-1.console.aws.amazon.com/lambda/home?region=ap-southeast-1#/begin">Lambda Console</a> to ap-southeast-1.
-2.In the left navigation bar, select Functions and search for <strong>GuardDuty-Example-Remediation-InstanceCredentialExfiltration</strong>.</li>
+<li>
+<p>Access <a href="https://ap-southeast-1.console.aws.amazon.com/lambda/home?region=ap-southeast-1#/begin">Lambda Console</a> to ap-southeast-1.</p>
+</li>
+<li>
+<p>In the left navigation bar, select Functions and search for <strong>GuardDuty-Example-Remediation-InstanceCredentialExfiltration</strong>.</p>
+</li>
 </ol>
 <p><img src="../../images/3.attack/3.4/9.png" alt="CredentialExfiltration"></p>
 <blockquote>
@@ -893,19 +897,19 @@ Execute the following command:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../js/clipboard.min.js?1751447251"></script>
-    <script src="../../js/perfect-scrollbar.min.js?1751447251"></script>
-    <script src="../../js/perfect-scrollbar.jquery.min.js?1751447251"></script>
-    <script src="../../js/jquery.sticky.js?1751447251"></script>
-    <script src="../../js/featherlight.min.js?1751447251"></script>
-    <script src="../../js/highlight.pack.js?1751447251"></script>
+    <script src="../../js/clipboard.min.js?1751448331"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1751448331"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1751448331"></script>
+    <script src="../../js/jquery.sticky.js?1751448331"></script>
+    <script src="../../js/featherlight.min.js?1751448331"></script>
+    <script src="../../js/highlight.pack.js?1751448331"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../js/modernizr.custom-3.6.0.js?1751447251"></script>
-    <script src="../../js/learn.js?1751447251"></script>
-    <script src="../../js/hugo-learn.js?1751447251"></script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1751448331"></script>
+    <script src="../../js/learn.js?1751448331"></script>
+    <script src="../../js/hugo-learn.js?1751448331"></script>
 
-    <link href="../../mermaid/mermaid.css?1751447251" rel="stylesheet" />
-    <script src="../../mermaid/mermaid.js?1751447251"></script>
+    <link href="../../mermaid/mermaid.css?1751448331" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1751448331"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
