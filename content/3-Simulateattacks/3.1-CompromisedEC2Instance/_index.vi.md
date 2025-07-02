@@ -23,13 +23,13 @@ Nội dung E-mail thứ hai ngay sau đó mà bạn nhận được với tình 
 
 ![Compromised EC2 Instance](/images/3.attack/3.1/CompromisedEC2-1.png) 
 
-1. Một EC2 compromised instance, tiến hành gửi gói tin pings đến địa chỉ EIP của một EC2 instance nguy hại. Địa chỉ EIP đó đã được thêm ở Custom Threat List.
-2. GuardDuty phát hiện ra lỗ hổng bảo mật bất thường, tiến hành gửi về Security Hub để tổng hợp.
-3. GuardDuty tiến hành theo dõi VPC Flow Logs (kể cả CloudTrail và DNS Logs) và phân tích tình hình dựa trên Machine Learning, Custom Threat List và một số cở sở khác.
-4. GuardDuty sinh ra một Finding và hiển thị trên GuardDuty Console và gửi sự kiện này đến EventBridge Events.
-5. Dựa trên sự kiện này, EventBridge Event Rule tiến hành phản ứng và kích hoạt đồng thời SNS Topic và Lambda Function tương ứng.
-6. SNS Topic sẽ gửi E-mail cùng với chi tiết Finding cho bạn.
-7. Lambda Function sẽ tiến hành cô lập EC2 compromised instance.
+1. Một **EC2 compromised instance**, tiến hành gửi gói tin pings đến địa chỉ EIP của một EC2 instance nguy hại. Địa chỉ EIP đó đã được thêm ở **Custom Threat List**.
+2. **GuardDuty** phát hiện ra lỗ hổng bảo mật bất thường, tiến hành gửi về **Security Hub** để tổng hợp.
+3. **GuardDuty** tiến hành theo dõi **VPC Flow Logs** (kể cả CloudTrail và DNS Logs) và phân tích tình hình dựa trên Machine Learning, Custom Threat List và một số cở sở khác.
+4. **GuardDuty** sinh ra một Finding và hiển thị trên GuardDuty Console và gửi sự kiện này đến **EventBridge Events**.
+5. Dựa trên sự kiện này, **EventBridge Event Rule** tiến hành phản ứng và kích hoạt đồng thời **SNS Topic** và **Lambda Function** tương ứng.
+6. **SNS Topic** sẽ gửi E-mail cùng với chi tiết Finding cho bạn.
+7. **Lambda Function** sẽ tiến hành cô lập EC2 compromised instance.
 
 > Khi Việt thiết lập thông báo E-mail cho sự kiện này, anh ấy chỉ thêm một vài thông tin nhất định về Finding ấy và cấu hình Lambda Function để tự động cô lập EC2 compromised instance. Mặc dù Finding đã được giải quyết, bạn vẫn quyết định tìm hiểu chi tiết hơn về các thiết lập và cấu hình hiện tại này của Việt.
 
@@ -66,6 +66,7 @@ Trong tình huống giả lập này, EC2 compromised instance chỉ tiến hàn
 {{% /notice %}}
 
 **Kiểm tra EventBridge Event Rule**
+
 Việt sử dụng EventBridge Event Rules để gửi thông báo đến bạn về các Findings cùng với nội dung các bước của quá trình Remediations. Chúng ta sẽ tiến hành khảo sát chi tiết hơn để hiểu rõ Việt đã thiết lập những gì và quá trình này diễn ra như thế nào?
 
 1. Truy cập vào [EventBridge](https://ap-southeast-1.console.aws.amazon.com/events/home?region=ap-southeast-1#/) Console ở ap-southeast-1.
@@ -103,7 +104,9 @@ Lambda Function là chìa khoá nắm giữ logic nhằm thực hiện các bư�
 
 ![Compromised EC2 Instance](/images/3.attack/3.1/10.png)
 
+
 **Xác nhận quá trình Remediation đã thành công**
+
 Để đảm bảo kết quả của quá trình Remediation, chúng ta cần phải xem xét EC2 instance đã bị cô lập hay chưa. Tại thời điểm này, bạn đã nhận được một E-mail cùng với một số thông tin quan trọng.
 
 1. Truy cập vào EC2 console ở ap-southeast-1 tại [đây](https://ap-southeast-1.console.aws.amazon.com/ec2/home?region=ap-southeast-1#Overview:).

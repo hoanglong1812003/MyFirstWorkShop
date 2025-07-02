@@ -23,13 +23,13 @@ The second E-mail you received shortly after with the situation being resolved i
 
 ![Compromised EC2 Instance](/images/3.attack/3.1/CompromisedEC2-1.png) 
 
-1. A compromised EC2 instance sends pings to the EIP address of a malicious EC2 instance. That EIP address has been added to the Custom Threat List.
-2. GuardDuty discovered an unusual security vulnerability and sent it to Security Hub for synthesis.
-3. GuardDuty monitors VPC Flow Logs (including CloudTrail and DNS Logs) and analyzes the situation based on Machine Learning, Custom Threat Lists, and more.
-4. GuardDuty generates a Finding and displays it on the GuardDuty Console and sends this event to EventBridge Events.
-5. Based on this event, EventBridge Event Rule reacts and triggers the corresponding SNS Topic and Lambda Function simultaneously.
-6. SNS Topic will send you an E-mail with Finding details.
-8. The Lambda Function will isolate the EC2 compromised instance.
+1. A **compromised EC2** instance sends pings to the EIP address of a malicious EC2 instance. That EIP address has been added to the **Custom Threat List**.
+2. **GuardDuty** discovered an unusual security vulnerability and sent it to **Security Hub** for synthesis.
+3. **GuardDuty** monitors **VPC Flow Logs** (including CloudTrail and DNS Logs) and analyzes the situation based on Machine Learning, Custom Threat Lists, and more.
+4. **GuardDuty** generates a Finding and displays it on the GuardDuty Console and sends this event to **EventBridge Events**.
+5. Based on this event, **EventBridge Event Rule** reacts and triggers the corresponding **SNS Topic** and **Lambda Function** simultaneously.
+6. **SNS Topic** will send you an E-mail with Finding details.
+8. The **Lambda Function** will isolate the EC2 compromised instance.
 
 > When Viet set up the E-mail notification for this event, he only added certain information about the Finding and configured the Lambda Function to automatically isolate the EC2 compromised instance. Even though the Finding has been resolved, you still decide to dig deeper into Viet's current settings and configuration.
 
@@ -105,6 +105,7 @@ The Lambda Function is the key that holds the logic to execute the Remediations 
 ![Compromised EC2 Instance](/images/3.attack/3.1/10.png)
 
 **Confirming the Remediation Process Was Successful**
+
 To ensure the success of the Remediation process, we need to check whether the EC2 instance has been isolated or not. At this point, you have received an E-mail with some important information.
 1. Access the EC2 console at ap-southeast-1 at [here](https://ap-southeast-1.console.aws.amazon.com/ec2/home?region=ap-southeast-1#Overview:).
 

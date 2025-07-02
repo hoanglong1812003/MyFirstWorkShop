@@ -12,7 +12,7 @@ pre : " <b> 3.4. </b> "
 ![CredentialExfiltration](/images/3.attack/3.4/CredentialExfiltration-1.png)
 
 1. Remote server accesses compromised EC2 instance and steals IAM role credentials via Metadata.
-2. This server sets up an AWS CLI Profile to make API calls to an AWS account.
+2. This server sets up an AWS CLI Profile to make **API calls** to an AWS account.
 3. **GuardDuty** discovered an unusual security vulnerability and sent it to **Security Hub** for synthesis.
 4. **GuardDuty** generates relevant Findings and simultaneously sends them to **GuardDuty console** and **EventBridge Events**.
 5. **EventBridge Event Rule** triggers **SNS Topic** and **Lambda Function**.
@@ -55,7 +55,8 @@ pre : " <b> 3.4. </b> "
 Viet has set up a Remediation process to respond to this threat automatically through a Lambda function. We can examine the code to understand more about this process.
 
 1. Access [Lambda Console](https://ap-southeast-1.console.aws.amazon.com/lambda/home?region=ap-southeast-1#/begin) to ap-southeast-1.
-2.In the left navigation bar, select Functions and search for **GuardDuty-Example-Remediation-InstanceCredentialExfiltration**.
+
+2. In the left navigation bar, select Functions and search for **GuardDuty-Example-Remediation-InstanceCredentialExfiltration**.
 
 ![CredentialExfiltration](/images/3.attack/3.4/9.png)
 

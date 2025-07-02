@@ -81,6 +81,7 @@ Hoá ra, Việt chưa từng thiết lập Lambda Function để thực hiện q
 > Ngoài ra, chúng ta có thể thiết lập Target đối một số tài nguyên AWS khác như SSM Run Commands hay Step Function State Machine.
 
 **Giải quyết tình hình**
+
 Bởi Việt chưa từng thiết lập quá trình Remediation đối với Finding này nên bạn Long cần phải thực hiện một cách thủ công. Trong khi đội ngũ Security đang tiến hành phân tích những hành vi của IAM user này để xác định rõ hơn phạm vi lỗ hổng, bạn Long cần phải thực hiện một số bước để vô hiệu hoá Access Key nhằm ngăn chặn lập tức những hành động tiếp theo.
 
 1. Truy cập vào IAM Console tại [đây](https://us-east-1.console.aws.amazon.com/iam/home?region=ap-southeast-1#/home)
