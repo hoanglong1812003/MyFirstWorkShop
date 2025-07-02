@@ -71,10 +71,12 @@ Các rủi ro được tìm thấy sẽ được tóm tắt trực quan trên tr
 
 ### Chi phí
 Thông thường, chi phí sẽ ít hơn $1 mỗi tháng nếu tài khoản của bạn chỉ sử dụng cho mục đích thử nghiệm, luyện tập và không thực hiện những cuộc tấn công giả lập.
+
 **Kiểm tra bảo mật**
 - 100,000 lần đầu tiên => $0.0010/check.
 - 100,001 – 500,000 => $0.0008/check.
 - 500,001+ => $0.0005/check.
+
 **Tìm các sự kiện tấn công**
 - 10,000 lần đầu tiên => miễn phí.
 - 10,001+ => $0.00003/lần.
